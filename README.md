@@ -5,7 +5,7 @@ The project combines **LLM-assisted annotation** with **network, lexical, and se
 
 > **Important:**  
 > This repository is a **code-only repository**.  
-> It contains the full processing and analysis **pipeline**, but **does not include** the original corpus or the full annotated framing database (for legal and ethical reasons).
+> It contains the full processing and analysis **pipeline** and supporting label documentation, but **does not include** the original corpus or the full annotated framing database (for legal and ethical reasons).
 
 ---
 
@@ -16,6 +16,9 @@ This repo is intended to:
 - Store the **Python scripts** that implement the end-to-end pipeline:
   - from raw text → analysis units → LLM-assisted frame labels → merged framing database;
   - plus downstream analyses (equivalence chains, nodal signifiers, antagonistic boundaries).
+- Maintain the **label documentation and manual sets** used in the project:
+  - `05_labels_guidance/` holds label schemas, coding guidance, and prompt-ready definitions.
+  - `06_manual_sets/` holds manually curated validation sets and exemplar subsets.
 - Document the **methodology** used in the accompanying paper / thesis.
 - Provide a template for others to **adapt the pipeline** to their own corpora.
 
@@ -57,6 +60,8 @@ Methodologically, we:
 
 ```text
 Taiwan_Framing_Discourse/
+├── 05_labels_guidance/                 # label schema, coding guidance, prompt-ready definitions
+├── 06_manual_sets/                     # manually curated validation sets and exemplar subsets
 ├── 00_preprocess_to_units.py
 ├── 01_convert_units_to_csv.py
 ├── 02_wrangling_units.py
@@ -72,5 +77,5 @@ Taiwan_Framing_Discourse/
 ├── 12_compare_round2_and_merge_all.py
 ├── 13_analyze_user_merged_and_sample.py
 ├── 14_current_status_summary.py
-├── Manual_Scripts.pdf
+├── Manual_Scripts.pdf                  # detailed pipeline description
 └── utils_wrangling_bert.py
