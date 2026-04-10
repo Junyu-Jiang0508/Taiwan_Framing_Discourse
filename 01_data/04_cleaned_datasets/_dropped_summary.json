@@ -1,0 +1,18 @@
+{
+  "refined_input": "/mnt/d/Projects/Taiwan_Framing_Discourse/01_data/03_refined_datasets",
+  "cleaned_root": "/mnt/d/Projects/Taiwan_Framing_Discourse/01_data/04_cleaned_datasets",
+  "skip_semantic": true,
+  "x_sim_threshold": 0.4,
+  "dropped_cleaning_rows": 631,
+  "dropped_cleaning_by_reason": {
+    "1b_prefix_strip_too_short": 442,
+    "drop_context_non_political_english": 181,
+    "moderator_procedural_hu_yuanhui": 4,
+    "drop_pure_hashtag": 4
+  },
+  "dropped_dedup_rows": 11617,
+  "files_written": {
+    "cleaning": "/mnt/d/Projects/Taiwan_Framing_Discourse/01_data/04_cleaned_datasets/_dropped_cleaning.csv",
+    "dedup": "/mnt/d/Projects/Taiwan_Framing_Discourse/01_data/04_cleaned_datasets/_dropped_dedup.csv"
+  }
+}

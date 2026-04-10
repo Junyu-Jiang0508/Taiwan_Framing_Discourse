@@ -1,0 +1,3 @@
+﻿artifact,note
+corpus_L1_frequency.csv / 06_descriptive/L1_frequency_full.csv,Same population (L1-valid corpus rows); manuscript table uses rounded compare + descriptive prop.
+corpus_L2_row_prevalence.csv vs 06_descriptive/L2_frequency_full.csv,Row prevalence vs L2 token instance counts — different aggregations; do not merge without renaming.

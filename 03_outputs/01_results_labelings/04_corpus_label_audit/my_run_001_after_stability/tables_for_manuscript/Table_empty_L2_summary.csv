@@ -1,0 +1,5 @@
+﻿metric,value_pct,flag
+empty_L2_rate_validation,10.8,
+empty_L2_rate_corpus,40.1,
+warn_high_corpus_empty_L2,,True
+warn_low_corpus_empty_L2,,False

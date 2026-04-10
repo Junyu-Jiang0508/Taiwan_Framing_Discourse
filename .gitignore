@@ -1,0 +1,16 @@
+# secrets
+.env
+.streamlit/secrets.toml
+05_annotation_app/.streamlit/secrets.toml
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# batch API intermediate shards (regeneratable)
+03_outputs/**/batch_*.jsonl
+
+# IDE
+*.code-workspace

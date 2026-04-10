@@ -1,0 +1,5 @@
+﻿L1,L2,reason,corpus_pair_count,validation_pair_count
+L1-01,L2-01,theoretical_low_prior,192,4
+L1-05,L2-01,zero_in_validation_high_in_corpus,24,0
+L1-06,L2-04,zero_in_validation_high_in_corpus,145,0
+L1-07,L2-02,zero_in_validation_high_in_corpus,65,0

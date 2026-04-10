@@ -1,0 +1,42 @@
+{
+  "schema": "s10_run_manifest_v1",
+  "command": "stability",
+  "argv": [
+    "02_src/s10_corpus_label_audit.py",
+    "stability",
+    "--out-dir",
+    "03_outputs/01_results_labelings/04_corpus_label_audit/stability_001"
+  ],
+  "cwd": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse",
+  "finished_utc": "2026-04-10T02:46:06.106317+00:00",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pandas": "3.0.2",
+    "scipy": "1.17.1"
+  },
+  "inputs": {
+    "corpus_csv": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_20260407_221407/final_results.csv",
+    "corpus_sha256": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+    "validation_csv": null,
+    "validation_sha256": null
+  },
+  "started_utc": "2026-04-10T02:32:09.849741+00:00",
+  "openai_model": "gpt-5.1",
+  "n_sample": 100,
+  "temperature": 0.2,
+  "l2_jaccard_threshold": 0.8,
+  "stability_summary": {
+    "n_sample": 100,
+    "temperature": 0.2,
+    "l1_full_agreement_rate": 0.79,
+    "l1_full_agreement_count": 79,
+    "l2_min_pairwise_jaccard_mean": 0.6998333333333332,
+    "l2_rows_min_jacc_ge_threshold_rate": 0.58,
+    "l2_jaccard_threshold": 0.8,
+    "recommend_majority_vote_l1": true,
+    "recommend_majority_vote_l2": true,
+    "protocol_note": "L1: target >=0.90 single pass OK; <0.85 suggest 3-run majority. L2: min pairwise Jaccard per row vs threshold 0.80.",
+    "elapsed_s": 836.1995158195496
+  }
+}
