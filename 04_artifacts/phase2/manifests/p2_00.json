@@ -1,0 +1,9 @@
+{
+  "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+  "inputs_hash": "d28587ea2f40fdedc5e35b142c84e610187b6fba12e1165245fb30834181917e",
+  "corpus_csv": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_20260407_221407/final_results.csv",
+  "n_rows_main": 22215,
+  "n_rows_social": 148,
+  "n_multi_party": 3283,
+  "written_at": "2026-05-18T21:11:38.094677+00:00"
+}
