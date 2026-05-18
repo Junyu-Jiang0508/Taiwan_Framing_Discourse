@@ -1,0 +1,15 @@
+{
+  "l1": {
+    "rows": 22560,
+    "l1_valid_label_rows": 22560,
+    "l1_error_non_empty_rows": 0,
+    "l1_error_type_distribution": {}
+  },
+  "l2": {
+    "rows": 22560,
+    "l2_non_empty_label_rows": 13524,
+    "l2_empty_label_rows": 9036,
+    "l2_rows_with_invalid_label_dropped": 0,
+    "l2_invalid_label_drop_count_total": 0
+  }
+}

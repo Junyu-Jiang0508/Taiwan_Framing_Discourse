@@ -22,6 +22,7 @@ from utils.io import (  # noqa: E402
 )
 from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E402
 from utils.summary import write_summary  # noqa: E402
+from utils.time_buckets import window_time_bucket  # noqa: E402
 
 
 def build_windows_for_doc(
@@ -50,6 +51,7 @@ def build_windows_for_doc(
     for start in starts:
         chunk = sents[start : start + n_eff]
         l2_union = union_l2_sets(r["l2_set"] for r in chunk)
+        sent_dates = [r.get("date", "") for r in chunk]
         rows.append({
             "window_id": f"{doc_id}_w{start:04d}",
             "doc_id": doc_id,
@@ -57,6 +59,7 @@ def build_windows_for_doc(
             "sent_idx_end": chunk[-1]["sent_idx"],
             "camp": camp,
             "genre": genre,
+            "time_bucket": window_time_bucket(sent_dates),
             "l2_set": l2_set_to_tuple(l2_union),
             "is_empty_l2": len(l2_union) == 0,
             "is_truncated": truncated,
@@ -110,7 +113,7 @@ def run(cfg: Phase2Config, force: bool = False, doc_ids: list | None = None) -> 
     trunc_rate = float(main_df["is_truncated"].mean()) if len(main_df) else 0.0
     write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([labeled_path])})
     write_summary(
-        art / "p2_01_summary.md",
+        art,
         "p2_01",
         params={"default_n": default_n, "step": step, "robustness_ns": robustness},
         outputs=outputs,

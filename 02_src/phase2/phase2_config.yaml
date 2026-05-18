@@ -11,6 +11,8 @@ strata:
       groupby: [camp, genre]
     - name: camp
       groupby: [camp]
+    - name: camp_time
+      groupby: [camp, time_bucket]
   unknown_camp_policy: drop_with_audit
 
 windows:
@@ -18,11 +20,14 @@ windows:
   step: 1
   short_doc_policy: truncate
   robustness_ns: [1, 5, document]
+  robustness_run: true
 
 npmi:
   min_marginal_count: 30
   min_stratum_windows: 500
   empty_l2_in_denominator: true
+  edge_selection: fdr
+  fdr_alpha: 0.05
 
 bootstrap:
   n_resamples: 1000

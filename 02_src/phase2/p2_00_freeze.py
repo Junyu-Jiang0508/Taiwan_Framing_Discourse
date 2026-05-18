@@ -23,6 +23,7 @@ from utils.config import Phase2Config  # noqa: E402
 from utils.io import l2_set_to_tuple, serialize_l2_column, write_parquet  # noqa: E402
 from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E402
 from utils.summary import write_summary  # noqa: E402
+from utils.time_buckets import election_time_bucket  # noqa: E402
 
 UNKNOWN_RATE_HALT = 0.02
 
@@ -55,6 +56,7 @@ def run(cfg: Phase2Config, force: bool = False, doc_ids: list | None = None) -> 
             sent_idx = derive_sent_idx(row, int(row["_fallback_idx"]))
             l2_set = frozenset(parse_l2_cell(row.get("L2_labels")))
             parties = parse_speaker_parties(row.get("speakers"))
+            date_val = row.get("date", "")
             rec = {
                 "doc_id": row["doc_id"],
                 "sent_idx": sent_idx,
@@ -63,7 +65,8 @@ def run(cfg: Phase2Config, force: bool = False, doc_ids: list | None = None) -> 
                 "l2_set": l2_set_to_tuple(l2_set),
                 "camp": camp,
                 "genre": genre,
-                "date": row.get("date", ""),
+                "date": date_val,
+                "time_bucket": election_time_bucket(date_val),
                 "source": row.get("source", ""),
             }
             if len(parties) >= 2:
@@ -134,7 +137,7 @@ def run(cfg: Phase2Config, force: bool = False, doc_ids: list | None = None) -> 
 
     elapsed = time.perf_counter() - t0
     write_summary(
-        art / "p2_00_summary.md",
+        art,
         "p2_00",
         params={"corpus_csv": str(cfg.corpus_csv), "corpus_hash": cfg.corpus_content_hash[:16]},
         outputs=[str(out_main), str(diag_dir / "unknown_camp_audit.json")],

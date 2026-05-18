@@ -1,0 +1,62 @@
+{
+  "input_csv": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/stability_run/stability_triplicate_sample.csv",
+  "n_total_rows": 89,
+  "n_rows_all_three_l2_empty": 3,
+  "n_rows_nonempty_l2_union": 86,
+  "canonical_l2_labels": [
+    "L2-01",
+    "L2-02",
+    "L2-03",
+    "L2-04",
+    "L2-05",
+    "L2-06",
+    "L2-07",
+    "L2-08"
+  ],
+  "extra_l2_labels_in_data": [],
+  "table2": {
+    "n_rows_non_empty_l2_union": 86,
+    "cohorts": {
+      "all_three_l2_empty": {
+        "n_rows": 3,
+        "share_of_sample": 0.033707865168539325,
+        "mean_jaccard_consensus_only": null,
+        "note": "Filled in run_diagnose; rows omitted from table2_row_decomposition.csv."
+      },
+      "nonempty_union_no_consensus": {
+        "n_rows": 4,
+        "share_of_sample": 0.0449438202247191,
+        "share_of_nonempty_l2_union": 0.046511627906976744,
+        "mean_n_swing": 1.75,
+        "mean_jaccard_consensus_only": null,
+        "n_swing_distribution": {
+          "1": 1,
+          "2": 3
+        },
+        "note": "Per-row jaccard_consensus_only is NaN; majority vote undefined for L2."
+      },
+      "nonempty_union_has_consensus": {
+        "n_rows": 82,
+        "share_of_sample": 0.9213483146067416,
+        "share_of_nonempty_l2_union": 0.9534883720930233,
+        "mean_n_swing": 0.5853658536585366,
+        "mean_jaccard_consensus_only": 0.734959349593496,
+        "n_swing_distribution": {
+          "0": 45,
+          "1": 28,
+          "2": 7,
+          "3": 2
+        }
+      }
+    },
+    "mean_jaccard_consensus_only_among_has_consensus_rows": 0.734959349593496,
+    "mean_n_swing_non_empty_union_all": 0.6395348837209303,
+    "n_swing_distribution_non_empty_union_all": {
+      "0": 45,
+      "1": 29,
+      "2": 10,
+      "3": 2
+    }
+  },
+  "table2_metadata_file": "table2_metadata.json"
+}

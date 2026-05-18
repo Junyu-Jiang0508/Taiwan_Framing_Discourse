@@ -37,8 +37,34 @@ class Phase2Config:
     def genres_main(self) -> List[str]:
         return list(self.raw["strata"]["genres_main"])
 
-    def scheme_dir(self, prefix: str, scheme_name: str) -> Path:
-        return self.artifacts_root / f"{prefix}_by_{scheme_name}"
+    def scheme_dir(
+        self,
+        prefix: str,
+        scheme_name: str,
+        window_suffix: str | int | None = None,
+    ) -> Path:
+        """Artifact dir; non-default window sizes get __n{suffix} (e.g. npmi_by_camp__n5)."""
+        base = f"{prefix}_by_{scheme_name}"
+        if window_suffix is not None:
+            default_n = self.raw["windows"]["default_n"]
+            suf = "document" if window_suffix == "document" else str(window_suffix)
+            def_suf = "document" if default_n == "document" else str(default_n)
+            if suf != def_suf:
+                base = f"{base}__n{suf}"
+        return self.artifacts_root / base
+
+    def windows_parquet_path(self, window_suffix: str | int | None = None) -> Path:
+        n = window_suffix if window_suffix is not None else self.raw["windows"]["default_n"]
+        suf = "document" if n == "document" else str(n)
+        return self.artifacts_root / "windows" / f"windows_n{suf}.parquet"
+
+    @property
+    def edge_selection(self) -> str:
+        return str(self.raw.get("npmi", {}).get("edge_selection", "ci_excludes_zero"))
+
+    @property
+    def fdr_alpha(self) -> float:
+        return float(self.raw.get("npmi", {}).get("fdr_alpha", 0.05))
 
     def bootstrap_n_for_mode(self, mode: str) -> int:
         b = self.raw["bootstrap"]

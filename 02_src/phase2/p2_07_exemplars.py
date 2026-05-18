@@ -18,18 +18,7 @@ from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E40
 from utils.summary import write_summary  # noqa: E402
 
 
-def election_time_bucket(date_val) -> str:
-    dt = pd.to_datetime(date_val, errors="coerce")
-    if pd.isna(dt):
-        return "nodate"
-    d = dt.normalize()
-    if d < pd.Timestamp("2023-11-25"):
-        return "pre_registration"
-    if d < pd.Timestamp("2023-12-16"):
-        return "post_registration"
-    if d < pd.Timestamp("2024-01-13"):
-        return "campaign"
-    return "election_plus"
+from utils.time_buckets import election_time_bucket  # noqa: E402
 
 
 def run(cfg: Phase2Config, force: bool = False) -> None:
@@ -54,7 +43,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     if cons.empty or "camp" not in cons.columns:
         write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([art / "labeled_units.parquet"])})
         write_summary(
-            art / "p2_07_summary.md", "p2_07",
+            art, "p2_07",
             params={"scheme": scheme_name}, outputs=[str(out_dir)],
             stats={"skipped": "no consensus"}, elapsed_sec=time.perf_counter() - t0,
         )
@@ -119,7 +108,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
 
     write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([art / "labeled_units.parquet"])})
     write_summary(
-        art / "p2_07_summary.md",
+        art,
         "p2_07",
         params={"scheme": scheme_name, "top_n": 30},
         outputs=[str(out_dir)],

@@ -1,6 +1,6 @@
 {
   "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
-  "windows_config": "{'default_n': 3, 'step': 1, 'short_doc_policy': 'truncate', 'robustness_ns': [1, 5, 'document']}",
-  "inputs_hash": "122e7145b8370ccc0b633d721578806a20e0649adf559557a4506d290a3bdee1",
-  "written_at": "2026-05-18T21:11:48.356765+00:00"
+  "windows_config": "{'default_n': 3, 'step': 1, 'short_doc_policy': 'truncate', 'robustness_ns': [1, 5, 'document'], 'robustness_run': True}",
+  "inputs_hash": "d0908abbf91ac9fe70d4fe54f4ab6747b53acbb698e9ad7687e5ba4e255999af",
+  "written_at": "2026-05-18T21:49:39.824433+00:00"
 }

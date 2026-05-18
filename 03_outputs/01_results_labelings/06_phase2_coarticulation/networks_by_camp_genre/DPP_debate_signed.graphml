@@ -139,12 +139,4 @@
   <data key="d7">566</data>
   <data key="d8">+</data>
 </edge>
-<edge source="L2-07" target="L2-08">
-  <data key="d3">0.07842857568766833</data>
-  <data key="d4">0.003340414797122122</data>
-  <data key="d5">0.13770426244508197</data>
-  <data key="d6">0.056537102473498226</data>
-  <data key="d7">566</data>
-  <data key="d8">+</data>
-</edge>
 </graph></graphml>

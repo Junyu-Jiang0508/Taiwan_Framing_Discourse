@@ -42,6 +42,27 @@ def top_k_communities(comm_map: Dict[int, Set[str]], k: int) -> List[Tuple[int, 
     return ranked[:k]
 
 
+def all_pair_jaccard(
+    camps: List[str],
+    comm_by_camp: Dict[str, List[Tuple[int, Set[str]]]],
+) -> pd.DataFrame:
+    rows = []
+    for camp_a in camps:
+        for camp_b in camps:
+            for id_a, set_a in comm_by_camp.get(camp_a, []):
+                for id_b, set_b in comm_by_camp.get(camp_b, []):
+                    rows.append({
+                        "camp_a": camp_a,
+                        "community_a": id_a,
+                        "l2_set_a": "|".join(sorted(set_a)),
+                        "camp_b": camp_b,
+                        "community_b": id_b,
+                        "l2_set_b": "|".join(sorted(set_b)),
+                        "jaccard": jaccard(set_a, set_b),
+                    })
+    return pd.DataFrame(rows)
+
+
 def hubert_gamma(a: np.ndarray, b: np.ndarray) -> float:
     n = a.shape[0]
     if n < 2:
@@ -93,7 +114,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     n_perm = int(ccfg["qap_permutations"])
 
     manifest_path = art / "manifests" / "p2_06.json"
-    expected = {"corpus_content_hash": cfg.corpus_content_hash}
+    expected = {"corpus_content_hash": cfg.corpus_content_hash, "edge_selection": cfg.edge_selection}
     if should_skip(manifest_path, expected, force):
         print("p2_06: skip (manifest match)")
         return
@@ -111,13 +132,14 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         pd.DataFrame().to_parquet(out_dir / "qap_results.parquet", index=False)
         write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([cons_path])})
         write_summary(
-            art / "p2_06_summary.md", "p2_06",
+            art, "p2_06",
             params={"scheme": scheme_name}, outputs=[str(out_dir)],
             stats={"skipped": "no consensus partition"}, elapsed_sec=time.perf_counter() - t0,
         )
         print("p2_06 skipped (no partitions)")
         return
 
+    comm_by_camp_full = {c: list(communities_from_partition(cons, c).items()) for c in camps}
     comm_by_camp = {c: top_k_communities(communities_from_partition(cons, c), top_k) for c in camps}
 
     match_rows = []
@@ -142,12 +164,13 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         })
 
     pd.DataFrame(match_rows).to_parquet(out_dir / "community_table.parquet", index=False)
+    jaccard_df = all_pair_jaccard(camps, {c: comm_by_camp_full[c] for c in camps})
+    jaccard_df.to_parquet(out_dir / "jaccard_all_pairs.parquet", index=False)
 
-    # QAP on shared L2 nodes (signed graphs)
     all_nodes = sorted({str(r["node"]) for _, r in cons.iterrows()})
+    qap_rows = []
     if len(all_nodes) >= 2:
         pair_labels = [("DPP", "KMT"), ("DPP", "TPP"), ("KMT", "TPP")]
-        qap_rows = []
         mats = {}
         for camp in camps:
             gp = net_dir / f"{camp}_signed.graphml"
@@ -156,16 +179,35 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         for a, b in pair_labels:
             if a in mats and b in mats:
                 gamma, p = qap_test(mats[a], mats[b], n_perm, seed=42)
-                qap_rows.append({"camp_a": a, "camp_b": b, "hubert_gamma": gamma, "p_value": p, "n_perm": n_perm})
+                qap_rows.append({
+                    "camp_a": a,
+                    "camp_b": b,
+                    "hubert_gamma": gamma,
+                    "p_value": p,
+                    "n_perm": n_perm,
+                    "n_nodes": len(all_nodes),
+                })
         pd.DataFrame(qap_rows).to_parquet(out_dir / "qap_results.parquet", index=False)
 
-    write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([part_dir / "consensus_partition.parquet"])})
+    write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([cons_path])})
     write_summary(
-        art / "p2_06_summary.md",
+        art,
         "p2_06",
         params={"scheme": scheme_name, "top_k": top_k, "qap_permutations": n_perm},
-        outputs=[str(out_dir / "community_table.parquet"), str(out_dir / "qap_results.parquet")],
-        stats={"n_matched_triples": len(match_rows)},
+        outputs=[
+            str(out_dir / "community_table.parquet"),
+            str(out_dir / "jaccard_all_pairs.parquet"),
+            str(out_dir / "qap_results.parquet"),
+        ],
+        stats={
+            "n_matched_triples": len(match_rows),
+            "community_table": match_rows,
+            "qap_results": qap_rows,
+            "jaccard_all_pairs_n": len(jaccard_df),
+        },
+        notes=[
+            "Report Hubert gamma as effect size; p-values on 28 edge pairs have limited power.",
+        ],
         elapsed_sec=time.perf_counter() - t0,
     )
     print("p2_06 done")

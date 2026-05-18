@@ -6,6 +6,7 @@ from typing import Dict, List, Tuple
 import numpy as np
 import pandas as pd
 
+from .multiple_testing import bootstrap_two_sided_p
 from .npmi import compute_npmi_table
 
 
@@ -73,12 +74,14 @@ def bootstrap_npmi(
             lo = float(np.quantile(valid, lo_q))
             hi = float(np.quantile(valid, hi_q))
             ci_excl = (lo > 0) or (hi < 0)
+        p_val = bootstrap_two_sided_p(col)
         rows.append({
             "l2_a": a, "l2_b": b,
             "npmi_median": med,
             "npmi_lower": lo,
             "npmi_upper": hi,
             "ci_excludes_zero": ci_excl,
+            "p_value": p_val,
             "n_resamples": n_resamples,
         })
         diag_rows.append({

@@ -1,0 +1,6 @@
+{
+  "script": "16_corpus_merged_deduped_async.py",
+  "input_resolved": "/mnt/d/Projects/Taiwan_Framing_Discourse/01_data/04_cleaned_datasets/merged_deduped.csv",
+  "n_requests": 22560,
+  "model": "gpt-5.1"
+}

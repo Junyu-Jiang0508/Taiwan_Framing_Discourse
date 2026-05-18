@@ -111,7 +111,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
 
     write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([net_camp, net_cg])})
     write_summary(
-        art / "p2_08_summary.md",
+        art,
         "p2_08",
         params={"layout": "fa2" if ForceAtlas2 else "spring"},
         outputs=[str(main_path), str(app_path)],

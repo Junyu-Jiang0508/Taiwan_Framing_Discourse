@@ -1,0 +1,125 @@
+{
+  "schema": "s10_run_manifest_v1",
+  "command": "stability",
+  "argv": [
+    "02_src/s10_corpus_label_audit.py",
+    "stability",
+    "--corpus-csv",
+    "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_20260407_221407/final_results.csv",
+    "--out-dir",
+    "03_outputs/01_results_labelings/stability_run",
+    "--seed",
+    "42",
+    "--temperature",
+    "0"
+  ],
+  "cwd": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse",
+  "finished_utc": "2026-04-23T19:05:44.147193+00:00",
+  "environment": {
+    "python": "3.11.15",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "pandas": "3.0.2",
+    "scipy": "1.17.1",
+    "git_commit": "12c5389a7c4b8542a1af5f4791ca536d1442bdea"
+  },
+  "inputs": {
+    "corpus_csv": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_20260407_221407/final_results.csv",
+    "corpus_sha256": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+    "validation_csv": null,
+    "validation_sha256": null
+  },
+  "started_utc": "2026-04-23T18:50:43.937624+00:00",
+  "openai_model": "gpt-5.1",
+  "n_sample": 89,
+  "stability_sampling": {
+    "sampling_mode": "min_l2_corpus_support",
+    "stability_min_rows_per_l2": 20,
+    "stability_l2_ref_col": "L2_labels",
+    "n_rows_selected": 89,
+    "per_l2_rows_in_pool_with_tag": {
+      "L2-01": 3853,
+      "L2-02": 910,
+      "L2-03": 995,
+      "L2-04": 494,
+      "L2-05": 4171,
+      "L2-06": 4607,
+      "L2-07": 5928,
+      "L2-08": 1542
+    },
+    "per_l2_rows_in_sample_tag_hits": {
+      "L2-01": 39,
+      "L2-02": 20,
+      "L2-03": 20,
+      "L2-04": 20,
+      "L2-05": 32,
+      "L2-06": 26,
+      "L2-07": 29,
+      "L2-08": 21
+    },
+    "per_l2_target_met": {
+      "L2-01": true,
+      "L2-02": true,
+      "L2-03": true,
+      "L2-04": true,
+      "L2-05": true,
+      "L2-06": true,
+      "L2-07": true,
+      "L2-08": true
+    },
+    "l2_tags_with_pool_count_below_target": {},
+    "exhausted_strata_before_target": []
+  },
+  "temperature": 0.0,
+  "l2_jaccard_threshold": 0.8,
+  "stability_summary": {
+    "n_sample": 89,
+    "stability_sampling": {
+      "sampling_mode": "min_l2_corpus_support",
+      "stability_min_rows_per_l2": 20,
+      "stability_l2_ref_col": "L2_labels",
+      "n_rows_selected": 89,
+      "per_l2_rows_in_pool_with_tag": {
+        "L2-01": 3853,
+        "L2-02": 910,
+        "L2-03": 995,
+        "L2-04": 494,
+        "L2-05": 4171,
+        "L2-06": 4607,
+        "L2-07": 5928,
+        "L2-08": 1542
+      },
+      "per_l2_rows_in_sample_tag_hits": {
+        "L2-01": 39,
+        "L2-02": 20,
+        "L2-03": 20,
+        "L2-04": 20,
+        "L2-05": 32,
+        "L2-06": 26,
+        "L2-07": 29,
+        "L2-08": 21
+      },
+      "per_l2_target_met": {
+        "L2-01": true,
+        "L2-02": true,
+        "L2-03": true,
+        "L2-04": true,
+        "L2-05": true,
+        "L2-06": true,
+        "L2-07": true,
+        "L2-08": true
+      },
+      "l2_tags_with_pool_count_below_target": {},
+      "exhausted_strata_before_target": []
+    },
+    "temperature": 0.0,
+    "l1_full_agreement_rate": 0.7752808988764045,
+    "l1_full_agreement_count": 69,
+    "l2_min_pairwise_jaccard_mean": 0.5921348314606741,
+    "l2_rows_min_jacc_ge_threshold_rate": 0.30337078651685395,
+    "l2_jaccard_threshold": 0.8,
+    "recommend_majority_vote_l1": true,
+    "recommend_majority_vote_l2": true,
+    "protocol_note": "L1: target >=0.90 single pass OK; <0.85 suggest 3-run majority. L2: min pairwise Jaccard per row vs threshold 0.80.",
+    "elapsed_s": 900.1133179664612
+  }
+}
