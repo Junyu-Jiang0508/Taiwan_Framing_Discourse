@@ -64,7 +64,13 @@ def compute_npmi_table(
             })
             continue
         log_pab = math.log(cab) - log_n
-        npmi = log_pab - log_marg[a] - log_marg[b]
+        pmi = log_pab - log_marg[a] - log_marg[b]
+        # Bouma (2009): NPMI = PMI / -log P(A,B); bounded in [-1, 1].
+        self_info = -log_pab
+        if self_info <= 0:
+            npmi = float("nan")
+        else:
+            npmi = pmi / self_info
         rows.append({
             "l2_a": a, "l2_b": b,
             "p_a": math.exp(log_marg[a]),
