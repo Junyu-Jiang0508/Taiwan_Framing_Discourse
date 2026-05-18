@@ -5,6 +5,7 @@ from __future__ import annotations
 import sys
 import time
 from pathlib import Path
+from typing import Any, Dict, Optional
 
 import pandas as pd
 
@@ -36,6 +37,7 @@ def run_scheme(
     npmi_rows = []
     diag_rows = []
     excl_rows = []
+    low_n_strata = []
 
     for keys, grp in windows.groupby(scheme.groupby, sort=True):
         if not isinstance(keys, tuple):
@@ -46,6 +48,9 @@ def run_scheme(
         diag["scheme"] = scheme.name
         if diag["n_windows"] < min_stratum_windows:
             diag["low_n_warning"] = True
+            low_n_strata.append(stratum)
+        else:
+            diag["low_n_warning"] = False
         diag_rows.append(diag)
 
         npmi_df, excl_df = compute_npmi_table(grp, min_marginal)
@@ -69,26 +74,49 @@ def run_scheme(
     write_parquet(npmi_all, out_dir / "npmi_point.parquet", sort_by=sort_cols)
     write_parquet(diag_all, out_dir / "stratum_diagnostics.parquet", sort_by=scheme.groupby)
     write_parquet(excl_all, out_dir / "excluded_labels.parquet", sort_by=scheme.groupby + ["l2"])
-    return {"n_edges": len(npmi_all), "n_strata": len(diag_rows)}
+
+    per_stratum_edges = {}
+    if not npmi_all.empty and scheme.groupby:
+        per_stratum_edges = {
+            str(k): int(v) for k, v in npmi_all.groupby(scheme.groupby, dropna=False).size().items()
+        }
+
+    empty_l2_rates = {}
+    if not diag_all.empty:
+        for _, row in diag_all.iterrows():
+            key = {c: row[c] for c in scheme.groupby}
+            rate = row["n_empty_l2_windows"] / row["n_windows"] if row["n_windows"] else 0.0
+            empty_l2_rates[str(key)] = f"{rate:.4f}"
+
+    return {
+        "n_edges": len(npmi_all),
+        "n_strata": len(diag_rows),
+        "low_n_strata": low_n_strata,
+        "per_stratum_edges": per_stratum_edges,
+        "empty_l2_rates": empty_l2_rates,
+    }
 
 
 def run(
     cfg: Phase2Config,
     force: bool = False,
     scheme_filter: str | None = None,
-) -> None:
+    window_suffix: str | int | None = None,
+) -> Dict[str, Any]:
     t0 = time.perf_counter()
     art = cfg.artifacts_root
-    win_path = art / "windows" / f"windows_n{cfg.raw['windows']['default_n']}.parquet"
-    manifest_path = art / "manifests" / "p2_02.json"
+    win_path = cfg.windows_parquet_path(window_suffix)
+    manifest_suffix = "" if window_suffix is None else f"_n{window_suffix}"
+    manifest_path = art / "manifests" / f"p2_02{manifest_suffix}.json"
     npmi_cfg = cfg.raw["npmi"]
     expected = {
         "corpus_content_hash": cfg.corpus_content_hash,
         "npmi": str(npmi_cfg),
+        "window_suffix": str(window_suffix),
     }
     if should_skip(manifest_path, expected, force):
-        print("p2_02: skip (manifest match)")
-        return
+        print(f"p2_02{manifest_suffix}: skip (manifest match)")
+        return {}
 
     windows = read_parquet(win_path)
     min_marginal = int(npmi_cfg["min_marginal_count"])
@@ -98,24 +126,26 @@ def run(
     for scheme in cfg.schemes:
         if scheme_filter and scheme.name != scheme_filter:
             continue
-        out_dir = cfg.scheme_dir("npmi", scheme.name)
+        out_dir = cfg.scheme_dir("npmi", scheme.name, window_suffix)
         stats[scheme.name] = run_scheme(windows, scheme, out_dir, min_marginal, min_stratum)
 
     write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([win_path])})
-    write_summary(
-        art / "p2_02_summary.md",
-        "p2_02",
-        params={"min_marginal_count": min_marginal, "schemes": [s.name for s in cfg.schemes]},
-        outputs=[str(cfg.scheme_dir("npmi", s.name)) for s in cfg.schemes],
-        stats=stats,
-        notes=[
-            EMPTY_L2_DENOM_NOTE,
-            "Pair counts exclude is_empty_l2 windows; marginals include all windows.",
-            "Step=1 window overlap inflates counts equally in P(A), P(B), P(AB) — ratio cancels in NPMI.",
-        ],
-        elapsed_sec=time.perf_counter() - t0,
-    )
-    print("p2_02 done")
+    if window_suffix is None:
+        write_summary(
+            art,
+            "p2_02",
+            params={"min_marginal_count": min_marginal, "schemes": [s.name for s in cfg.schemes]},
+            outputs=[str(cfg.scheme_dir("npmi", s.name)) for s in cfg.schemes],
+            stats=stats,
+            notes=[
+                EMPTY_L2_DENOM_NOTE,
+                "Pair counts exclude is_empty_l2 windows; marginals include all windows.",
+                "Step=1 window overlap inflates counts equally in P(A), P(B), P(AB) — ratio cancels in NPMI.",
+            ],
+            elapsed_sec=time.perf_counter() - t0,
+        )
+    print(f"p2_02{manifest_suffix} done")
+    return stats
 
 
 if __name__ == "__main__":

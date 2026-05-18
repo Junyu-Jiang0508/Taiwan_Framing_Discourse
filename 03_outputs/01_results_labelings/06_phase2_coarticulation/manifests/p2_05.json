@@ -1,6 +1,7 @@
 {
   "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
   "leiden": "{'gammas': [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0], 'seeds_per_gamma': 10, 'seed_base': 123, 'consensus_threshold': 0.5, 'consensus_gamma': 1.0, 'stability_coassignment_min': 0.8}",
-  "inputs_hash": "10dde837a02e1e1ebea49f059a279436a970273ad63639fb73ef6a2b23f072af",
-  "written_at": "2026-05-18T21:25:03.938400+00:00"
+  "window_suffix": "None",
+  "inputs_hash": "cd21231717391005e5cfbab108cfd8d0d5c226251dffb9416cb5a296a25843b2",
+  "written_at": "2026-05-18T21:56:23.015948+00:00"
 }

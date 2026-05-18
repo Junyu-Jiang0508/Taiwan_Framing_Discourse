@@ -1,0 +1,300 @@
+{
+  "files": {
+    "01_news_datasets/01_Ho_chinatimes_news_units.csv": {
+      "in": 3450,
+      "final_status_REVIEW_in": 117,
+      "out": 3395,
+      "drops": 55,
+      "reasons": {
+        "1b_prefix_strip_too_short": 55
+      },
+      "final_status_REVIEW_out": 116
+    },
+    "01_news_datasets/01_Ho_ltn_news_units.csv": {
+      "in": 1931,
+      "final_status_REVIEW_in": 209,
+      "out": 1924,
+      "drops": 7,
+      "reasons": {
+        "1b_prefix_strip_too_short": 7
+      },
+      "final_status_REVIEW_out": 208
+    },
+    "01_news_datasets/01_Ho_tvbs_news_units.csv": {
+      "in": 694,
+      "final_status_REVIEW_in": 45,
+      "out": 688,
+      "drops": 6,
+      "reasons": {
+        "1b_prefix_strip_too_short": 6
+      },
+      "final_status_REVIEW_out": 45
+    },
+    "01_news_datasets/02_Ke_chinatimes_news_units.csv": {
+      "in": 9259,
+      "final_status_REVIEW_in": 459,
+      "out": 9082,
+      "drops": 177,
+      "reasons": {
+        "1b_prefix_strip_too_short": 177
+      },
+      "final_status_REVIEW_out": 448
+    },
+    "01_news_datasets/02_Ke_ltn_news_units.csv": {
+      "in": 1913,
+      "final_status_REVIEW_in": 286,
+      "out": 1908,
+      "drops": 5,
+      "reasons": {
+        "1b_prefix_strip_too_short": 5
+      },
+      "final_status_REVIEW_out": 285
+    },
+    "01_news_datasets/02_Ke_tvbs_news_units.csv": {
+      "in": 990,
+      "final_status_REVIEW_in": 88,
+      "out": 982,
+      "drops": 8,
+      "reasons": {
+        "1b_prefix_strip_too_short": 8
+      },
+      "final_status_REVIEW_out": 88
+    },
+    "01_news_datasets/03_Lai_chinatimes_news_units.csv": {
+      "in": 9307,
+      "final_status_REVIEW_in": 530,
+      "out": 9139,
+      "drops": 168,
+      "reasons": {
+        "1b_prefix_strip_too_short": 168
+      },
+      "final_status_REVIEW_out": 525
+    },
+    "01_news_datasets/03_Lai_ltn_news_units.csv": {
+      "in": 4105,
+      "final_status_REVIEW_in": 492,
+      "out": 4098,
+      "drops": 7,
+      "reasons": {
+        "1b_prefix_strip_too_short": 7
+      },
+      "final_status_REVIEW_out": 492
+    },
+    "01_news_datasets/03_Lai_tvbs_news_units.csv": {
+      "in": 1131,
+      "final_status_REVIEW_in": 154,
+      "out": 1122,
+      "drops": 9,
+      "reasons": {
+        "1b_prefix_strip_too_short": 9
+      },
+      "final_status_REVIEW_out": 154
+    },
+    "02_conference_datasets/Debate_President_units.csv": {
+      "in": 360,
+      "final_status_REVIEW_in": 86,
+      "drop_mod_procedural": 3,
+      "out": 357,
+      "short_drop_filler": 0,
+      "short_keep_auto": 15,
+      "short_keep_bulk": 12,
+      "final_status_REVIEW_out": 86
+    },
+    "02_conference_datasets/Interview_Xiao_units.csv": {
+      "in": 116,
+      "final_status_REVIEW_in": 35,
+      "out": 116,
+      "final_status_REVIEW_out": 35
+    },
+    "02_conference_datasets/Interview_ko_units.csv": {
+      "in": 109,
+      "final_status_REVIEW_in": 23,
+      "out": 109,
+      "final_status_REVIEW_out": 23
+    },
+    "02_conference_datasets/meeting1_units.csv": {
+      "in": 178,
+      "final_status_REVIEW_in": 60,
+      "out": 178,
+      "final_status_REVIEW_out": 60
+    },
+    "02_conference_datasets/meeting2_units.csv": {
+      "in": 367,
+      "final_status_REVIEW_in": 86,
+      "out": 367,
+      "final_status_REVIEW_out": 86
+    },
+    "02_conference_datasets/meeting3_units.csv": {
+      "in": 181,
+      "final_status_REVIEW_in": 59,
+      "out": 181,
+      "final_status_REVIEW_out": 59
+    },
+    "02_conference_datasets/vice_president_units.csv": {
+      "in": 383,
+      "final_status_REVIEW_in": 68,
+      "drop_mod_procedural": 1,
+      "out": 382,
+      "short_drop_filler": 0,
+      "short_keep_auto": 21,
+      "short_keep_bulk": 11,
+      "final_status_REVIEW_out": 68
+    },
+    "03_X_datasets/01_Hou_X_datasets_units.csv": {
+      "in": 252,
+      "final_status_REVIEW_in": 0,
+      "drop_pure_hashtag": 3,
+      "strip_hashtag": 43,
+      "rows_with_hashtag": 43,
+      "drop_context_semantic_or_english": 172,
+      "out": 77,
+      "final_status_REVIEW_out": 0
+    },
+    "03_X_datasets/02_Ke_X_datasets_units.csv": {
+      "in": 89,
+      "final_status_REVIEW_in": 0,
+      "drop_pure_hashtag": 1,
+      "strip_hashtag": 19,
+      "rows_with_hashtag": 19,
+      "drop_context_semantic_or_english": 60,
+      "out": 28,
+      "final_status_REVIEW_out": 0
+    },
+    "03_X_datasets/03_Lai_X_datasets_units.csv": {
+      "in": 133,
+      "final_status_REVIEW_in": 0,
+      "drop_pure_hashtag": 0,
+      "strip_hashtag": 24,
+      "rows_with_hashtag": 24,
+      "drop_context_semantic_or_english": 89,
+      "out": 44,
+      "final_status_REVIEW_out": 0
+    }
+  },
+  "x_threshold": 0.4,
+  "debate_seed_pool_ge15": 680,
+  "debate_seed_count": 48,
+  "debate_short_review_rows": 0,
+  "merged_rows": 34177,
+  "merged_after_dedup": 22560,
+  "cross_corpus_dup_dropped": 11617,
+  "per_source_counts": {
+    "02_Ke_chinatimes_news": 6385,
+    "03_Lai_chinatimes_news": 3569,
+    "01_Ho_chinatimes_news": 3395,
+    "03_Lai_ltn_news": 2801,
+    "01_Ho_ltn_news": 1924,
+    "02_Ke_ltn_news": 1483,
+    "01_Ho_tvbs_news.csv": 687,
+    "02_Ke_tvbs_news": 557,
+    "03_Lai_tvbs_news": 448,
+    "副总统辩论": 382,
+    "总统辩论": 357,
+    "meeting1": 178,
+    "萧美琴专访": 116,
+    "柯文哲专访": 109,
+    "01_Hou_X_datasets": 77,
+    "03_Lai_X_datasets": 43,
+    "02_Ke_X_datasets": 28,
+    "meeting2": 14,
+    "meeting3": 7
+  },
+  "merged_final_status_REVIEW": 2143,
+  "dedup_per_source": {
+    "01_Ho_chinatimes_news": {
+      "before": 3395,
+      "after": 3395,
+      "dropped": 0
+    },
+    "01_Ho_ltn_news": {
+      "before": 1924,
+      "after": 1924,
+      "dropped": 0
+    },
+    "01_Ho_tvbs_news.csv": {
+      "before": 688,
+      "after": 687,
+      "dropped": 1
+    },
+    "01_Hou_X_datasets": {
+      "before": 77,
+      "after": 77,
+      "dropped": 0
+    },
+    "02_Ke_X_datasets": {
+      "before": 28,
+      "after": 28,
+      "dropped": 0
+    },
+    "02_Ke_chinatimes_news": {
+      "before": 9082,
+      "after": 6385,
+      "dropped": 2697
+    },
+    "02_Ke_ltn_news": {
+      "before": 1908,
+      "after": 1483,
+      "dropped": 425
+    },
+    "02_Ke_tvbs_news": {
+      "before": 982,
+      "after": 557,
+      "dropped": 425
+    },
+    "03_Lai_X_datasets": {
+      "before": 44,
+      "after": 43,
+      "dropped": 1
+    },
+    "03_Lai_chinatimes_news": {
+      "before": 9139,
+      "after": 3569,
+      "dropped": 5570
+    },
+    "03_Lai_ltn_news": {
+      "before": 4098,
+      "after": 2801,
+      "dropped": 1297
+    },
+    "03_Lai_tvbs_news": {
+      "before": 1122,
+      "after": 448,
+      "dropped": 674
+    },
+    "meeting1": {
+      "before": 178,
+      "after": 178,
+      "dropped": 0
+    },
+    "meeting2": {
+      "before": 367,
+      "after": 14,
+      "dropped": 353
+    },
+    "meeting3": {
+      "before": 181,
+      "after": 7,
+      "dropped": 174
+    },
+    "副总统辩论": {
+      "before": 382,
+      "after": 382,
+      "dropped": 0
+    },
+    "总统辩论": {
+      "before": 357,
+      "after": 357,
+      "dropped": 0
+    },
+    "柯文哲专访": {
+      "before": 109,
+      "after": 109,
+      "dropped": 0
+    },
+    "萧美琴专访": {
+      "before": 116,
+      "after": 116,
+      "dropped": 0
+    }
+  }
+}

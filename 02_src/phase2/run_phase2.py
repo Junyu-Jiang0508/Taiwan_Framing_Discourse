@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 from pathlib import Path
+from typing import List, Optional
 
 PHASE2_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(PHASE2_DIR))
@@ -21,6 +22,9 @@ import p2_05_leiden  # noqa: E402
 import p2_06_cross_camp  # noqa: E402
 import p2_07_exemplars  # noqa: E402
 import p2_08_visualization  # noqa: E402
+import p2_09_substantive_export  # noqa: E402
+import p2_10_robustness_compare  # noqa: E402
+import p2_11_temporal_stability  # noqa: E402
 
 MODULES = {
     "p2_00": p2_00_freeze,
@@ -32,9 +36,30 @@ MODULES = {
     "p2_06": p2_06_cross_camp,
     "p2_07": p2_07_exemplars,
     "p2_08": p2_08_visualization,
+    "p2_09": p2_09_substantive_export,
+    "p2_10": p2_10_robustness_compare,
+    "p2_11": p2_11_temporal_stability,
 }
 
-ORDER = ["p2_00", "p2_01", "p2_02", "p2_03", "p2_04", "p2_05", "p2_06", "p2_07", "p2_08"]
+ORDER = [
+    "p2_00", "p2_01", "p2_02", "p2_03", "p2_04", "p2_05", "p2_06", "p2_07", "p2_08",
+    "p2_09", "p2_10", "p2_11",
+]
+
+NPMI_CHAIN = ["p2_02", "p2_03", "p2_04", "p2_05"]
+
+
+def _robustness_window_suffixes(cfg) -> List[Optional[str | int]]:
+    wcfg = cfg.raw["windows"]
+    if not wcfg.get("robustness_run", False):
+        return [None]
+    default_n = wcfg["default_n"]
+    suffixes: List[Optional[str | int]] = [None]
+    for n in wcfg.get("robustness_ns", []):
+        if n == default_n:
+            continue
+        suffixes.append(n)
+    return suffixes
 
 
 def run_pipeline(
@@ -43,6 +68,7 @@ def run_pipeline(
     scheme: str | None = None,
     force: bool = False,
     config_path: Path | None = None,
+    skip_robustness: bool = False,
 ) -> None:
     cfg = load_config(config_path)
     if mode == "smoke":
@@ -60,26 +86,37 @@ def run_pipeline(
     if only and only not in MODULES:
         raise SystemExit(f"Unknown module: {only}")
 
+    window_suffixes = [None] if skip_robustness else _robustness_window_suffixes(cfg)
+
     for name in modules:
         print(f"\n=== {name} (mode={mode}) ===")
         if name == "p2_00":
             p2_00_freeze.run(cfg, force=force, doc_ids=doc_ids if mode == "smoke" else None)
         elif name == "p2_01":
             p2_01_windows.run(cfg, force=force)
-        elif name == "p2_02":
-            p2_02_npmi.run(cfg, force=force, scheme_filter=scheme)
-        elif name == "p2_03":
-            p2_03_bootstrap.run(cfg, mode=mode, force=force, scheme_filter=scheme)
-        elif name == "p2_04":
-            p2_04_networks.run(cfg, force=force, scheme_filter=scheme)
-        elif name == "p2_05":
-            p2_05_leiden.run(cfg, force=force, scheme_filter=scheme)
+        elif name in NPMI_CHAIN:
+            runners = {
+                "p2_02": lambda ws: p2_02_npmi.run(cfg, force=force, scheme_filter=scheme, window_suffix=ws),
+                "p2_03": lambda ws: p2_03_bootstrap.run(cfg, mode=mode, force=force, scheme_filter=scheme, window_suffix=ws),
+                "p2_04": lambda ws: p2_04_networks.run(cfg, force=force, scheme_filter=scheme, window_suffix=ws),
+                "p2_05": lambda ws: p2_05_leiden.run(cfg, force=force, scheme_filter=scheme, window_suffix=ws),
+            }
+            for ws in window_suffixes:
+                label = f" (window n={ws or cfg.raw['windows']['default_n']})" if len(window_suffixes) > 1 else ""
+                print(f"  -- {name}{label}")
+                runners[name](ws)
         elif name == "p2_06":
             p2_06_cross_camp.run(cfg, force=force)
         elif name == "p2_07":
             p2_07_exemplars.run(cfg, force=force)
         elif name == "p2_08":
             p2_08_visualization.run(cfg, force=force)
+        elif name == "p2_09":
+            p2_09_substantive_export.run(cfg, force=force)
+        elif name == "p2_10":
+            p2_10_robustness_compare.run(cfg, force=force)
+        elif name == "p2_11":
+            p2_11_temporal_stability.run(cfg, force=force)
 
     print(f"\nPhase 2 pipeline complete (mode={mode}).")
 
@@ -91,6 +128,11 @@ def main():
     ap.add_argument("--scheme", type=str, default=None, help="Limit p2_02-05 to scheme name")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--config", type=Path, default=None)
+    ap.add_argument(
+        "--skip-robustness",
+        action="store_true",
+        help="Only run default window size (n=3), skip robustness_ns variants",
+    )
     args = ap.parse_args()
     run_pipeline(
         mode=args.mode,
@@ -98,6 +140,7 @@ def main():
         scheme=args.scheme,
         force=args.force,
         config_path=args.config,
+        skip_robustness=args.skip_robustness,
     )
 
 

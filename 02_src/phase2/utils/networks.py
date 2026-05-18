@@ -34,6 +34,16 @@ def l1_distribution_for_nodes(
     return out
 
 
+def edge_is_significant(row: pd.Series, edge_selection: str) -> bool:
+    ci = bool(row.get("ci_excludes_zero", False))
+    fdr = bool(row.get("fdr_significant", False))
+    if edge_selection == "fdr":
+        return fdr
+    if edge_selection == "both":
+        return ci and fdr
+    return ci
+
+
 def build_graphs(
     npmi_point: pd.DataFrame,
     npmi_boot: pd.DataFrame,
@@ -41,13 +51,19 @@ def build_graphs(
     stratum_filter: Dict[str, Any],
     stratum_key: str,
     out_dir: Path,
-) -> Tuple[Path, Path]:
-    merged = npmi_point.merge(
-        npmi_boot[["l2_a", "l2_b", "npmi_median", "npmi_lower", "npmi_upper", "ci_excludes_zero"]],
-        on=["l2_a", "l2_b"],
-        how="inner",
-    )
-    sig = merged[merged["ci_excludes_zero"] == True]  # noqa: E712
+    edge_selection: str = "ci_excludes_zero",
+) -> Tuple[Path, Path, Dict[str, int]]:
+    boot_cols = [
+        "l2_a", "l2_b", "npmi_median", "npmi_lower", "npmi_upper",
+        "ci_excludes_zero", "p_value", "q_value", "fdr_significant",
+    ]
+    boot_cols = [c for c in boot_cols if c in npmi_boot.columns]
+    merged = npmi_point.merge(npmi_boot[boot_cols], on=["l2_a", "l2_b"], how="inner")
+    sig_mask = merged.apply(lambda r: edge_is_significant(r, edge_selection), axis=1)
+    sig = merged[sig_mask]
+    n_ci = int((merged["ci_excludes_zero"] == True).sum()) if "ci_excludes_zero" in merged.columns else 0  # noqa: E712
+    n_fdr = int((merged["fdr_significant"] == True).sum()) if "fdr_significant" in merged.columns else 0  # noqa: E712
+    stats = {"n_sig_ci": n_ci, "n_sig_fdr": n_fdr, "n_sig_selected": len(sig)}
     nodes = sorted(set(sig["l2_a"]) | set(sig["l2_b"]))
     l1_dist = l1_distribution_for_nodes(labeled, nodes, stratum_filter)
 
@@ -87,4 +103,4 @@ def build_graphs(
             )
         nx.write_graphml(G, path)
 
-    return pos_path, signed_path
+    return pos_path, signed_path, stats

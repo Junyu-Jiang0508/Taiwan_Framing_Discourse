@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""p2_09 — Aggregate substantive Phase 2 results for interpretation."""
+from __future__ import annotations
+
+import sys
+import time
+from pathlib import Path
+from typing import Any, Dict, List
+
+import networkx as nx
+import pandas as pd
+
+PHASE2_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(PHASE2_DIR))
+
+from utils.config import Phase2Config  # noqa: E402
+from utils.io import read_parquet  # noqa: E402
+from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E402
+from utils.summary import write_summary  # noqa: E402
+
+INTERPRETIVE_NOTES = [
+    "8-node L2 co-occurrence graphs are often near-saturated; community structure reflects edge-weight ranking.",
+    "These are co-articulation patterns among framing functions, not Laclau equivalential chains (signifier-level).",
+    "Hubert QAP gamma is reported as effect size; significance on ~28 edges has limited interpretive value.",
+]
+
+
+def _md_table(df: pd.DataFrame, max_rows: int = 50) -> str:
+    if df.empty:
+        return "_empty_\n"
+    sub = df.head(max_rows)
+    cols = list(sub.columns)
+    lines = ["| " + " | ".join(cols) + " |", "| " + " | ".join("---" for _ in cols) + " |"]
+    for _, row in sub.iterrows():
+        lines.append("| " + " | ".join(str(row[c]) for c in cols) + " |")
+    if len(df) > max_rows:
+        lines.append(f"\n_({len(df) - max_rows} more rows)_\n")
+    return "\n".join(lines) + "\n"
+
+
+def _partition_block(cons: pd.DataFrame, stab: pd.DataFrame, scheme: str) -> str:
+    lines = [f"### Scheme: `{scheme}`\n"]
+    if cons.empty:
+        lines.append("_No consensus partition._\n")
+        return "\n".join(lines)
+    for sk, sub in cons.groupby("stratum_key", sort=True):
+        lines.append(f"#### Stratum `{sk}`\n")
+        comms: Dict[int, List[str]] = {}
+        for _, r in sub.iterrows():
+            comms.setdefault(int(r["community_id"]), []).append(str(r["node"]))
+        for cid, nodes in sorted(comms.items()):
+            stable = ""
+            if not stab.empty:
+                match = stab[(stab["stratum_key"] == sk) & (stab["community_id"] == cid)]
+                if len(match):
+                    st = match.iloc[0]
+                    stable = f" (stability={st['stability']:.3f}, stable={st['stable']})"
+            lines.append(f"- Community {cid}{stable}: {', '.join(sorted(nodes))}")
+        lines.append("")
+    return "\n".join(lines)
+
+
+def _graph_diagnostics(cfg: Phase2Config, scheme: str) -> pd.DataFrame:
+    rows = []
+    net_dir = cfg.scheme_dir("networks", scheme)
+    diag_path = cfg.scheme_dir("npmi", scheme) / "stratum_diagnostics.parquet"
+    diag = read_parquet(diag_path) if diag_path.is_file() else pd.DataFrame()
+    for gp in sorted(net_dir.glob("*_positive.graphml")):
+        key = gp.name.replace("_positive.graphml", "")
+        G = nx.read_graphml(gp)
+        n, m = G.number_of_nodes(), G.number_of_edges()
+        max_e = n * (n - 1) // 2 if n >= 2 else 0
+        row: Dict[str, Any] = {
+            "scheme": scheme,
+            "stratum": key,
+            "n_nodes": n,
+            "n_edges": m,
+            "max_edges": max_e,
+            "density": round(m / max_e, 4) if max_e else 0.0,
+        }
+        if not diag.empty:
+            if scheme == "camp":
+                dsub = diag[diag["camp"] == key]
+            elif scheme == "camp_genre":
+                parts = key.split("_", 1)
+                if len(parts) == 2:
+                    dsub = diag[(diag["camp"] == parts[0]) & (diag["genre"] == parts[1])]
+                else:
+                    dsub = pd.DataFrame()
+            elif scheme == "camp_time":
+                parts = key.split("_", 1)
+                if len(parts) == 2:
+                    dsub = diag[(diag["camp"] == parts[0]) & (diag["time_bucket"] == parts[1])]
+                else:
+                    dsub = pd.DataFrame()
+            else:
+                dsub = pd.DataFrame()
+            if len(dsub):
+                r0 = dsub.iloc[0]
+                row["n_windows"] = int(r0["n_windows"])
+                row["empty_l2_rate"] = round(r0["n_empty_l2_windows"] / r0["n_windows"], 4)
+                row["low_n_warning"] = bool(r0.get("low_n_warning", False))
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def run(cfg: Phase2Config, force: bool = False) -> None:
+    t0 = time.perf_counter()
+    art = cfg.artifacts_root
+    manifest_path = art / "manifests" / "p2_09.json"
+    expected = {"corpus_content_hash": cfg.corpus_content_hash, "edge_selection": cfg.edge_selection}
+    if should_skip(manifest_path, expected, force):
+        print("p2_09: skip (manifest match)")
+        return
+
+    out_md = art / "substantive_results.md"
+    long_rows: List[Dict[str, Any]] = []
+    md_parts = [
+        "# Phase 2 substantive results\n",
+        f"_Edge selection: `{cfg.edge_selection}`; FDR α={cfg.fdr_alpha}_\n",
+        "## Interpretive notes\n",
+    ]
+    for note in INTERPRETIVE_NOTES:
+        md_parts.append(f"- {note}\n")
+    md_parts.append("\n")
+
+    cross_dir = art / "cross_camp"
+    comm = read_parquet(cross_dir / "community_table.parquet") if (cross_dir / "community_table.parquet").is_file() else pd.DataFrame()
+    jacc = read_parquet(cross_dir / "jaccard_all_pairs.parquet") if (cross_dir / "jaccard_all_pairs.parquet").is_file() else pd.DataFrame()
+    qap = read_parquet(cross_dir / "qap_results.parquet") if (cross_dir / "qap_results.parquet").is_file() else pd.DataFrame()
+
+    md_parts.append("## Cross-camp community matching (top-k greedy)\n\n")
+    md_parts.append(_md_table(comm))
+    md_parts.append("## Cross-camp Jaccard (all community pairs)\n\n")
+    md_parts.append(_md_table(jacc, max_rows=30))
+    md_parts.append("## QAP (Hubert γ)\n\n")
+    md_parts.append(_md_table(qap))
+    md_parts.append("\n_p-values: interpret cautiously with n≈28 edge pairs._\n\n")
+
+    for scheme in ["camp", "camp_genre", "camp_time"]:
+        if scheme not in [s.name for s in cfg.schemes]:
+            continue
+        part_dir = cfg.scheme_dir("partitions", scheme)
+        cons_path = part_dir / "consensus_partition.parquet"
+        stab_path = part_dir / "community_stability.parquet"
+        cons = read_parquet(cons_path) if cons_path.is_file() else pd.DataFrame()
+        stab = read_parquet(stab_path) if stab_path.is_file() else pd.DataFrame()
+        md_parts.append(_partition_block(cons, stab, scheme))
+        gdiag = _graph_diagnostics(cfg, scheme)
+        md_parts.append(f"### Graph diagnostics (`{scheme}`)\n\n")
+        md_parts.append(_md_table(gdiag))
+        if not gdiag.empty and "low_n_warning" in gdiag.columns:
+            warned = gdiag[gdiag["low_n_warning"] == True]  # noqa: E712
+            if len(warned):
+                md_parts.append("**Low-n strata (excluded from networks when n_windows < min_stratum_windows):**\n")
+                for _, r in warned.iterrows():
+                    md_parts.append(f"- `{r['stratum']}`: n_windows={r.get('n_windows', '?')}\n")
+        for _, r in gdiag.iterrows():
+            long_rows.append({"section": "graph_diagnostics", **r.to_dict()})
+
+    if not comm.empty:
+        for _, r in comm.iterrows():
+            long_rows.append({"section": "community_table", **r.to_dict()})
+    if not qap.empty:
+        for _, r in qap.iterrows():
+            long_rows.append({"section": "qap", **r.to_dict()})
+
+    out_md.write_text("".join(md_parts), encoding="utf-8")
+    pd.DataFrame(long_rows).to_parquet(art / "substantive_results.parquet", index=False)
+
+    write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([out_md])})
+    write_summary(
+        art,
+        "p2_09",
+        params={"edge_selection": cfg.edge_selection},
+        outputs=[str(out_md), str(art / "substantive_results.parquet")],
+        stats={"n_long_rows": len(long_rows)},
+        notes=INTERPRETIVE_NOTES,
+        elapsed_sec=time.perf_counter() - t0,
+    )
+    print("p2_09 done")
+
+
+if __name__ == "__main__":
+    from utils.config import load_config
+
+    run(load_config(), force="--force" in sys.argv)
