@@ -1,6 +1,6 @@
 paths:
   corpus_pointer: "03_outputs/01_results_labelings/01_results_datasets/latest_merged_deduped_run.txt"
-  artifacts_root: "04_artifacts/phase2"
+  artifacts_root: "03_outputs/01_results_labelings/06_phase2_coarticulation"
 
 strata:
   camps: [DPP, KMT, TPP]
