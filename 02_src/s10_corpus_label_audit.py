@@ -10,13 +10,16 @@ Workflow (per study protocol)::
     2. Empty L2 rate — corpus vs validation band (~18–20%)
     3. Slices — by candidate / source / time period; flag dominant-L1 or skewed L2
     4. L1×L2 joint — cross-tab; theoretical + empirical low-prior cells; sample for review
-    5. Stability (optional API) — 100 rows × 3 runs, temp=0.2; L1 agreement; L2 Jaccard
+    5. Stability (optional API) — triplicate rows × 3 runs, temp=0.2; L1 agreement; L2 Jaccard.
+       Default draw: minimal random set with ≥``--stability-min-rows-per-l2`` corpus hits per L2-01…08
+       (by ``L2_labels``); use ``--stability-min-rows-per-l2 0`` for legacy ``--n-sample`` uniform random.
     6. Descriptive tables — only after gates pass (or ``--force-descriptive``)
 
 Usage::
 
     python s10_corpus_label_audit.py audit [--corpus-csv ...] [--validation-csv ...] --out-dir ...
     python s10_corpus_label_audit.py stability --corpus-csv ... --out-dir ...
+    python s10_corpus_label_audit.py stability-diagnose --triplicate-csv .../stability_triplicate_sample.csv --out-dir ...
     python s10_corpus_label_audit.py describe --corpus-csv ... --out-dir ...  # step 6 only
 
 Each ``audit`` run also writes ``run_manifest.json``, ``METHODS_AUDIT.md``, and
@@ -72,6 +75,9 @@ logger = logging.getLogger(__name__)
 DEFAULT_LOW_PRIOR_L1_L2: List[Tuple[str, str]] = [
     ("L1-01", "L2-01"),
 ]
+
+# Corpus-side strata for stability sampling (must match codebook L2 ids).
+STABILITY_L2_CANONICAL: Tuple[str, ...] = tuple(f"L2-0{i}" for i in range(1, 9))
 
 _LATEST_RUN_FILE = "latest_run.txt"
 _LATEST_CORPUS_RUN_FILE = "latest_corpus_run.txt"
@@ -207,6 +213,101 @@ def jaccard(a: Set[str], b: Set[str]) -> float:
     if u == 0:
         return 1.0
     return len(a & b) / u
+
+
+def sample_stability_min_l2_corpus_support(
+    pool: pd.DataFrame,
+    min_per: int,
+    l2_col: str,
+    seed: int,
+) -> Tuple[pd.DataFrame, Dict[str, Any]]:
+    """Minimal random subset of ``pool`` rows so each L2 in ``STABILITY_L2_CANONICAL`` appears
+    on at least ``min_per`` rows **by corpus** ``l2_col`` (pipe-joined), when the pool allows it.
+
+    Rows are chosen with replacement across strata forbidden (each row at most once); a single row
+    can count toward multiple L2 tags. Random tie-breaking is seeded.
+    """
+    rng = np.random.default_rng(seed)
+    labs = list(STABILITY_L2_CANONICAL)
+    if l2_col not in pool.columns:
+        raise SystemExit(
+            f"Stratified stability sampling requires corpus column {l2_col!r} (pipe-joined L2 labels)"
+        )
+    index_list = list(pool.index)
+    idx_to_l2: Dict[Any, Set[str]] = {}
+    lab_to_rows: Dict[str, List[Any]] = {lab: [] for lab in labs}
+    for idx in index_list:
+        tags = set(parse_l2_cell(pool.at[idx, l2_col])) & set(labs)
+        idx_to_l2[idx] = tags
+        for lab in tags:
+            lab_to_rows[lab].append(idx)
+    for lab in labs:
+        order = rng.permutation(len(lab_to_rows[lab])).tolist()
+        lab_to_rows[lab] = [lab_to_rows[lab][i] for i in order]
+
+    def coverage(selected: Set[Any]) -> Dict[str, int]:
+        return {lab: sum(1 for i in selected if lab in idx_to_l2[i]) for lab in labs}
+
+    selected: Set[Any] = set()
+    exhausted: Set[str] = set()
+    cap = max(10000, len(pool) * len(labs) + 1)
+    for _ in range(cap):
+        c = coverage(selected)
+        underserved = [lab for lab in labs if c[lab] < min_per and lab not in exhausted]
+        if not underserved:
+            break
+        lab = underserved[int(rng.integers(0, len(underserved)))]
+        cand = [i for i in lab_to_rows[lab] if i not in selected]
+        if not cand:
+            exhausted.add(lab)
+            continue
+        pick = cand[int(rng.integers(0, len(cand)))]
+        selected.add(pick)
+    else:
+        logger.warning(
+            "stability L2 stratified sampling stopped at iteration cap (%s); check pool / min_per",
+            cap,
+        )
+
+    sel_list = list(selected)
+    shuf = rng.permutation(len(sel_list)).tolist()
+    order_idx = [sel_list[i] for i in shuf]
+    sampled = pool.loc[order_idx]
+
+    pool_counts = {lab: len(lab_to_rows[lab]) for lab in labs}
+    sample_counts = coverage(selected)
+    underfilled = {lab: pool_counts[lab] for lab in labs if pool_counts[lab] < min_per}
+    target_met = {lab: sample_counts[lab] >= min_per for lab in labs}
+    for lab in labs:
+        if sample_counts[lab] < min_per:
+            if pool_counts[lab] < min_per:
+                logger.warning(
+                    "stability L2 stratum %s: corpus pool has %s rows with tag in %r (<%s); quota not fully reachable",
+                    lab,
+                    pool_counts[lab],
+                    l2_col,
+                    min_per,
+                )
+            else:
+                logger.warning(
+                    "stability L2 stratum %s: sample has %s/%s hits despite pool %s (iteration cap?)",
+                    lab,
+                    sample_counts[lab],
+                    min_per,
+                    pool_counts[lab],
+                )
+    meta: Dict[str, Any] = {
+        "sampling_mode": "min_l2_corpus_support",
+        "stability_min_rows_per_l2": min_per,
+        "stability_l2_ref_col": l2_col,
+        "n_rows_selected": int(len(sampled)),
+        "per_l2_rows_in_pool_with_tag": pool_counts,
+        "per_l2_rows_in_sample_tag_hits": sample_counts,
+        "per_l2_target_met": target_met,
+        "l2_tags_with_pool_count_below_target": underfilled,
+        "exhausted_strata_before_target": sorted(exhausted),
+    }
+    return sampled, meta
 
 
 def _sha256_file(path: Path, chunk: int = 1 << 20) -> Optional[str]:
@@ -720,6 +821,10 @@ def write_methods_audit_md(
         "- Triplicate **Chat Completions** (not Batch API), same prompts as parallel corpus labeling: "
         "one L1 call + one L2 call per replicate, user-specified `temperature` (default 0.2).",
         "",
+        "- **Row draw**: default is a minimal random subset of the corpus pool such that each L2-01…08 "
+        "appears on at least **20** rows by corpus `L2_labels` (see `--stability-min-rows-per-l2`); "
+        "set that flag to **0** for a uniform random `--n-sample` draw.",
+        "",
         "## Step 6 — Descriptive tables",
         "",
         "- Written under `06_descriptive/` when gates allow or when forced; see `run_manifest.json` for flags.",
@@ -1017,15 +1122,46 @@ def cmd_stability(args: argparse.Namespace) -> None:
     base_dir = Path(os.getcwd())
     defs = _defaults_batch(base_dir)
     corpus_path = Path(args.corpus_csv).resolve()
+    if not corpus_path.is_file():
+        ptr = base_dir / CORPUS_RESULTS_BASE / _LATEST_MERGED_DEDUPED_RUN_FILE
+        raise SystemExit(
+            "Corpus CSV not found:\n"
+            f"  {corpus_path}\n"
+            "Use an existing labeling export, e.g.\n"
+            f"  {base_dir / CORPUS_RESULTS_BASE}/<Run_YYYYMMDD_HHMMSS>/final_results.csv\n"
+            "If you omit --corpus-csv, create a one-line pointer file:\n"
+            f"  {ptr}\n"
+            "whose content is the absolute path to that Run_* directory (not the CSV filename)."
+        )
     df = pd.read_csv(corpus_path, encoding="utf-8-sig")
     if "id" not in df.columns:
         df["id"] = df.index
     m = valid_l1_mask(df) & df["sentence"].astype(str).str.strip().ne("")
     pool = df.loc[m]
-    n = min(args.n_sample, len(pool))
+    sampling_meta: Dict[str, Any]
+    if args.stability_min_rows_per_l2 and args.stability_min_rows_per_l2 > 0:
+        sampled, sampling_meta = sample_stability_min_l2_corpus_support(
+            pool,
+            min_per=int(args.stability_min_rows_per_l2),
+            l2_col=str(args.stability_l2_ref_col),
+            seed=int(args.seed),
+        )
+        n = int(len(sampled))
+        logger.info(
+            "stability sampling: L2-stratified min_per=%s → n=%s rows",
+            args.stability_min_rows_per_l2,
+            n,
+        )
+    else:
+        n = min(args.n_sample, len(pool))
+        sampled = pool.sample(n=n, random_state=args.seed)
+        sampling_meta = {
+            "sampling_mode": "random_n_sample",
+            "n_sample_requested": int(args.n_sample),
+            "n_rows_selected": n,
+        }
     if n < 10:
         raise SystemExit(f"Too few rows for stability test after filter: {n}")
-    sampled = pool.sample(n=n, random_state=args.seed)
     out_dir = Path(args.out_dir).resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     started_utc = datetime.now(timezone.utc).isoformat()
@@ -1075,6 +1211,7 @@ def cmd_stability(args: argparse.Namespace) -> None:
 
     summary = {
         "n_sample": n,
+        "stability_sampling": sampling_meta,
         "temperature": args.temperature,
         "l1_full_agreement_rate": l1_rate,
         "l1_full_agreement_count": int(l1_agree),
@@ -1110,12 +1247,23 @@ def cmd_stability(args: argparse.Namespace) -> None:
             "started_utc": started_utc,
             "openai_model": args.model,
             "n_sample": n,
+            "stability_sampling": sampling_meta,
             "temperature": args.temperature,
             "l2_jaccard_threshold": args.l2_jaccard_threshold,
             "stability_summary": summary,
         },
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
+
+
+def cmd_stability_diagnose(args: argparse.Namespace) -> None:
+    """Four-table L2 diagnostics from an existing stability triplicate CSV (no API)."""
+    from s10_stability_l2_diagnose import run_diagnose
+
+    tri = Path(args.triplicate_csv).resolve()
+    out = Path(args.out_dir).resolve()
+    run_diagnose(tri, out)
+    logger.info("L2 stability diagnostics → %s", out)
 
 
 def cmd_describe(args: argparse.Namespace) -> None:
@@ -1380,7 +1528,24 @@ def main() -> None:
     p_s = sub.add_parser("stability", help="Step 5: triplicate labeling via Chat Completions API")
     p_s.add_argument("--corpus-csv", default=None)
     p_s.add_argument("--out-dir", required=True)
-    p_s.add_argument("--n-sample", type=int, default=100)
+    p_s.add_argument(
+        "--n-sample",
+        type=int,
+        default=100,
+        help="Uniform random pool size when --stability-min-rows-per-l2 is 0 (legacy)",
+    )
+    p_s.add_argument(
+        "--stability-min-rows-per-l2",
+        type=int,
+        default=20,
+        help="If >0, minimal random sample: each L2-01…08 must hit ≥this many rows by corpus "
+        "L2_labels (see --stability-l2-ref-col). Set 0 to use --n-sample random draw only.",
+    )
+    p_s.add_argument(
+        "--stability-l2-ref-col",
+        default="L2_labels",
+        help="Corpus column (pipe-joined) used to stratify stability rows by L2 tag counts",
+    )
     p_s.add_argument("--temperature", type=float, default=0.2)
     p_s.add_argument("--l2-jaccard-threshold", type=float, default=0.80)
     p_s.add_argument("--model", default="gpt-5.1")
@@ -1392,6 +1557,22 @@ def main() -> None:
     p_s.add_argument("--hard-pool-n-l2", type=int, default=5)
     p_s.add_argument("--hard-pool-seed", type=int, default=None)
     p_s.set_defaults(func=cmd_stability)
+
+    p_sd = sub.add_parser(
+        "stability-diagnose",
+        help="Post-hoc L2 tables from stability_triplicate_sample.csv (label / row / co-fluctuation / empty-L2 L1)",
+    )
+    p_sd.add_argument(
+        "--triplicate-csv",
+        required=True,
+        help="Path to stability_triplicate_sample.csv produced by `stability`",
+    )
+    p_sd.add_argument(
+        "--out-dir",
+        required=True,
+        help="Output folder for table1–4 CSV + diagnostics_summary.json",
+    )
+    p_sd.set_defaults(func=cmd_stability_diagnose)
 
     args = ap.parse_args()
     if args.command == "stability" and not args.corpus_csv:
