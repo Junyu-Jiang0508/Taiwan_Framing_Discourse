@@ -59,6 +59,12 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         print("p2_13 skipped (no bootstrap data)")
         return
 
+    if "camp" not in boot.columns:
+        raise RuntimeError(
+            "p2_13 requires p2_03 run on scheme='camp' with stratified bootstrap output "
+            f"(missing 'camp' column in {boot_path})"
+        )
+
     if "scheme" in boot.columns:
         boot = boot[boot["scheme"] == "camp"].copy()
 

@@ -87,6 +87,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         "n_permutations": n_perm,
         "seed_base": seed_base,
         "min_marginal_count": min_marginal,
+        "observed_estimator": "point_npmi",
     }
     if should_skip(manifest_path, expected, force):
         print("p2_12: skip (manifest match)")
@@ -106,6 +107,21 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     for camp in camps:
         doc_ids_by_camp[camp] = sorted(windows.loc[windows["camp"] == camp, "doc_id"].unique())
 
+    camp_by_doc = windows.groupby("doc_id")["camp"].nunique()
+    bad_docs = camp_by_doc[camp_by_doc > 1]
+    if len(bad_docs):
+        raise RuntimeError(
+            f"p2_12 requires doc_id→camp to be 1-to-1; "
+            f"{len(bad_docs)} doc(s) map to multiple camps: {bad_docs.index[:5].tolist()}"
+        )
+
+    identity_map = {
+        doc_id: camp
+        for camp in camps
+        for doc_id in doc_ids_by_camp[camp]
+    }
+    observed_point = _gamma_for_camps(windows, identity_map, camps, all_nodes, min_marginal)
+
     null_rows = []
     for i in range(n_perm):
         rng = np.random.default_rng(seed_base + i)
@@ -119,22 +135,25 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     qap = read_parquet(qap_path) if qap_path.is_file() else pd.DataFrame()
     summary_rows = []
     observed_gammas = []
+    observed_filtered_gammas = []
     null_means = []
 
     for a, b in CAMP_PAIRS:
         key = f"gamma_{a.lower()}_{b.lower()}"
         null_vals = null_df[key].values.astype(float)
-        obs = float("nan")
+        obs = float(observed_point[key])
+        obs_filtered = float("nan")
         if not qap.empty:
             match = qap[(qap["camp_a"] == a) & (qap["camp_b"] == b)]
             if len(match):
-                obs = float(match.iloc[0]["hubert_gamma"])
+                obs_filtered = float(match.iloc[0]["hubert_gamma"])
         p_val = empirical_p_value(obs, null_vals, side="lower")
         summary_rows.append({
             "test": key,
             "camp_a": a,
             "camp_b": b,
             "observed_gamma": obs,
+            "observed_gamma_filtered": obs_filtered,
             "null_mean": float(np.nanmean(null_vals)),
             "null_q05": float(np.nanquantile(null_vals, 0.05)),
             "null_q50": float(np.nanquantile(null_vals, 0.50)),
@@ -144,16 +163,22 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         })
         if not np.isnan(obs):
             observed_gammas.append(obs)
+        if not np.isnan(obs_filtered):
+            observed_filtered_gammas.append(obs_filtered)
         null_means.append(float(np.nanmean(null_vals)))
 
     if observed_gammas and null_means:
         obs_joint = float(np.mean(observed_gammas))
+        obs_joint_filtered = (
+            float(np.mean(observed_filtered_gammas)) if observed_filtered_gammas else float("nan")
+        )
         null_joint = null_df[[f"gamma_{a.lower()}_{b.lower()}" for a, b in CAMP_PAIRS]].mean(axis=1).values
         summary_rows.append({
             "test": "joint_mean_gamma",
             "camp_a": None,
             "camp_b": None,
             "observed_gamma": obs_joint,
+            "observed_gamma_filtered": obs_joint_filtered,
             "null_mean": float(np.nanmean(null_joint)),
             "null_q05": float(np.nanquantile(null_joint, 0.05)),
             "null_q50": float(np.nanquantile(null_joint, 0.50)),
@@ -174,7 +199,8 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         stats={"permutation_summary": summary_rows},
         notes=[
             "Permutation shuffles doc_id→camp assignments (preserving counts); windows inherit via doc_id.",
-            "Full 28-edge NPMI table used inside permutations (no FDR) — test targets γ, not edge significance.",
+            "Full 28-edge point NPMI used for observed_gamma and null (no FDR inside permutations).",
+            "observed_gamma_filtered is p2_06 FDR+bootstrap-median γ for diagnostic comparison only.",
         ],
         elapsed_sec=time.perf_counter() - t0,
     )

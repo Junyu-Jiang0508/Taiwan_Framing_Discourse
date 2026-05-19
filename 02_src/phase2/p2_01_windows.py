@@ -110,6 +110,14 @@ def run(cfg: Phase2Config, force: bool = False, doc_ids: list | None = None) -> 
         suf = "document" if n_val == "document" else str(n_val)
         _run_n(n_val, suf)
 
+    camp_by_doc = main_df.groupby("doc_id")["camp"].nunique()
+    bad_docs = camp_by_doc[camp_by_doc > 1]
+    if len(bad_docs):
+        raise RuntimeError(
+            f"p2_01 requires doc_id→camp to be 1-to-1; "
+            f"{len(bad_docs)} doc(s) map to multiple camps: {bad_docs.index[:5].tolist()}"
+        )
+
     trunc_rate = float(main_df["is_truncated"].mean()) if len(main_df) else 0.0
     write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([labeled_path])})
     write_summary(

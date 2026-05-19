@@ -81,6 +81,9 @@ def run_pipeline(
     if mode == "smoke":
         cfg.raw["npmi"]["min_marginal_count"] = 1
         cfg.raw["npmi"]["min_stratum_windows"] = 1
+    elif mode == "dev":
+        ccfg = cfg.raw.setdefault("cross_camp", {})
+        ccfg["camp_permutation_n"] = int(ccfg.get("camp_permutation_n_dev", 100))
     cfg.artifacts_root.mkdir(parents=True, exist_ok=True)
     (cfg.artifacts_root / "manifests").mkdir(parents=True, exist_ok=True)
 
