@@ -49,6 +49,9 @@ cross_camp:
   top_k_communities: 3
   qap_permutations: 1000
   primary_network_scheme: camp
+  shared_jaccard_threshold: 0.66
+  camp_permutation_n: 1000
+  camp_permutation_seed_base: 42
 
 smoke:
   doc_ids: []

@@ -23,6 +23,9 @@ import p2_06_cross_camp  # noqa: E402
 import p2_07_exemplars  # noqa: E402
 import p2_08_visualization  # noqa: E402
 import p2_09_substantive_export  # noqa: E402
+import p2_12_camp_permutation  # noqa: E402
+import p2_13_edge_ci_diff  # noqa: E402
+import p2_14_subnetwork  # noqa: E402
 import p2_10_robustness_compare  # noqa: E402
 import p2_11_temporal_stability  # noqa: E402
 
@@ -34,6 +37,9 @@ MODULES = {
     "p2_04": p2_04_networks,
     "p2_05": p2_05_leiden,
     "p2_06": p2_06_cross_camp,
+    "p2_12": p2_12_camp_permutation,
+    "p2_13": p2_13_edge_ci_diff,
+    "p2_14": p2_14_subnetwork,
     "p2_07": p2_07_exemplars,
     "p2_08": p2_08_visualization,
     "p2_09": p2_09_substantive_export,
@@ -42,8 +48,9 @@ MODULES = {
 }
 
 ORDER = [
-    "p2_00", "p2_01", "p2_02", "p2_03", "p2_04", "p2_05", "p2_06", "p2_07", "p2_08",
-    "p2_09", "p2_10", "p2_11",
+    "p2_00", "p2_01", "p2_02", "p2_03", "p2_04", "p2_05", "p2_06",
+    "p2_12", "p2_13", "p2_14",
+    "p2_07", "p2_08", "p2_09", "p2_10", "p2_11",
 ]
 
 NPMI_CHAIN = ["p2_02", "p2_03", "p2_04", "p2_05"]
@@ -107,6 +114,12 @@ def run_pipeline(
                 runners[name](ws)
         elif name == "p2_06":
             p2_06_cross_camp.run(cfg, force=force)
+        elif name == "p2_12":
+            p2_12_camp_permutation.run(cfg, force=force)
+        elif name == "p2_13":
+            p2_13_edge_ci_diff.run(cfg, force=force)
+        elif name == "p2_14":
+            p2_14_subnetwork.run(cfg, force=force)
         elif name == "p2_07":
             p2_07_exemplars.run(cfg, force=force)
         elif name == "p2_08":

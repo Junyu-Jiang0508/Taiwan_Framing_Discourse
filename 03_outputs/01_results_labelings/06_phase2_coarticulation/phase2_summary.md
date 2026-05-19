@@ -153,50 +153,6 @@ _Updated: 2026-05-18T21:56:23.016129+00:00_
 - stability(C)=mean co_assignment_freq(i,j) for i!=j in C across 70 partitions.
 - consensus_gamma=1.0 (median of sweep; post-threshold graph).
 
-## p2_06
-
-_Updated: 2026-05-18T21:56:24.233981+00:00_
-
-**Parameters**
-- scheme: `camp`
-- top_k: `3`
-- qap_permutations: `1000`
-
-**Outputs**
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/community_table.parquet`
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/jaccard_all_pairs.parquet`
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/qap_results.parquet`
-
-**Stats**
-- n_matched_triples: 3
-- community_table: [{'dpp_community_id': 0, 'dpp_l2_set': 'L2-01|L2-03', 'kmt_community_id': 0, 'kmt_jaccard': 0.6666666666666666, 'tpp_community_id': 1, 'tpp_jaccard': 1.0}, {'dpp_community_id': 1, 'dpp_l2_set': 'L2-02|L2-05', 'kmt_community_id': 0, 'kmt_jaccard': 0.25, 'tpp_community_id': 0, 'tpp_jaccard': 0.6666666666666666}, {'dpp_community_id': 3, 'dpp_l2_set': 'L2-04|L2-08', 'kmt_community_id': 1, 'kmt_jaccard': 0.6666666666666666, 'tpp_community_id': 0, 'tpp_jaccard': 0.25}]
-- qap_results: [{'camp_a': 'DPP', 'camp_b': 'KMT', 'hubert_gamma': 0.8771324746118299, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}, {'camp_a': 'DPP', 'camp_b': 'TPP', 'hubert_gamma': 0.8877425961143403, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}, {'camp_a': 'KMT', 'camp_b': 'TPP', 'hubert_gamma': 0.949434135985186, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}]
-- jaccard_all_pairs_n: 121
-- elapsed_sec: 0.19
-
-**Notes**
-- Report Hubert gamma as effect size; p-values on 28 edge pairs have limited power.
-
-## p2_09
-
-_Updated: 2026-05-18T21:56:25.377705+00:00_
-
-**Parameters**
-- edge_selection: `fdr`
-
-**Outputs**
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/substantive_results.md`
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/substantive_results.parquet`
-
-**Stats**
-- n_long_rows: 24
-- elapsed_sec: 0.12
-
-**Notes**
-- 8-node L2 co-occurrence graphs are often near-saturated; community structure reflects edge-weight ranking.
-- These are co-articulation patterns among framing functions, not Laclau equivalential chains (signifier-level).
-- Hubert QAP gamma is reported as effect size; significance on ~28 edges has limited interpretive value.
-
 ## p2_11
 
 _Updated: 2026-05-18T21:56:26.410291+00:00_
@@ -232,3 +188,114 @@ _Updated: 2026-05-18T21:56:29.356934+00:00_
 - n_comparisons: 23
 - summary: [{'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '1', 'camp': 'DPP', 'genre': 'debate', 'spearman_rho': 0.7696969696969697, 'n_pairs': 10, 'sig_edge_jaccard': 0.4444, 'n_sig_ref': 6, 'n_sig_alt': 7}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '1', 'camp': 'DPP', 'genre': 'news', 'spearman_rho': 0.9195402298850575, 'n_pairs': 28, 'sig_edge_jaccard': 0.8333, 'n_sig_ref': 24, 'n_sig_alt': 20}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '1', 'camp': 'KMT', 'genre': 'news', 'spearman_rho': 0.9414340448823207, 'n_pairs': 28, 'sig_edge_jaccard': 0.8333, 'n_sig_ref': 22, 'n_sig_alt': 22}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '1', 'camp': 'TPP', 'genre': 'debate', 'spearman_rho': 0.6, 'n_pairs': 6, 'sig_edge_jaccard': 0.5, 'n_sig_ref': 1, 'n_sig_alt': 2}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '1', 'camp': 'TPP', 'genre': 'news', 'spearman_rho': 0.9781061850027366, 'n_pairs': 28, 'sig_edge_jaccard': 0.8636, 'n_sig_ref': 20, 'n_sig_alt': 21}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '5', 'camp': 'DPP', 'genre': 'debate', 'spearman_rho': 0.9415584415584415, 'n_pairs': 21, 'sig_edge_jaccard': 0.9167, 'n_sig_ref': 12, 'n_sig_alt': 11}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '5', 'camp': 'DPP', 'genre': 'news', 'spearman_rho': 0.9682539682539683, 'n_pairs': 28, 'sig_edge_jaccard': 0.92, 'n_sig_ref': 24, 'n_sig_alt': 24}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '5', 'camp': 'KMT', 'genre': 'news', 'spearman_rho': 0.9792008757525997, 'n_pairs': 28, 'sig_edge_jaccard': 0.9545, 'n_sig_ref': 22, 'n_sig_alt': 21}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '5', 'camp': 'TPP', 'genre': 'debate', 'spearman_rho': 0.7818181818181817, 'n_pairs': 10, 'sig_edge_jaccard': 0.6, 'n_sig_ref': 4, 'n_sig_alt': 4}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': '5', 'camp': 'TPP', 'genre': 'news', 'spearman_rho': 0.9709906951286261, 'n_pairs': 28, 'sig_edge_jaccard': 0.7917, 'n_sig_ref': 20, 'n_sig_alt': 23}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': 'document', 'camp': 'DPP', 'genre': 'news', 'spearman_rho': 0.8237547892720307, 'n_pairs': 28, 'sig_edge_jaccard': 0.8571, 'n_sig_ref': 24, 'n_sig_alt': 28}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': 'document', 'camp': 'KMT', 'genre': 'news', 'spearman_rho': 0.8954570333880678, 'n_pairs': 28, 'sig_edge_jaccard': 0.8148, 'n_sig_ref': 22, 'n_sig_alt': 27}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': 'document', 'camp': 'TPP', 'genre': 'debate', 'spearman_rho': nan, 'n_pairs': 1, 'sig_edge_jaccard': 0.0, 'n_sig_ref': 1, 'n_sig_alt': 0}, {'scheme': 'camp_genre', 'ref_window': '3', 'alt_window': 'document', 'camp': 'TPP', 'genre': 'news', 'spearman_rho': 0.8839627805145046, 'n_pairs': 28, 'sig_edge_jaccard': 0.7143, 'n_sig_ref': 20, 'n_sig_alt': 28}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '1', 'camp': 'DPP', 'genre': nan, 'spearman_rho': 0.9272030651340997, 'n_pairs': 28, 'sig_edge_jaccard': 0.8261, 'n_sig_ref': 23, 'n_sig_alt': 19}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '1', 'camp': 'KMT', 'genre': nan, 'spearman_rho': 0.9507389162561576, 'n_pairs': 28, 'sig_edge_jaccard': 0.7917, 'n_sig_ref': 22, 'n_sig_alt': 21}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '1', 'camp': 'TPP', 'genre': nan, 'spearman_rho': 0.9824849480021893, 'n_pairs': 28, 'sig_edge_jaccard': 0.8696, 'n_sig_ref': 20, 'n_sig_alt': 23}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '5', 'camp': 'DPP', 'genre': nan, 'spearman_rho': 0.9885057471264367, 'n_pairs': 28, 'sig_edge_jaccard': 0.9167, 'n_sig_ref': 23, 'n_sig_alt': 23}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '5', 'camp': 'KMT', 'genre': nan, 'spearman_rho': 0.9819376026272578, 'n_pairs': 28, 'sig_edge_jaccard': 0.9545, 'n_sig_ref': 22, 'n_sig_alt': 21}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': '5', 'camp': 'TPP', 'genre': nan, 'spearman_rho': 0.9698960043787629, 'n_pairs': 28, 'sig_edge_jaccard': 0.8261, 'n_sig_ref': 20, 'n_sig_alt': 22}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': 'document', 'camp': 'DPP', 'genre': nan, 'spearman_rho': 0.856048166392994, 'n_pairs': 28, 'sig_edge_jaccard': 0.8214, 'n_sig_ref': 23, 'n_sig_alt': 28}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': 'document', 'camp': 'KMT', 'genre': nan, 'spearman_rho': 0.9113300492610837, 'n_pairs': 28, 'sig_edge_jaccard': 0.8148, 'n_sig_ref': 22, 'n_sig_alt': 27}, {'scheme': 'camp', 'ref_window': '3', 'alt_window': 'document', 'camp': 'TPP', 'genre': nan, 'spearman_rho': 0.8784893267651889, 'n_pairs': 28, 'sig_edge_jaccard': 0.7143, 'n_sig_ref': 20, 'n_sig_alt': 28}]
 - elapsed_sec: 0.24
+
+## p2_06
+
+_Updated: 2026-05-19T16:44:27.260676+00:00_
+
+**Parameters**
+- scheme: `camp`
+- top_k: `3`
+- qap_permutations: `1000`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/community_table.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/jaccard_all_pairs.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/qap_results.parquet`
+
+**Stats**
+- n_matched_triples: 3
+- community_table: [{'dpp_community_id': 0, 'dpp_l2_set': 'L2-01|L2-03', 'kmt_community_id': 0, 'kmt_jaccard': 0.6666666666666666, 'tpp_community_id': 1, 'tpp_jaccard': 1.0, 'category': 'shared', 'dpp_is_stable': True, 'kmt_is_stable': False, 'tpp_is_stable': True}, {'dpp_community_id': 1, 'dpp_l2_set': 'L2-02|L2-05', 'kmt_community_id': 0, 'kmt_jaccard': 0.25, 'tpp_community_id': 0, 'tpp_jaccard': 0.6666666666666666, 'category': 'partial', 'dpp_is_stable': True, 'kmt_is_stable': False, 'tpp_is_stable': False}, {'dpp_community_id': 3, 'dpp_l2_set': 'L2-04|L2-08', 'kmt_community_id': 1, 'kmt_jaccard': 0.6666666666666666, 'tpp_community_id': 0, 'tpp_jaccard': 0.25, 'category': 'partial', 'dpp_is_stable': True, 'kmt_is_stable': False, 'tpp_is_stable': False}]
+- qap_results: [{'camp_a': 'DPP', 'camp_b': 'KMT', 'hubert_gamma': 0.8771324746118299, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}, {'camp_a': 'DPP', 'camp_b': 'TPP', 'hubert_gamma': 0.8877425961143403, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}, {'camp_a': 'KMT', 'camp_b': 'TPP', 'hubert_gamma': 0.949434135985186, 'p_value': 0.000999000999000999, 'n_perm': 1000, 'n_nodes': 8}]
+- jaccard_all_pairs_n: 121
+- elapsed_sec: 0.27
+
+**Notes**
+- Report Hubert gamma as effect size; p-values on 28 edge pairs have limited power.
+- QAP γ measures against-random distinctness, not between-camp distinctness; the latter is tested by p2_12_camp_permutation.py.
+
+## p2_12
+
+_Updated: 2026-05-19T16:48:41.286784+00:00_
+
+**Parameters**
+- n_permutations: `1000`
+- seed_base: `42`
+- min_marginal_count: `30`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_null_distribution.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_summary.parquet`
+
+**Stats**
+- permutation_summary: [{'test': 'gamma_dpp_kmt', 'camp_a': 'DPP', 'camp_b': 'KMT', 'observed_gamma': 0.8771324746118299, 'null_mean': 0.938383937048258, 'null_q05': 0.8972625997813548, 'null_q50': 0.9429830914933753, 'null_q95': 0.9684277768438919, 'p_value': 0.013986013986013986, 'n_permutations': 1000}, {'test': 'gamma_dpp_tpp', 'camp_a': 'DPP', 'camp_b': 'TPP', 'observed_gamma': 0.8877425961143403, 'null_mean': 0.9490998215198752, 'null_q05': 0.9171677318653351, 'null_q50': 0.9515054359530031, 'null_q95': 0.9733696194220584, 'p_value': 0.00999000999000999, 'n_permutations': 1000}, {'test': 'gamma_kmt_tpp', 'camp_a': 'KMT', 'camp_b': 'TPP', 'observed_gamma': 0.949434135985186, 'null_mean': 0.9405742387547191, 'null_q05': 0.9032135232238347, 'null_q50': 0.9440255381866092, 'null_q95': 0.9696569818758948, 'p_value': 0.6283716283716284, 'n_permutations': 1000}, {'test': 'joint_mean_gamma', 'camp_a': None, 'camp_b': None, 'observed_gamma': 0.904769735570452, 'null_mean': 0.9426859991076175, 'null_q05': 0.9156266459823477, 'null_q50': 0.9444672427081813, 'null_q95': 0.9628070367428786, 'p_value': 0.011988011988011988, 'n_permutations': 1000}]
+- elapsed_sec: 243.17
+
+**Notes**
+- Permutation shuffles doc_id→camp assignments (preserving counts); windows inherit via doc_id.
+- Full 28-edge NPMI table used inside permutations (no FDR) — test targets γ, not edge significance.
+
+## p2_13
+
+_Updated: 2026-05-19T16:48:45.569526+00:00_
+
+**Parameters**
+- ci_alpha: `0.05`
+- bootstrap_n_resamples: `1000`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/edge_diff_pairwise.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/diff_by_l2_node.parquet`
+
+**Stats**
+- n_edges_tested: 84
+- n_ci_disjoint: 15
+- elapsed_sec: 0.04
+
+**Notes**
+- Non-overlapping 95% bootstrap CIs used as conservative cross-camp edge difference test.
+
+## p2_14
+
+_Updated: 2026-05-19T16:48:46.599472+00:00_
+
+**Parameters**
+- shared_jaccard_threshold: `0.66`
+- scheme: `camp`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/subnetwork/node_selection_audit.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/subnetwork/differentiating_subnet_stats.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/subnetwork/shared_subnet_stats.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/subnetwork/rank_correlation_comparison.parquet`
+
+**Stats**
+- shared_nodes: ['L2-01', 'L2-03', 'L2-06', 'L2-07']
+- differentiating_nodes: ['L2-02', 'L2-04', 'L2-05', 'L2-08']
+- rank_correlation_comparison: [{'scope': 'full', 'camp_a': 'DPP', 'camp_b': 'KMT', 'metric': 'hubert_gamma', 'value': 0.8771324746118299}, {'scope': 'differentiating', 'camp_a': 'DPP', 'camp_b': 'KMT', 'metric': 'spearman_rho', 'value': 0.8857142857142858}, {'scope': 'shared', 'camp_a': 'DPP', 'camp_b': 'KMT', 'metric': 'spearman_rho', 'value': 0.8857142857142858}, {'scope': 'full', 'camp_a': 'DPP', 'camp_b': 'TPP', 'metric': 'hubert_gamma', 'value': 0.8877425961143403}, {'scope': 'differentiating', 'camp_a': 'DPP', 'camp_b': 'TPP', 'metric': 'spearman_rho', 'value': 0.942857142857143}, {'scope': 'shared', 'camp_a': 'DPP', 'camp_b': 'TPP', 'metric': 'spearman_rho', 'value': 0.942857142857143}, {'scope': 'full', 'camp_a': 'KMT', 'camp_b': 'TPP', 'metric': 'hubert_gamma', 'value': 0.949434135985186}, {'scope': 'differentiating', 'camp_a': 'KMT', 'camp_b': 'TPP', 'metric': 'spearman_rho', 'value': 0.942857142857143}, {'scope': 'shared', 'camp_a': 'KMT', 'camp_b': 'TPP', 'metric': 'spearman_rho', 'value': 0.942857142857143}]
+- elapsed_sec: 0.04
+
+**Notes**
+- Node selection is exploratory (Jaccard ≥ threshold vs both KMT and TPP); informs structured analysis, not a confirmatory test on the same data.
+
+## p2_09
+
+_Updated: 2026-05-19T16:48:47.779522+00:00_
+
+**Parameters**
+- edge_selection: `fdr`
+- export_version: `subclaim1_v2`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/substantive_results.md`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/substantive_results.parquet`
+
+**Stats**
+- n_long_rows: 167
+- elapsed_sec: 0.16
+
+**Notes**
+- Shared infrastructure cluster ({L2-06, L2-07}) is isomorphic across all three camps (Jaccard=1.0, stable).
+- Differentiation concentrates in the {L2-02, L2-04, L2-05, L2-08} sub-network.
+- KMT and TPP show near-isomorphic articulation grammar (γ≈0.949); DPP is the outlier.
+- Community partition is supplementary to edge-level analysis given 8-node saturation.
