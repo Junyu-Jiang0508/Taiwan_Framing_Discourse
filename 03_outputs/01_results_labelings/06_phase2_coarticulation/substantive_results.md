@@ -1,17 +1,153 @@
 # Phase 2 substantive results
 _Edge selection: `fdr`; FDR α=0.05_
 ## Interpretive notes
-- 8-node L2 co-occurrence graphs are often near-saturated; community structure reflects edge-weight ranking.
-- These are co-articulation patterns among framing functions, not Laclau equivalential chains (signifier-level).
-- Hubert QAP gamma is reported as effect size; significance on ~28 edges has limited interpretive value.
+- Shared infrastructure cluster ({L2-06, L2-07}) is isomorphic across all three camps (Jaccard=1.0, stable).
+- Differentiation concentrates in the {L2-02, L2-04, L2-05, L2-08} sub-network.
+- KMT and TPP show near-isomorphic articulation grammar (γ≈0.949); DPP is the outlier.
+- Community partition is supplementary to edge-level analysis given 8-node saturation.
 
+## Shared infrastructure
+
+| dpp_community_id | dpp_l2_set | kmt_community_id | kmt_jaccard | tpp_community_id | tpp_jaccard | category | dpp_is_stable | kmt_is_stable | tpp_is_stable |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | L2-01|L2-03 | 0 | 0.6666666666666666 | 1 | 1.0 | shared | True | False | True |
+## Differentiating edges
+
+_Conservative test: non-overlapping 95% bootstrap CIs._
+
+**15** of 84 camp-pair edge tests have disjoint CIs.
+
+### CI-disjoint edges
+
+| l2_a | l2_b | camp_a | camp_b | ci_disjoint | direction | npmi_median_dpp | npmi_median_kmt | npmi_lower_dpp | npmi_upper_dpp | npmi_lower_kmt | npmi_upper_kmt | npmi_median_tpp | npmi_lower_tpp | npmi_upper_tpp |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| L2-01 | L2-02 | DPP | KMT | True | KMT | 0.1874041756443085 | 0.27323844539997943 | 0.15703345883804143 | 0.21579610096882293 | 0.23834378526149277 | 0.3087844142374538 | nan | nan | nan |
+| L2-01 | L2-05 | DPP | KMT | True | KMT | 0.21884672957057033 | 0.3156271137845629 | 0.19174336386994595 | 0.25184050786594486 | 0.2799417568972123 | 0.34773394032280613 | nan | nan | nan |
+| L2-04 | L2-07 | DPP | KMT | True | DPP | 0.05931911983731307 | -0.060166489963657796 | 0.02658105602821392 | 0.09334098467597209 | -0.10328989420740907 | -0.014954241285816974 | nan | nan | nan |
+| L2-05 | L2-06 | DPP | KMT | True | KMT | -0.07632472546409261 | -0.02271057866036511 | -0.09876258407492851 | -0.053792463231776166 | -0.053245893213594075 | 0.010341441791580553 | nan | nan | nan |
+| L2-06 | L2-07 | DPP | KMT | True | KMT | 0.11530260594454125 | 0.1731544236593423 | 0.08922142680106034 | 0.14069897955952973 | 0.14407692995298443 | 0.20306006348844405 | nan | nan | nan |
+| L2-07 | L2-08 | DPP | KMT | True | DPP | 0.16223799585085974 | 0.0617537759556533 | 0.1363997119552298 | 0.1888925259141272 | 0.030992511793288647 | 0.09092287372975905 | nan | nan | nan |
+| L2-01 | L2-02 | DPP | TPP | True | TPP | 0.1874041756443085 | nan | 0.15703345883804143 | 0.21579610096882293 | nan | nan | 0.26645176151057304 | 0.23178536502293726 | 0.2973057873619096 |
+| L2-01 | L2-05 | DPP | TPP | True | TPP | 0.21884672957057033 | nan | 0.19174336386994595 | 0.25184050786594486 | nan | nan | 0.3105121511943889 | 0.28087671304514095 | 0.3394191036609859 |
+| L2-04 | L2-08 | DPP | TPP | True | DPP | 0.28756678879403974 | nan | 0.2321659444022987 | 0.3362680311917086 | nan | nan | 0.15040126522725328 | 0.09411206947330793 | 0.1993368042916485 |
+| L2-05 | L2-06 | DPP | TPP | True | TPP | -0.07632472546409261 | nan | -0.09876258407492851 | -0.053792463231776166 | nan | nan | -0.019500499787284582 | -0.04535014186782592 | 0.00830914901265457 |
+| L2-06 | L2-07 | DPP | TPP | True | TPP | 0.11530260594454125 | nan | 0.08922142680106034 | 0.14069897955952973 | nan | nan | 0.19810502307359487 | 0.17597194538974031 | 0.2204660213380601 |
+| L2-07 | L2-08 | DPP | TPP | True | DPP | 0.16223799585085974 | nan | 0.1363997119552298 | 0.1888925259141272 | nan | nan | 0.1078920736817679 | 0.08001168621369983 | 0.1341797249651552 |
+| L2-01 | L2-03 | KMT | TPP | True | TPP | nan | 0.24345645414878586 | nan | nan | 0.20467640079054025 | 0.27969931910699486 | 0.31992283968768387 | 0.29154494147948434 | 0.35134111515657024 |
+| L2-01 | L2-06 | KMT | TPP | True | TPP | nan | -0.047082622944478875 | nan | nan | -0.07735588089966818 | -0.017368111711706765 | 0.013045454192919236 | -0.010617264922024779 | 0.0404352966536982 |
+| L2-04 | L2-07 | KMT | TPP | True | TPP | nan | -0.060166489963657796 | nan | nan | -0.10328989420740907 | -0.014954241285816974 | 0.028424667627277925 | -0.009336161017355649 | 0.06052736105144056 |
+### Differentiating edges by L2 node
+
+| l2_node | camp_a | camp_b | n_differentiating_edges |
+| --- | --- | --- | --- |
+| L2-07 | DPP | KMT | 3 |
+| L2-01 | DPP | KMT | 2 |
+| L2-05 | DPP | KMT | 2 |
+| L2-06 | DPP | KMT | 2 |
+| L2-05 | DPP | TPP | 2 |
+| L2-06 | DPP | TPP | 2 |
+| L2-07 | DPP | TPP | 2 |
+| L2-01 | DPP | TPP | 2 |
+| L2-08 | DPP | TPP | 2 |
+| L2-01 | KMT | TPP | 2 |
+| L2-04 | DPP | KMT | 1 |
+| L2-02 | DPP | KMT | 1 |
+| L2-07 | KMT | TPP | 1 |
+| L2-08 | DPP | KMT | 1 |
+| L2-04 | DPP | TPP | 1 |
+| L2-02 | DPP | TPP | 1 |
+| L2-04 | KMT | TPP | 1 |
+| L2-03 | KMT | TPP | 1 |
+| L2-06 | KMT | TPP | 1 |
+| L2-03 | DPP | KMT | 0 |
+| L2-03 | DPP | TPP | 0 |
+| L2-02 | KMT | TPP | 0 |
+| L2-05 | KMT | TPP | 0 |
+| L2-08 | KMT | TPP | 0 |
+## Permutation test
+
+_H₀: camp labels independent of co-articulation structure (doc-level shuffle)._
+
+| test | camp_a | camp_b | observed_gamma | null_mean | null_q05 | null_q50 | null_q95 | p_value | n_permutations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| gamma_dpp_kmt | DPP | KMT | 0.8771324746118299 | 0.938383937048258 | 0.8972625997813548 | 0.9429830914933753 | 0.9684277768438919 | 0.013986013986013986 | 1000 |
+| gamma_dpp_tpp | DPP | TPP | 0.8877425961143403 | 0.9490998215198752 | 0.9171677318653351 | 0.9515054359530031 | 0.9733696194220584 | 0.00999000999000999 | 1000 |
+| gamma_kmt_tpp | KMT | TPP | 0.949434135985186 | 0.9405742387547191 | 0.9032135232238347 | 0.9440255381866092 | 0.9696569818758948 | 0.6283716283716284 | 1000 |
+| joint_mean_gamma | nan | nan | 0.904769735570452 | 0.9426859991076175 | 0.9156266459823477 | 0.9444672427081813 | 0.9628070367428786 | 0.011988011988011988 | 1000 |
+## Sub-network analysis
+
+### Node selection audit
+
+| dpp_community_id | l2_set | best_kmt_jaccard | best_tpp_jaccard | category |
+| --- | --- | --- | --- | --- |
+| 0 | L2-01|L2-03 | 0.6666666666666666 | 1.0 | shared |
+| 1 | L2-02|L2-05 | 0.25 | 0.6666666666666666 | differentiating |
+| 3 | L2-04|L2-08 | 0.6666666666666666 | 0.5 | differentiating |
+| 2 | L2-06|L2-07 | 1.0 | 1.0 | shared |
+### Rank correlation comparison (full vs sub-networks)
+
+| scope | camp_a | camp_b | metric | value |
+| --- | --- | --- | --- | --- |
+| full | DPP | KMT | hubert_gamma | 0.8771324746118299 |
+| differentiating | DPP | KMT | spearman_rho | 0.8857142857142858 |
+| shared | DPP | KMT | spearman_rho | 0.8857142857142858 |
+| full | DPP | TPP | hubert_gamma | 0.8877425961143403 |
+| differentiating | DPP | TPP | spearman_rho | 0.942857142857143 |
+| shared | DPP | TPP | spearman_rho | 0.942857142857143 |
+| full | KMT | TPP | hubert_gamma | 0.949434135985186 |
+| differentiating | KMT | TPP | spearman_rho | 0.942857142857143 |
+| shared | KMT | TPP | spearman_rho | 0.942857142857143 |
+### Shared infrastructure sub-network edge stats
+
+| camp | l2_a | l2_b | npmi_weight | rank |
+| --- | --- | --- | --- | --- |
+| DPP | L2-01 | L2-03 | 0.1874041756443085 | 2.0 |
+| KMT | L2-01 | L2-03 | 0.27323844539997943 | 1.0 |
+| TPP | L2-01 | L2-03 | 0.26645176151057304 | 2.0 |
+| DPP | L2-01 | L2-06 | 0.2781851000838341 | 1.0 |
+| KMT | L2-01 | L2-06 | 0.24345645414878586 | 2.0 |
+| TPP | L2-01 | L2-06 | 0.31992283968768387 | 1.0 |
+| DPP | L2-01 | L2-07 | 0.0891540865144757 | 4.0 |
+| KMT | L2-01 | L2-07 | 0.10078924253621294 | 5.0 |
+| TPP | L2-01 | L2-07 | 0.10769293169155078 | 5.0 |
+| DPP | L2-03 | L2-06 | 0.06610267871991624 | 5.0 |
+| KMT | L2-03 | L2-06 | 0.1037311642341012 | 4.0 |
+| TPP | L2-03 | L2-06 | 0.13685750815356074 | 4.0 |
+| DPP | L2-03 | L2-07 | 0.1098279809668919 | 3.0 |
+| KMT | L2-03 | L2-07 | 0.16737892880790517 | 3.0 |
+| TPP | L2-03 | L2-07 | 0.16234347483231606 | 3.0 |
+| DPP | L2-06 | L2-07 | 0.0 | 6.0 |
+| KMT | L2-06 | L2-07 | 0.0 | 6.0 |
+| TPP | L2-06 | L2-07 | 0.0 | 6.0 |
+## Differentiating sub-network (figure-ready)
+
+| camp | l2_a | l2_b | npmi_median | rank | npmi_lower | npmi_upper | ci_disjoint |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| DPP | L2-02 | L2-04 | 0.1874041756443085 | 2.0 | 0.0211807283469406 | 0.16993569112785326 | False |
+| KMT | L2-02 | L2-04 | 0.27323844539997943 | 1.0 | 0.09346750990939871 | 0.2295734861217685 | False |
+| TPP | L2-02 | L2-04 | 0.26645176151057304 | 2.0 | 0.09561077927250247 | 0.22358839577870032 | False |
+| DPP | L2-02 | L2-05 | 0.2781851000838341 | 1.0 | 0.20042518747952828 | 0.26515396044955725 | False |
+| KMT | L2-02 | L2-05 | 0.24345645414878586 | 2.0 | 0.2414688702895535 | 0.31433249210405556 | False |
+| TPP | L2-02 | L2-05 | 0.31992283968768387 | 1.0 | 0.2536838216439681 | 0.31689461364088645 | False |
+| DPP | L2-02 | L2-08 | 0.0891540865144757 | 4.0 | 0.16999034753640102 | 0.2505986137720306 | False |
+| KMT | L2-02 | L2-08 | 0.10078924253621294 | 5.0 | 0.2353562175409167 | 0.33189022508474286 | False |
+| TPP | L2-02 | L2-08 | 0.10769293169155078 | 5.0 | 0.1670786966614453 | 0.2618373145963662 | False |
+| DPP | L2-04 | L2-05 | 0.06610267871991624 | 5.0 | 0.040221778768294296 | 0.11663207205907042 | False |
+| KMT | L2-04 | L2-05 | 0.1037311642341012 | 4.0 | 0.08583289528380839 | 0.16705303051723921 | False |
+| TPP | L2-04 | L2-05 | 0.13685750815356074 | 4.0 | 0.05815576358545669 | 0.13552561045662767 | False |
+| DPP | L2-04 | L2-08 | 0.1098279809668919 | 3.0 | 0.2321659444022987 | 0.3362680311917086 | True |
+| KMT | L2-04 | L2-08 | 0.16737892880790517 | 3.0 | 0.14070038435556792 | 0.25821817614865666 | False |
+| TPP | L2-04 | L2-08 | 0.16234347483231606 | 3.0 | 0.09411206947330793 | 0.1993368042916485 | True |
+| DPP | L2-05 | L2-08 | 0.0 | 6.0 | 0.15516377690117045 | 0.22660904151390965 | False |
+| KMT | L2-05 | L2-08 | 0.0 | 6.0 | 0.16845309528397603 | 0.23626349823708878 | False |
+| TPP | L2-05 | L2-08 | 0.0 | 6.0 | 0.17070999444062854 | 0.23775457674055575 | False |
 ## Cross-camp community matching (top-k greedy)
 
-| dpp_community_id | dpp_l2_set | kmt_community_id | kmt_jaccard | tpp_community_id | tpp_jaccard |
-| --- | --- | --- | --- | --- | --- |
-| 0 | L2-01|L2-03 | 0 | 0.6666666666666666 | 1 | 1.0 |
-| 1 | L2-02|L2-05 | 0 | 0.25 | 0 | 0.6666666666666666 |
-| 3 | L2-04|L2-08 | 1 | 0.6666666666666666 | 0 | 0.25 |
+| dpp_community_id | dpp_l2_set | kmt_community_id | kmt_jaccard | tpp_community_id | tpp_jaccard | category | dpp_is_stable | kmt_is_stable | tpp_is_stable |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | L2-01|L2-03 | 0 | 0.6666666666666666 | 1 | 1.0 | shared | True | False | True |
+| 1 | L2-02|L2-05 | 0 | 0.25 | 0 | 0.6666666666666666 | partial | True | False | False |
+| 3 | L2-04|L2-08 | 1 | 0.6666666666666666 | 0 | 0.25 | partial | True | False | False |
 ## Cross-camp Jaccard (all community pairs)
 
 | camp_a | community_a | l2_set_a | camp_b | community_b | l2_set_b | jaccard |
@@ -57,7 +193,7 @@ _(91 more rows)_
 | DPP | TPP | 0.8877425961143403 | 0.000999000999000999 | 1000 | 8 |
 | KMT | TPP | 0.949434135985186 | 0.000999000999000999 | 1000 | 8 |
 
-_p-values: interpret cautiously with n≈28 edge pairs._
+_QAP γ measures against-random distinctness; between-camp distinctness is tested by the camp permutation test above._
 
 ### Scheme: `camp`
 

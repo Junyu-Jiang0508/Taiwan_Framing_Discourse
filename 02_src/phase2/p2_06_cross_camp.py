@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
-"""p2_06 — Cross-camp community matching (Jaccard) and QAP appendix."""
+"""p2_06 — Cross-camp community matching (Jaccard) and QAP appendix.
+
+QAP γ measures against-random distinctness, not between-camp distinctness;
+the latter is tested by p2_12_camp_permutation.py.
+"""
 from __future__ import annotations
 
 import sys
 import time
 from pathlib import Path
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
-import networkx as nx
-import numpy as np
 import pandas as pd
 
 PHASE2_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(PHASE2_DIR))
 
 from utils.config import Phase2Config  # noqa: E402
+from utils.cross_camp import adjacency_from_graph, qap_test  # noqa: E402
 from utils.io import read_parquet  # noqa: E402
 from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E402
 from utils.summary import write_summary  # noqa: E402
@@ -63,46 +66,23 @@ def all_pair_jaccard(
     return pd.DataFrame(rows)
 
 
-def hubert_gamma(a: np.ndarray, b: np.ndarray) -> float:
-    n = a.shape[0]
-    if n < 2:
-        return float("nan")
-    triu_i, triu_j = np.triu_indices(n, k=1)
-    x = a[triu_i, triu_j]
-    y = b[triu_i, triu_j]
-    if np.std(x) == 0 or np.std(y) == 0:
-        return float("nan")
-    return float(np.corrcoef(x, y)[0, 1])
+def community_category(kmt_j: float, tpp_j: float, threshold: float) -> str:
+    kmt_ok = kmt_j >= threshold
+    tpp_ok = tpp_j >= threshold
+    if kmt_ok and tpp_ok:
+        return "shared"
+    if kmt_ok or tpp_ok:
+        return "partial"
+    return "distinct"
 
 
-def qap_test(a: np.ndarray, b: np.ndarray, n_perm: int, seed: int) -> Tuple[float, float]:
-    obs = hubert_gamma(a, b)
-    rng = np.random.default_rng(seed)
-    n = a.shape[0]
-    null = []
-    for _ in range(n_perm):
-        perm = rng.permutation(n)
-        bp = b[np.ix_(perm, perm)]
-        null.append(hubert_gamma(a, bp))
-    null = np.array([x for x in null if not np.isnan(x)])
-    if len(null) == 0 or np.isnan(obs):
-        return obs, float("nan")
-    p = float((np.sum(null >= obs) + 1) / (len(null) + 1))
-    return obs, p
-
-
-def adjacency_from_graph(path: Path, nodes: List[str]) -> np.ndarray:
-    G = nx.read_graphml(path)
-    n = len(nodes)
-    idx = {nodes[i]: i for i in range(n)}
-    mat = np.zeros((n, n))
-    for u, v, d in G.edges(data=True):
-        if u in idx and v in idx:
-            w = float(d.get("npmi_median", 0))
-            i, j = idx[u], idx[v]
-            mat[i, j] = w
-            mat[j, i] = w
-    return mat
+def stability_lookup(stab: pd.DataFrame, camp: str, community_id: Optional[int]) -> Optional[bool]:
+    if stab.empty or community_id is None:
+        return None
+    sub = stab[(stab["camp"] == camp) & (stab["community_id"] == community_id)]
+    if sub.empty:
+        return None
+    return bool(sub.iloc[0]["stable"])
 
 
 def run(cfg: Phase2Config, force: bool = False) -> None:
@@ -112,6 +92,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     scheme_name = ccfg.get("primary_network_scheme", "camp")
     top_k = int(ccfg["top_k_communities"])
     n_perm = int(ccfg["qap_permutations"])
+    jaccard_threshold = float(ccfg.get("shared_jaccard_threshold", 0.66))
 
     manifest_path = art / "manifests" / "p2_06.json"
     expected = {"corpus_content_hash": cfg.corpus_content_hash, "edge_selection": cfg.edge_selection}
@@ -121,7 +102,9 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
 
     part_dir = cfg.scheme_dir("partitions", scheme_name)
     cons_path = part_dir / "consensus_partition.parquet"
+    stab_path = part_dir / "community_stability.parquet"
     cons = read_parquet(cons_path) if cons_path.is_file() else pd.DataFrame()
+    stab = read_parquet(stab_path) if stab_path.is_file() else pd.DataFrame()
     net_dir = cfg.scheme_dir("networks", scheme_name)
     out_dir = art / "cross_camp"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -161,6 +144,10 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
             "kmt_jaccard": best_kmt_j,
             "tpp_community_id": best_tpp,
             "tpp_jaccard": best_tpp_j,
+            "category": community_category(best_kmt_j, best_tpp_j, jaccard_threshold),
+            "dpp_is_stable": stability_lookup(stab, "DPP", dpp_id),
+            "kmt_is_stable": stability_lookup(stab, "KMT", best_kmt),
+            "tpp_is_stable": stability_lookup(stab, "TPP", best_tpp),
         })
 
     pd.DataFrame(match_rows).to_parquet(out_dir / "community_table.parquet", index=False)
@@ -189,7 +176,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
                 })
         pd.DataFrame(qap_rows).to_parquet(out_dir / "qap_results.parquet", index=False)
 
-    write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([cons_path])})
+    write_manifest(manifest_path, {**expected, "inputs_hash": inputs_hash([cons_path, stab_path])})
     write_summary(
         art,
         "p2_06",
@@ -207,6 +194,8 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
         },
         notes=[
             "Report Hubert gamma as effect size; p-values on 28 edge pairs have limited power.",
+            "QAP γ measures against-random distinctness, not between-camp distinctness; "
+            "the latter is tested by p2_12_camp_permutation.py.",
         ],
         elapsed_sec=time.perf_counter() - t0,
     )

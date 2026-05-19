@@ -1,0 +1,8 @@
+{
+  "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+  "n_permutations": 1000,
+  "seed_base": 42,
+  "min_marginal_count": 30,
+  "inputs_hash": "a8cf4b58f86d3b68a2d29a4a6455388f285e66985a096ca398fe27a26d9ad562",
+  "written_at": "2026-05-19T16:48:41.286639+00:00"
+}
