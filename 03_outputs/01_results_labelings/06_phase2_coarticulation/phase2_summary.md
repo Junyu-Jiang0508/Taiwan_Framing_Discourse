@@ -214,27 +214,6 @@ _Updated: 2026-05-19T16:44:27.260676+00:00_
 - Report Hubert gamma as effect size; p-values on 28 edge pairs have limited power.
 - QAP γ measures against-random distinctness, not between-camp distinctness; the latter is tested by p2_12_camp_permutation.py.
 
-## p2_12
-
-_Updated: 2026-05-19T16:48:41.286784+00:00_
-
-**Parameters**
-- n_permutations: `1000`
-- seed_base: `42`
-- min_marginal_count: `30`
-
-**Outputs**
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_null_distribution.parquet`
-- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_summary.parquet`
-
-**Stats**
-- permutation_summary: [{'test': 'gamma_dpp_kmt', 'camp_a': 'DPP', 'camp_b': 'KMT', 'observed_gamma': 0.8771324746118299, 'null_mean': 0.938383937048258, 'null_q05': 0.8972625997813548, 'null_q50': 0.9429830914933753, 'null_q95': 0.9684277768438919, 'p_value': 0.013986013986013986, 'n_permutations': 1000}, {'test': 'gamma_dpp_tpp', 'camp_a': 'DPP', 'camp_b': 'TPP', 'observed_gamma': 0.8877425961143403, 'null_mean': 0.9490998215198752, 'null_q05': 0.9171677318653351, 'null_q50': 0.9515054359530031, 'null_q95': 0.9733696194220584, 'p_value': 0.00999000999000999, 'n_permutations': 1000}, {'test': 'gamma_kmt_tpp', 'camp_a': 'KMT', 'camp_b': 'TPP', 'observed_gamma': 0.949434135985186, 'null_mean': 0.9405742387547191, 'null_q05': 0.9032135232238347, 'null_q50': 0.9440255381866092, 'null_q95': 0.9696569818758948, 'p_value': 0.6283716283716284, 'n_permutations': 1000}, {'test': 'joint_mean_gamma', 'camp_a': None, 'camp_b': None, 'observed_gamma': 0.904769735570452, 'null_mean': 0.9426859991076175, 'null_q05': 0.9156266459823477, 'null_q50': 0.9444672427081813, 'null_q95': 0.9628070367428786, 'p_value': 0.011988011988011988, 'n_permutations': 1000}]
-- elapsed_sec: 243.17
-
-**Notes**
-- Permutation shuffles doc_id→camp assignments (preserving counts); windows inherit via doc_id.
-- Full 28-edge NPMI table used inside permutations (no FDR) — test targets γ, not edge significance.
-
 ## p2_13
 
 _Updated: 2026-05-19T16:48:45.569526+00:00_
@@ -278,13 +257,35 @@ _Updated: 2026-05-19T16:48:46.599472+00:00_
 **Notes**
 - Node selection is exploratory (Jaccard ≥ threshold vs both KMT and TPP); informs structured analysis, not a confirmatory test on the same data.
 
+## p2_12
+
+_Updated: 2026-05-19T17:05:26.644841+00:00_
+
+**Parameters**
+- n_permutations: `1000`
+- seed_base: `42`
+- min_marginal_count: `30`
+
+**Outputs**
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_null_distribution.parquet`
+- `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/cross_camp/permutation_summary.parquet`
+
+**Stats**
+- permutation_summary: [{'test': 'gamma_dpp_kmt', 'camp_a': 'DPP', 'camp_b': 'KMT', 'observed_gamma': 0.8816303660630427, 'observed_gamma_filtered': 0.8771324746118299, 'null_mean': 0.938383937048258, 'null_q05': 0.8972625997813548, 'null_q50': 0.9429830914933753, 'null_q95': 0.9684277768438919, 'p_value': 0.023976023976023976, 'n_permutations': 1000}, {'test': 'gamma_dpp_tpp', 'camp_a': 'DPP', 'camp_b': 'TPP', 'observed_gamma': 0.8956610632456885, 'observed_gamma_filtered': 0.8877425961143403, 'null_mean': 0.9490998215198752, 'null_q05': 0.9171677318653351, 'null_q50': 0.9515054359530031, 'null_q95': 0.9733696194220584, 'p_value': 0.015984015984015984, 'n_permutations': 1000}, {'test': 'gamma_kmt_tpp', 'camp_a': 'KMT', 'camp_b': 'TPP', 'observed_gamma': 0.9449991085767732, 'observed_gamma_filtered': 0.949434135985186, 'null_mean': 0.9405742387547191, 'null_q05': 0.9032135232238347, 'null_q50': 0.9440255381866092, 'null_q95': 0.9696569818758948, 'p_value': 0.5204795204795205, 'n_permutations': 1000}, {'test': 'joint_mean_gamma', 'camp_a': None, 'camp_b': None, 'observed_gamma': 0.9074301792951681, 'observed_gamma_filtered': 0.904769735570452, 'null_mean': 0.9426859991076175, 'null_q05': 0.9156266459823477, 'null_q50': 0.9444672427081813, 'null_q95': 0.9628070367428786, 'p_value': 0.02197802197802198, 'n_permutations': 1000}]
+- elapsed_sec: 241.73
+
+**Notes**
+- Permutation shuffles doc_id→camp assignments (preserving counts); windows inherit via doc_id.
+- Full 28-edge point NPMI used for observed_gamma and null (no FDR inside permutations).
+- observed_gamma_filtered is p2_06 FDR+bootstrap-median γ for diagnostic comparison only.
+
 ## p2_09
 
-_Updated: 2026-05-19T16:48:47.779522+00:00_
+_Updated: 2026-05-19T17:05:29.816684+00:00_
 
 **Parameters**
 - edge_selection: `fdr`
-- export_version: `subclaim1_v2`
+- export_version: `subclaim1_v3_dpm`
 
 **Outputs**
 - `/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation/substantive_results.md`
@@ -292,10 +293,12 @@ _Updated: 2026-05-19T16:48:47.779522+00:00_
 
 **Stats**
 - n_long_rows: 167
-- elapsed_sec: 0.16
+- elapsed_sec: 0.21
 
 **Notes**
-- Shared infrastructure cluster ({L2-06, L2-07}) is isomorphic across all three camps (Jaccard=1.0, stable).
-- Differentiation concentrates in the {L2-02, L2-04, L2-05, L2-08} sub-network.
-- KMT and TPP show near-isomorphic articulation grammar (γ≈0.949); DPP is the outlier.
+- Shared infrastructure cluster ({L2-06 民族自豪 / National Pride, L2-07 凝聚動員 / Solidarity & Vision}) is isomorphic across all three camps (Jaccard=1.0, stable).
+- Differentiation concentrates in the differentiating sub-network {L2-02 差異化認同, L2-04 集體敘事再造, L2-05 共同威脅, L2-08 民主價值}.
+- L2-07 (凝聚與願景動員, DPM Mobilising) shows a floating-signifier signature: the frame is shared infrastructure (clustered with L2-06) but has the most CI-disjoint cross-cluster articulation edges vs DPP–KMT/TPP — same element, camp-specific articulatory chains.
+- Permutation test uses point NPMI on full 28-edge table (observed_gamma); observed_gamma_filtered (p2_06 FDR+bootstrap) is diagnostic only.
+- Sub-network Spearman ρ identical across shared/differentiating splits is a structural consequence of FDR sparsity on 8 nodes, not a reporting error; sub-network analysis is descriptive only.
 - Community partition is supplementary to edge-level analysis given 8-node saturation.

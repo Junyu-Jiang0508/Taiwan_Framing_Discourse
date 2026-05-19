@@ -9,19 +9,29 @@ from typing import Any, Dict, List
 
 import networkx as nx
 import pandas as pd
+from scipy.stats import binomtest
 
 PHASE2_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(PHASE2_DIR))
 
 from utils.config import Phase2Config  # noqa: E402
 from utils.io import read_parquet  # noqa: E402
+from utils.l2_labels import l2_display, load_l2_labels  # noqa: E402
 from utils.manifest import inputs_hash, should_skip, write_manifest  # noqa: E402
 from utils.summary import write_summary  # noqa: E402
 
 INTERPRETIVE_NOTES = [
-    "Shared infrastructure cluster ({L2-06, L2-07}) is isomorphic across all three camps (Jaccard=1.0, stable).",
-    "Differentiation concentrates in the {L2-02, L2-04, L2-05, L2-08} sub-network.",
-    "KMT and TPP show near-isomorphic articulation grammar (γ≈0.949); DPP is the outlier.",
+    "Shared infrastructure cluster ({L2-06 民族自豪 / National Pride, L2-07 凝聚動員 / Solidarity & Vision}) "
+    "is isomorphic across all three camps (Jaccard=1.0, stable).",
+    "Differentiation concentrates in the differentiating sub-network "
+    "{L2-02 差異化認同, L2-04 集體敘事再造, L2-05 共同威脅, L2-08 民主價值}.",
+    "L2-07 (凝聚與願景動員, DPM Mobilising) shows a floating-signifier signature: the frame is shared "
+    "infrastructure (clustered with L2-06) but has the most CI-disjoint cross-cluster articulation edges "
+    "vs DPP–KMT/TPP — same element, camp-specific articulatory chains.",
+    "Permutation test uses point NPMI on full 28-edge table (observed_gamma); "
+    "observed_gamma_filtered (p2_06 FDR+bootstrap) is diagnostic only.",
+    "Sub-network Spearman ρ identical across shared/differentiating splits is a structural consequence "
+    "of FDR sparsity on 8 nodes, not a reporting error; sub-network analysis is descriptive only.",
     "Community partition is supplementary to edge-level analysis given 8-node saturation.",
 ]
 
@@ -143,6 +153,35 @@ def _build_differentiating_long_table(
     return long_df
 
 
+def _annotate_l2_node(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty or "l2_node" not in df.columns:
+        return df
+    out = df.copy()
+    out["l2_label"] = out["l2_node"].map(l2_display)
+    cols = ["l2_node", "l2_label"] + [c for c in out.columns if c not in ("l2_node", "l2_label")]
+    return out[cols]
+
+
+def _annotate_l2_edges(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty or "l2_a" not in df.columns:
+        return df
+    out = df.copy()
+    out["l2_a_label"] = out["l2_a"].map(l2_display)
+    out["l2_b_label"] = out["l2_b"].map(l2_display)
+    front = ["l2_a", "l2_a_label", "l2_b", "l2_b_label"]
+    rest = [c for c in out.columns if c not in front]
+    return out[front + rest]
+
+
+def _codebook_table() -> str:
+    rows = []
+    for lid in sorted(load_l2_labels()):
+        info = load_l2_labels()[lid]
+        rows.append(f"| {lid} | {info['cn']} | {info['en']} |")
+    header = "| Label | 中文 | English |\n| --- | --- | --- |"
+    return header + "\n" + "\n".join(rows) + "\n"
+
+
 def run(cfg: Phase2Config, force: bool = False) -> None:
     t0 = time.perf_counter()
     art = cfg.artifacts_root
@@ -150,7 +189,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     expected = {
         "corpus_content_hash": cfg.corpus_content_hash,
         "edge_selection": cfg.edge_selection,
-        "export_version": "subclaim1_v2",
+        "export_version": "subclaim1_v3_dpm",
     }
     if should_skip(manifest_path, expected, force):
         print("p2_09: skip (manifest match)")
@@ -165,6 +204,8 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     ]
     for note in INTERPRETIVE_NOTES:
         md_parts.append(f"- {note}\n")
+    md_parts.append("\n## L2 v10 codebook (DPM)\n\n")
+    md_parts.append(_codebook_table())
     md_parts.append("\n")
 
     cross_dir = art / "cross_camp"
@@ -193,18 +234,44 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     md_parts.append("_Conservative test: non-overlapping 95% bootstrap CIs._\n\n")
     if not edge_diff.empty:
         disjoint = edge_diff[edge_diff["ci_disjoint"] == True]  # noqa: E712
-        md_parts.append(f"**{len(disjoint)}** of {len(edge_diff)} camp-pair edge tests have disjoint CIs.\n\n")
+        n_tests = len(edge_diff)
+        n_disjoint = len(disjoint)
+        expected_fp = n_tests * 0.05
+        binom_p = float(binomtest(n_disjoint, n_tests, 0.05, alternative="greater").pvalue)
+        md_parts.append(f"**{n_disjoint}** of {n_tests} camp-pair edge tests have disjoint CIs.\n\n")
+        md_parts.append(
+            f"_Binomial null check (α=0.05): expected false positives ≈ {expected_fp:.1f}; "
+            f"observed {n_disjoint} (binom p={binom_p:.2e}). "
+            "Count is strongly inconsistent with a global null of no cross-camp differences._\n\n"
+        )
         md_parts.append("### CI-disjoint edges\n\n")
-        md_parts.append(_md_table(disjoint))
+        md_parts.append(_md_table(_annotate_l2_edges(disjoint)))
     if not diff_by_node.empty:
         md_parts.append("### Differentiating edges by L2 node\n\n")
-        md_parts.append(_md_table(diff_by_node.sort_values("n_differentiating_edges", ascending=False)))
+        md_parts.append(_md_table(_annotate_l2_node(diff_by_node.sort_values("n_differentiating_edges", ascending=False))))
 
     md_parts.append("## Permutation test\n\n")
-    md_parts.append("_H₀: camp labels independent of co-articulation structure (doc-level shuffle)._\n\n")
+    md_parts.append(
+        "_H₀: camp labels independent of co-articulation structure (doc-level shuffle). "
+        "observed_gamma uses point NPMI (same estimator as null); "
+        "observed_gamma_filtered is p2_06 FDR+bootstrap reference._\n\n"
+    )
     md_parts.append(_md_table(perm_summary))
 
     md_parts.append("## Sub-network analysis\n\n")
+    md_parts.append(
+        "_Exploratory node classification only. Identical Spearman ρ across shared and "
+        "differentiating 4-node subsets reflects FDR-filtered edge sparsity (identical weight "
+        "multisets on 6 edges per subnet), not a copy-paste error. Do not treat as an "
+        "independent quantitative finding._\n\n"
+    )
+    md_parts.append(
+        "### Paper outline note\n\n"
+        "Primary quantitative evidence: camp permutation test + CI-disjoint edges. "
+        "Sub-network section should be brief (node selection audit table); "
+        "consider a dedicated subsection on L2-07 floating-signifier signature "
+        "(shared {L2-06,L2-07} infrastructure with differential cross-cluster articulation).\n\n"
+    )
     if not node_audit.empty:
         md_parts.append("### Node selection audit\n\n")
         md_parts.append(_md_table(node_audit))
@@ -276,7 +343,7 @@ def run(cfg: Phase2Config, force: bool = False) -> None:
     write_summary(
         art,
         "p2_09",
-        params={"edge_selection": cfg.edge_selection, "export_version": "subclaim1_v2"},
+        params={"edge_selection": cfg.edge_selection, "export_version": "subclaim1_v3_dpm"},
         outputs=[str(out_md), str(art / "substantive_results.parquet")],
         stats={"n_long_rows": len(long_rows)},
         notes=INTERPRETIVE_NOTES,

@@ -1,10 +1,25 @@
 # Phase 2 substantive results
 _Edge selection: `fdr`; FDR α=0.05_
 ## Interpretive notes
-- Shared infrastructure cluster ({L2-06, L2-07}) is isomorphic across all three camps (Jaccard=1.0, stable).
-- Differentiation concentrates in the {L2-02, L2-04, L2-05, L2-08} sub-network.
-- KMT and TPP show near-isomorphic articulation grammar (γ≈0.949); DPP is the outlier.
+- Shared infrastructure cluster ({L2-06 民族自豪 / National Pride, L2-07 凝聚動員 / Solidarity & Vision}) is isomorphic across all three camps (Jaccard=1.0, stable).
+- Differentiation concentrates in the differentiating sub-network {L2-02 差異化認同, L2-04 集體敘事再造, L2-05 共同威脅, L2-08 民主價值}.
+- L2-07 (凝聚與願景動員, DPM Mobilising) shows a floating-signifier signature: the frame is shared infrastructure (clustered with L2-06) but has the most CI-disjoint cross-cluster articulation edges vs DPP–KMT/TPP — same element, camp-specific articulatory chains.
+- Permutation test uses point NPMI on full 28-edge table (observed_gamma); observed_gamma_filtered (p2_06 FDR+bootstrap) is diagnostic only.
+- Sub-network Spearman ρ identical across shared/differentiating splits is a structural consequence of FDR sparsity on 8 nodes, not a reporting error; sub-network analysis is descriptive only.
 - Community partition is supplementary to edge-level analysis given 8-node saturation.
+
+## L2 v10 codebook (DPM)
+
+| Label | 中文 | English |
+| --- | --- | --- |
+| L2-01 | 主體性建構 | Subjectivity Construction |
+| L2-02 | 差異化認同強調 | Differentiated Identity Emphasis |
+| L2-03 | 國際合法性塑造 | International Legitimacy Construction |
+| L2-04 | 集體敘事再造 | Collective Narrative Reconstruction |
+| L2-05 | 共同威脅設定 | Shared Crisis Construction |
+| L2-06 | 民族自豪感激發 | National Pride Activation |
+| L2-07 | 凝聚與願景動員 | Solidarity & Vision |
+| L2-08 | 民主價值強調 | Democratic Values Emphasis |
 
 ## Shared infrastructure
 
@@ -17,64 +32,72 @@ _Conservative test: non-overlapping 95% bootstrap CIs._
 
 **15** of 84 camp-pair edge tests have disjoint CIs.
 
+_Binomial null check (α=0.05): expected false positives ≈ 4.2; observed 15 (binom p=1.69e-05). Count is strongly inconsistent with a global null of no cross-camp differences._
+
 ### CI-disjoint edges
 
-| l2_a | l2_b | camp_a | camp_b | ci_disjoint | direction | npmi_median_dpp | npmi_median_kmt | npmi_lower_dpp | npmi_upper_dpp | npmi_lower_kmt | npmi_upper_kmt | npmi_median_tpp | npmi_lower_tpp | npmi_upper_tpp |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| L2-01 | L2-02 | DPP | KMT | True | KMT | 0.1874041756443085 | 0.27323844539997943 | 0.15703345883804143 | 0.21579610096882293 | 0.23834378526149277 | 0.3087844142374538 | nan | nan | nan |
-| L2-01 | L2-05 | DPP | KMT | True | KMT | 0.21884672957057033 | 0.3156271137845629 | 0.19174336386994595 | 0.25184050786594486 | 0.2799417568972123 | 0.34773394032280613 | nan | nan | nan |
-| L2-04 | L2-07 | DPP | KMT | True | DPP | 0.05931911983731307 | -0.060166489963657796 | 0.02658105602821392 | 0.09334098467597209 | -0.10328989420740907 | -0.014954241285816974 | nan | nan | nan |
-| L2-05 | L2-06 | DPP | KMT | True | KMT | -0.07632472546409261 | -0.02271057866036511 | -0.09876258407492851 | -0.053792463231776166 | -0.053245893213594075 | 0.010341441791580553 | nan | nan | nan |
-| L2-06 | L2-07 | DPP | KMT | True | KMT | 0.11530260594454125 | 0.1731544236593423 | 0.08922142680106034 | 0.14069897955952973 | 0.14407692995298443 | 0.20306006348844405 | nan | nan | nan |
-| L2-07 | L2-08 | DPP | KMT | True | DPP | 0.16223799585085974 | 0.0617537759556533 | 0.1363997119552298 | 0.1888925259141272 | 0.030992511793288647 | 0.09092287372975905 | nan | nan | nan |
-| L2-01 | L2-02 | DPP | TPP | True | TPP | 0.1874041756443085 | nan | 0.15703345883804143 | 0.21579610096882293 | nan | nan | 0.26645176151057304 | 0.23178536502293726 | 0.2973057873619096 |
-| L2-01 | L2-05 | DPP | TPP | True | TPP | 0.21884672957057033 | nan | 0.19174336386994595 | 0.25184050786594486 | nan | nan | 0.3105121511943889 | 0.28087671304514095 | 0.3394191036609859 |
-| L2-04 | L2-08 | DPP | TPP | True | DPP | 0.28756678879403974 | nan | 0.2321659444022987 | 0.3362680311917086 | nan | nan | 0.15040126522725328 | 0.09411206947330793 | 0.1993368042916485 |
-| L2-05 | L2-06 | DPP | TPP | True | TPP | -0.07632472546409261 | nan | -0.09876258407492851 | -0.053792463231776166 | nan | nan | -0.019500499787284582 | -0.04535014186782592 | 0.00830914901265457 |
-| L2-06 | L2-07 | DPP | TPP | True | TPP | 0.11530260594454125 | nan | 0.08922142680106034 | 0.14069897955952973 | nan | nan | 0.19810502307359487 | 0.17597194538974031 | 0.2204660213380601 |
-| L2-07 | L2-08 | DPP | TPP | True | DPP | 0.16223799585085974 | nan | 0.1363997119552298 | 0.1888925259141272 | nan | nan | 0.1078920736817679 | 0.08001168621369983 | 0.1341797249651552 |
-| L2-01 | L2-03 | KMT | TPP | True | TPP | nan | 0.24345645414878586 | nan | nan | 0.20467640079054025 | 0.27969931910699486 | 0.31992283968768387 | 0.29154494147948434 | 0.35134111515657024 |
-| L2-01 | L2-06 | KMT | TPP | True | TPP | nan | -0.047082622944478875 | nan | nan | -0.07735588089966818 | -0.017368111711706765 | 0.013045454192919236 | -0.010617264922024779 | 0.0404352966536982 |
-| L2-04 | L2-07 | KMT | TPP | True | TPP | nan | -0.060166489963657796 | nan | nan | -0.10328989420740907 | -0.014954241285816974 | 0.028424667627277925 | -0.009336161017355649 | 0.06052736105144056 |
+| l2_a | l2_a_label | l2_b | l2_b_label | camp_a | camp_b | ci_disjoint | direction | npmi_median_dpp | npmi_median_kmt | npmi_lower_dpp | npmi_upper_dpp | npmi_lower_kmt | npmi_upper_kmt | npmi_median_tpp | npmi_lower_tpp | npmi_upper_tpp |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-02 | L2-02 (差異化認同強調 / Differentiated Identity Emphasis) | DPP | KMT | True | KMT | 0.1874041756443085 | 0.27323844539997943 | 0.15703345883804143 | 0.21579610096882293 | 0.23834378526149277 | 0.3087844142374538 | nan | nan | nan |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | DPP | KMT | True | KMT | 0.21884672957057033 | 0.3156271137845629 | 0.19174336386994595 | 0.25184050786594486 | 0.2799417568972123 | 0.34773394032280613 | nan | nan | nan |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | DPP | KMT | True | DPP | 0.05931911983731307 | -0.060166489963657796 | 0.02658105602821392 | 0.09334098467597209 | -0.10328989420740907 | -0.014954241285816974 | nan | nan | nan |
+| L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | DPP | KMT | True | KMT | -0.07632472546409261 | -0.02271057866036511 | -0.09876258407492851 | -0.053792463231776166 | -0.053245893213594075 | 0.010341441791580553 | nan | nan | nan |
+| L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | DPP | KMT | True | KMT | 0.11530260594454125 | 0.1731544236593423 | 0.08922142680106034 | 0.14069897955952973 | 0.14407692995298443 | 0.20306006348844405 | nan | nan | nan |
+| L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | DPP | KMT | True | DPP | 0.16223799585085974 | 0.0617537759556533 | 0.1363997119552298 | 0.1888925259141272 | 0.030992511793288647 | 0.09092287372975905 | nan | nan | nan |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-02 | L2-02 (差異化認同強調 / Differentiated Identity Emphasis) | DPP | TPP | True | TPP | 0.1874041756443085 | nan | 0.15703345883804143 | 0.21579610096882293 | nan | nan | 0.26645176151057304 | 0.23178536502293726 | 0.2973057873619096 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | DPP | TPP | True | TPP | 0.21884672957057033 | nan | 0.19174336386994595 | 0.25184050786594486 | nan | nan | 0.3105121511943889 | 0.28087671304514095 | 0.3394191036609859 |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | DPP | TPP | True | DPP | 0.28756678879403974 | nan | 0.2321659444022987 | 0.3362680311917086 | nan | nan | 0.15040126522725328 | 0.09411206947330793 | 0.1993368042916485 |
+| L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | DPP | TPP | True | TPP | -0.07632472546409261 | nan | -0.09876258407492851 | -0.053792463231776166 | nan | nan | -0.019500499787284582 | -0.04535014186782592 | 0.00830914901265457 |
+| L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | DPP | TPP | True | TPP | 0.11530260594454125 | nan | 0.08922142680106034 | 0.14069897955952973 | nan | nan | 0.19810502307359487 | 0.17597194538974031 | 0.2204660213380601 |
+| L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | DPP | TPP | True | DPP | 0.16223799585085974 | nan | 0.1363997119552298 | 0.1888925259141272 | nan | nan | 0.1078920736817679 | 0.08001168621369983 | 0.1341797249651552 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-03 | L2-03 (國際合法性塑造 / International Legitimacy Construction) | KMT | TPP | True | TPP | nan | 0.24345645414878586 | nan | nan | 0.20467640079054025 | 0.27969931910699486 | 0.31992283968768387 | 0.29154494147948434 | 0.35134111515657024 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | KMT | TPP | True | TPP | nan | -0.047082622944478875 | nan | nan | -0.07735588089966818 | -0.017368111711706765 | 0.013045454192919236 | -0.010617264922024779 | 0.0404352966536982 |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | KMT | TPP | True | TPP | nan | -0.060166489963657796 | nan | nan | -0.10328989420740907 | -0.014954241285816974 | 0.028424667627277925 | -0.009336161017355649 | 0.06052736105144056 |
 ### Differentiating edges by L2 node
 
-| l2_node | camp_a | camp_b | n_differentiating_edges |
-| --- | --- | --- | --- |
-| L2-07 | DPP | KMT | 3 |
-| L2-01 | DPP | KMT | 2 |
-| L2-05 | DPP | KMT | 2 |
-| L2-06 | DPP | KMT | 2 |
-| L2-05 | DPP | TPP | 2 |
-| L2-06 | DPP | TPP | 2 |
-| L2-07 | DPP | TPP | 2 |
-| L2-01 | DPP | TPP | 2 |
-| L2-08 | DPP | TPP | 2 |
-| L2-01 | KMT | TPP | 2 |
-| L2-04 | DPP | KMT | 1 |
-| L2-02 | DPP | KMT | 1 |
-| L2-07 | KMT | TPP | 1 |
-| L2-08 | DPP | KMT | 1 |
-| L2-04 | DPP | TPP | 1 |
-| L2-02 | DPP | TPP | 1 |
-| L2-04 | KMT | TPP | 1 |
-| L2-03 | KMT | TPP | 1 |
-| L2-06 | KMT | TPP | 1 |
-| L2-03 | DPP | KMT | 0 |
-| L2-03 | DPP | TPP | 0 |
-| L2-02 | KMT | TPP | 0 |
-| L2-05 | KMT | TPP | 0 |
-| L2-08 | KMT | TPP | 0 |
+| l2_node | l2_label | camp_a | camp_b | n_differentiating_edges |
+| --- | --- | --- | --- | --- |
+| L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | DPP | KMT | 3 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | DPP | KMT | 2 |
+| L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | DPP | KMT | 2 |
+| L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | DPP | KMT | 2 |
+| L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | DPP | TPP | 2 |
+| L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | DPP | TPP | 2 |
+| L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | DPP | TPP | 2 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | DPP | TPP | 2 |
+| L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | DPP | TPP | 2 |
+| L2-01 | L2-01 (主體性建構 / Subjectivity Construction) | KMT | TPP | 2 |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | DPP | KMT | 1 |
+| L2-02 | L2-02 (差異化認同強調 / Differentiated Identity Emphasis) | DPP | KMT | 1 |
+| L2-07 | L2-07 (凝聚與願景動員 / Solidarity & Vision) | KMT | TPP | 1 |
+| L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | DPP | KMT | 1 |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | DPP | TPP | 1 |
+| L2-02 | L2-02 (差異化認同強調 / Differentiated Identity Emphasis) | DPP | TPP | 1 |
+| L2-04 | L2-04 (集體敘事再造 / Collective Narrative Reconstruction) | KMT | TPP | 1 |
+| L2-03 | L2-03 (國際合法性塑造 / International Legitimacy Construction) | KMT | TPP | 1 |
+| L2-06 | L2-06 (民族自豪感激發 / National Pride Activation) | KMT | TPP | 1 |
+| L2-03 | L2-03 (國際合法性塑造 / International Legitimacy Construction) | DPP | KMT | 0 |
+| L2-03 | L2-03 (國際合法性塑造 / International Legitimacy Construction) | DPP | TPP | 0 |
+| L2-02 | L2-02 (差異化認同強調 / Differentiated Identity Emphasis) | KMT | TPP | 0 |
+| L2-05 | L2-05 (共同威脅設定 / Shared Crisis Construction) | KMT | TPP | 0 |
+| L2-08 | L2-08 (民主價值強調 / Democratic Values Emphasis) | KMT | TPP | 0 |
 ## Permutation test
 
-_H₀: camp labels independent of co-articulation structure (doc-level shuffle)._
+_H₀: camp labels independent of co-articulation structure (doc-level shuffle). observed_gamma uses point NPMI (same estimator as null); observed_gamma_filtered is p2_06 FDR+bootstrap reference._
 
-| test | camp_a | camp_b | observed_gamma | null_mean | null_q05 | null_q50 | null_q95 | p_value | n_permutations |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| gamma_dpp_kmt | DPP | KMT | 0.8771324746118299 | 0.938383937048258 | 0.8972625997813548 | 0.9429830914933753 | 0.9684277768438919 | 0.013986013986013986 | 1000 |
-| gamma_dpp_tpp | DPP | TPP | 0.8877425961143403 | 0.9490998215198752 | 0.9171677318653351 | 0.9515054359530031 | 0.9733696194220584 | 0.00999000999000999 | 1000 |
-| gamma_kmt_tpp | KMT | TPP | 0.949434135985186 | 0.9405742387547191 | 0.9032135232238347 | 0.9440255381866092 | 0.9696569818758948 | 0.6283716283716284 | 1000 |
-| joint_mean_gamma | nan | nan | 0.904769735570452 | 0.9426859991076175 | 0.9156266459823477 | 0.9444672427081813 | 0.9628070367428786 | 0.011988011988011988 | 1000 |
+| test | camp_a | camp_b | observed_gamma | observed_gamma_filtered | null_mean | null_q05 | null_q50 | null_q95 | p_value | n_permutations |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| gamma_dpp_kmt | DPP | KMT | 0.8816303660630427 | 0.8771324746118299 | 0.938383937048258 | 0.8972625997813548 | 0.9429830914933753 | 0.9684277768438919 | 0.023976023976023976 | 1000 |
+| gamma_dpp_tpp | DPP | TPP | 0.8956610632456885 | 0.8877425961143403 | 0.9490998215198752 | 0.9171677318653351 | 0.9515054359530031 | 0.9733696194220584 | 0.015984015984015984 | 1000 |
+| gamma_kmt_tpp | KMT | TPP | 0.9449991085767732 | 0.949434135985186 | 0.9405742387547191 | 0.9032135232238347 | 0.9440255381866092 | 0.9696569818758948 | 0.5204795204795205 | 1000 |
+| joint_mean_gamma | nan | nan | 0.9074301792951681 | 0.904769735570452 | 0.9426859991076175 | 0.9156266459823477 | 0.9444672427081813 | 0.9628070367428786 | 0.02197802197802198 | 1000 |
 ## Sub-network analysis
+
+_Exploratory node classification only. Identical Spearman ρ across shared and differentiating 4-node subsets reflects FDR-filtered edge sparsity (identical weight multisets on 6 edges per subnet), not a copy-paste error. Do not treat as an independent quantitative finding._
+
+### Paper outline note
+
+Primary quantitative evidence: camp permutation test + CI-disjoint edges. Sub-network section should be brief (node selection audit table); consider a dedicated subsection on L2-07 floating-signifier signature (shared {L2-06,L2-07} infrastructure with differential cross-cluster articulation).
 
 ### Node selection audit
 
