@@ -1,0 +1,7 @@
+{
+  "corpus_content_hash": "a216389f022b7961523aa078d1e6f63f85fe7e78848325fedf3de6f4fbf2f281",
+  "leiden": "{'gammas': [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0], 'seeds_per_gamma': 10, 'seed_base': 123, 'consensus_threshold': 0.5, 'consensus_gamma': 1.0, 'stability_coassignment_min': 0.8}",
+  "window_suffix": "1",
+  "inputs_hash": "ba9b58d86f695528b8107e710afc5db7080d889347c5975466d9175e41b5a0e0",
+  "written_at": "2026-08-05T13:59:59.226152+00:00"
+}

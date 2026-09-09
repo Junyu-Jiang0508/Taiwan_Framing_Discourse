@@ -1,0 +1,9 @@
+{
+  "corpus_content_hash": "15a2af644ea51de905b624c9111d5a0d767b7a738bbfd5c13c45b3f9610e1a75",
+  "bootstrap_n": 1000,
+  "mode": "full",
+  "window_suffix": "document",
+  "fdr_alpha": 0.05,
+  "inputs_hash": "3520f315aa431ac482ca74e19f7b577f3a57353d1e9a7a53f3be4b2cd4a97e6c",
+  "written_at": "2026-08-05T13:24:56.533587+00:00"
+}

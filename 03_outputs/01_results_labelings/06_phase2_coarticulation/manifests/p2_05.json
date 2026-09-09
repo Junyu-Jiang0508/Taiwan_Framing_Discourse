@@ -1,7 +1,7 @@
 {
-  "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+  "corpus_content_hash": "15a2af644ea51de905b624c9111d5a0d767b7a738bbfd5c13c45b3f9610e1a75",
   "leiden": "{'gammas': [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0], 'seeds_per_gamma': 10, 'seed_base': 123, 'consensus_threshold': 0.5, 'consensus_gamma': 1.0, 'stability_coassignment_min': 0.8}",
   "window_suffix": "None",
-  "inputs_hash": "cd21231717391005e5cfbab108cfd8d0d5c226251dffb9416cb5a296a25843b2",
-  "written_at": "2026-05-18T21:56:23.015948+00:00"
+  "inputs_hash": "0dea5bc783b65d80684b2ae066a847a98fb4849dc8fa63a6eb1e910b34ac07e3",
+  "written_at": "2026-08-05T13:25:28.835668+00:00"
 }

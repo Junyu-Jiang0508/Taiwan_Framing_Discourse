@@ -1,0 +1,51 @@
+﻿item_id,doc_id,sent_idx,camp,genre,source,date,time_bucket,gpt_l207,ds_l207,disagreement_type,app_id
+A001,_74f5c954e09c,1,KMT,news,01_Ho_chinatimes_news,2023-12-02 16:28:00,post_registration,True,False,gpt_true_ds_false,9001
+A002,_3df8e9be27c1,0,TPP,news,02_Ke_chinatimes_news,2023-12-23 22:07:00,campaign,True,False,gpt_true_ds_false,9002
+A003,_476e54a294f6,9,DPP,news,03_Lai_chinatimes_news,2023-08-28 01:00:00,pre_registration,False,True,gpt_false_ds_true,9003
+A004,_3f2da8ecbb64,14,KMT,news,01_Ho_chinatimes_news,2023-12-05 14:38:00,post_registration,True,True,both_true,9004
+A005,_9ceaf5e79fc8,25,KMT,news,01_Ho_chinatimes_news,2023-11-29 20:11:00,post_registration,False,True,gpt_false_ds_true,9005
+A006,_2262e5a23bba,13,KMT,news,01_Ho_chinatimes_news,2023-12-20 21:59:00,campaign,False,True,gpt_false_ds_true,9006
+A007,_f83a2ee26d5e,3,DPP,news,03_Lai_chinatimes_news,2023-09-18 13:12:00,pre_registration,True,False,gpt_true_ds_false,9007
+A008,_72d238c94576,5,DPP,news,03_Lai_chinatimes_news,2023-11-27 14:14:00,post_registration,False,True,gpt_false_ds_true,9008
+A009,_2f9dedbf5e80,0,KMT,news,01_Ho_chinatimes_news,2023-12-13 14:27:00,post_registration,True,False,gpt_true_ds_false,9009
+A010,_8cf01a0922f8,8,TPP,news,02_Ke_chinatimes_news,2023-11-28 21:08:00,post_registration,False,True,gpt_false_ds_true,9010
+A011,_6f7dd25cc365,4,KMT,news,01_Ho_ltn_news,2023/4/18 10:17,pre_registration,False,True,gpt_false_ds_true,9011
+A012,_517a192993a5,9,TPP,news,02_Ke_chinatimes_news,2024-01-02 18:30:00,campaign,False,False,both_false,9012
+A013,meeting1_aeedadc96915,5,TPP,debate,meeting1,,nodate,False,True,gpt_false_ds_true,9013
+A014,_1e65dbb336e6,5,TPP,news,02_Ke_chinatimes_news,2023-12-04 20:57:00,post_registration,True,False,gpt_true_ds_false,9014
+A015,_b0ef33543cea,4,TPP,news,02_Ke_chinatimes_news,2023-10-21 14:47:00,pre_registration,True,False,gpt_true_ds_false,9015
+A016,_74f737502147,14,TPP,news,02_Ke_chinatimes_news,2023-12-22 09:54:00,campaign,False,True,gpt_false_ds_true,9016
+A017,_dfee657a8900,3,KMT,news,01_Ho_chinatimes_news,2023-12-29 12:06:00,campaign,False,True,gpt_false_ds_true,9017
+A018,_a8086c654a13,12,TPP,news,02_Ke_chinatimes_news,2023-02-25 16:49:00,pre_registration,True,True,both_true,9018
+A019,_d5aee037e8f7,0,KMT,news,01_Ho_chinatimes_news,2024-01-10 11:36:00,campaign,True,False,gpt_true_ds_false,9019
+A020,_e97a34f4b509,5,DPP,news,03_Lai_chinatimes_news,2023-12-27 15:32:00,campaign,True,False,gpt_true_ds_false,9020
+A021,_ab2806530f8c,0,KMT,news,01_Ho_ltn_news,2023/11/9 20:48,pre_registration,False,True,gpt_false_ds_true,9021
+A022,_2a54f30a0908,8,TPP,news,02_Ke_ltn_news,2023-06-15 11:27:41,pre_registration,True,False,gpt_true_ds_false,9022
+A023,_dbcac6ad70a1,6,DPP,news,03_Lai_ltn_news,2023-10-21 14:27:43,pre_registration,False,True,gpt_false_ds_true,9023
+A024,_aa7c366ac6c3,8,KMT,news,01_Ho_chinatimes_news,2023-12-30 16:16:00,campaign,False,True,gpt_false_ds_true,9024
+A025,_cbc96ba86d7f,9,TPP,news,02_Ke_chinatimes_news,2023-10-09 11:43:00,pre_registration,False,True,gpt_false_ds_true,9025
+A026,_4f299b8e36a2,7,DPP,news,03_Lai_ltn_news,2023-06-19 17:04:08,pre_registration,False,True,gpt_false_ds_true,9026
+A027,_edd69f5b9dd7,14,DPP,news,03_Lai_chinatimes_news,2023-05-07 16:54:00,pre_registration,True,False,gpt_true_ds_false,9027
+A028,总统辩论_3c9723712c15,123,KMT,debate,总统辩论,,nodate,True,False,gpt_true_ds_false,9028
+A029,_68c39267b513,20,DPP,news,03_Lai_chinatimes_news,2024-01-13 20:59:00,election_plus,False,False,both_false,9029
+A030,_de4389879e31,0,DPP,news,03_Lai_chinatimes_news,2023-06-27 12:01:00,pre_registration,True,False,gpt_true_ds_false,9030
+A031,_1107c1d4c140,2,TPP,news,02_Ke_chinatimes_news,2024-01-11 15:29:00,campaign,False,True,gpt_false_ds_true,9031
+A032,_bbdba5923426,13,DPP,news,03_Lai_chinatimes_news,2023-11-20 10:54:00,pre_registration,True,True,both_true,9032
+A033,_a3e06b844c94,16,KMT,news,01_Ho_chinatimes_news,2024-01-13 21:03:00,election_plus,True,False,gpt_true_ds_false,9033
+A034,_8b40a831f695,4,DPP,news,03_Lai_chinatimes_news,2023-11-22 17:49:00,pre_registration,True,False,gpt_true_ds_false,9034
+A035,_efc970cf1dbc,5,KMT,news,01_Ho_chinatimes_news,2023-12-09 22:45:00,post_registration,True,False,gpt_true_ds_false,9035
+A036,萧美琴专访_02a1f8e71ede,47,DPP,debate,萧美琴专访,,nodate,False,False,both_false,9036
+A037,_3196d42f7fb4,11,DPP,news,03_Lai_chinatimes_news,2023-07-06 16:31:00,pre_registration,True,True,both_true,9037
+A038,_20d82e44a444,12,DPP,news,03_Lai_ltn_news,2023-03-24 11:12:42,pre_registration,False,True,gpt_false_ds_true,9038
+A039,_3e3f1755e49a,3,KMT,news,01_Ho_ltn_news,2023/8/26 12:24,pre_registration,False,False,both_false,9039
+A040,_42e9052cb9e1,10,KMT,news,01_Ho_ltn_news,2023/7/22 14:24,pre_registration,True,False,gpt_true_ds_false,9040
+A041,_836e0e76006b,10,KMT,news,01_Ho_tvbs_news.csv,2024-01-12 10:42:00,campaign,True,True,both_true,9041
+A042,_5d12ab5ce7fa,23,TPP,news,02_Ke_chinatimes_news,2023-08-08 00:01:00,pre_registration,True,False,gpt_true_ds_false,9042
+A043,_bd5fe6a89f60,15,KMT,news,01_Ho_ltn_news,2023/12/29 13:24,campaign,False,True,gpt_false_ds_true,9043
+A044,_6d5b292ba5f6,3,TPP,news,02_Ke_chinatimes_news,2024-01-05 09:00:00,campaign,False,True,gpt_false_ds_true,9044
+A045,_b2fc4e56d2c7,3,DPP,news,03_Lai_chinatimes_news,2023-07-20 17:45:00,pre_registration,False,True,gpt_false_ds_true,9045
+A046,_07ffec390976,3,TPP,news,02_Ke_chinatimes_news,2023-10-30 16:34:00,pre_registration,True,False,gpt_true_ds_false,9046
+A047,_75812932e39a,7,DPP,news,03_Lai_ltn_news,2023-08-04 14:37:39,pre_registration,True,False,gpt_true_ds_false,9047
+A048,_8480712bd11e,16,DPP,news,03_Lai_chinatimes_news,2023-02-15 17:19:00,pre_registration,False,True,gpt_false_ds_true,9048
+A049,_4e73c668e23a,1,DPP,news,03_Lai_ltn_news,2023-03-28 17:27:13,pre_registration,True,False,gpt_true_ds_false,9049
+A050,_1115f4109f40,16,TPP,news,02_Ke_ltn_news,2023-07-31 07:47:57,pre_registration,False,False,both_false,9050

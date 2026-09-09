@@ -34,41 +34,41 @@
   <data key="d2">{"L1-04": 7, "L1-07": 6, "L1-01": 26, "L1-03": 15, "L1-06": 30, "L1-02": 1, "L1-05": 2}</data>
 </node>
 <edge source="L2-01" target="L2-03">
-  <data key="d3">0.20971883309313089</data>
-  <data key="d4">0.1808455317700744</data>
-  <data key="d5">0.24433518780473693</data>
+  <data key="d3">0.21214325866206254</data>
+  <data key="d4">0.18169454376930694</data>
+  <data key="d5">0.24919012754612008</data>
   <data key="d6">0.033277870216306155</data>
   <data key="d7">601</data>
   <data key="d8">+</data>
 </edge>
 <edge source="L2-01" target="L2-07">
-  <data key="d3">0.10470781410837655</data>
-  <data key="d4">0.042763253326583664</data>
-  <data key="d5">0.1783885363044254</data>
+  <data key="d3">0.10138992082879013</data>
+  <data key="d4">0.04219499043827877</data>
+  <data key="d5">0.17962142032067901</data>
   <data key="d6">0.051580698835274545</data>
   <data key="d7">601</data>
   <data key="d8">+</data>
 </edge>
 <edge source="L2-03" target="L2-07">
-  <data key="d3">0.1299209613832161</data>
-  <data key="d4">0.0714555319903211</data>
-  <data key="d5">0.1737837742092817</data>
+  <data key="d3">0.1297870861292478</data>
+  <data key="d4">0.0700063912830254</data>
+  <data key="d5">0.16699136110220725</data>
   <data key="d6">0.029950083194675535</data>
   <data key="d7">601</data>
   <data key="d8">+</data>
 </edge>
 <edge source="L2-05" target="L2-07">
-  <data key="d3">0.09040851019143378</data>
-  <data key="d4">0.001175786900705445</data>
-  <data key="d5">0.26473962341490787</data>
+  <data key="d3">0.08810839965071497</data>
+  <data key="d4">0.007081339992068135</data>
+  <data key="d5">0.24268960021465716</data>
   <data key="d6">0.04991680532445924</data>
   <data key="d7">601</data>
   <data key="d8">+</data>
 </edge>
 <edge source="L2-06" target="L2-07">
-  <data key="d3">0.06892483169760819</data>
-  <data key="d4">0.021628235149049033</data>
-  <data key="d5">0.19948512628799692</data>
+  <data key="d3">0.06789136933082907</data>
+  <data key="d4">0.02064773882795559</data>
+  <data key="d5">0.1774885578338299</data>
   <data key="d6">0.06988352745424294</data>
   <data key="d7">601</data>
   <data key="d8">+</data>
