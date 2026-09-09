@@ -1,0 +1,12 @@
+{
+  "corpus_content_hash": "a216389f022b7961523aa078d1e6f63f85fe7e78848325fedf3de6f4fbf2f281",
+  "boilerplate_policy": "drop_residue",
+  "corpus_file_hash": "d29163f7d7522941c985af19c442ea1a80bc1f4e0da3ee5a16038d596d80b7a3",
+  "inputs_hash": "b8b7636bf69c086eaa768e635a3204c2b677d16e1e3cf72f2278d1ef81fbbeae",
+  "corpus_csv": "/home/jain_farstrider/projects/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_deepseek_l2binary/final_results.csv",
+  "n_rows_main": 20901,
+  "n_rows_social": 148,
+  "n_multi_party": 2654,
+  "n_boilerplate_dropped": 1314,
+  "written_at": "2026-08-05T13:39:44.659157+00:00"
+}

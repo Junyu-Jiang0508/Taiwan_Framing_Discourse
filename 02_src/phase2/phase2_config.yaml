@@ -2,6 +2,14 @@ paths:
   corpus_pointer: "03_outputs/01_results_labelings/01_results_datasets/latest_merged_deduped_run.txt"
   artifacts_root: "03_outputs/01_results_labelings/06_phase2_coarticulation"
 
+corpus_filters:
+  # drop_residue = drop rows that ARE scrape residue (headline soup, promo /
+  # hotline / syndication blocks), keep rows that are real sentences carrying a
+  # scrape prefix (timestamps, Google-News follow line) with boiler_tier=prefix.
+  # drop_all = drop any marker; flag_only = keep everything, flag only.
+  # Patterns and tiers live in utils/boilerplate.py.
+  boilerplate_policy: drop_residue
+
 strata:
   camps: [DPP, KMT, TPP]
   genres_main: [news, debate]
@@ -19,7 +27,9 @@ windows:
   default_n: 3
   step: 1
   short_doc_policy: truncate
-  robustness_ns: [1, 5, document]
+  # n=1 是同句捆绑，n=2 是最小的跨句尺度，n=3 是主规格：三档一起看才能定位
+  # "共articulation 的尺度是句子" 这条负结果在哪一步开始衰减。
+  robustness_ns: [1, 2, 5, document]
   robustness_run: true
 
 npmi:

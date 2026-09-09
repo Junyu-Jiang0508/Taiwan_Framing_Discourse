@@ -26,12 +26,21 @@ class Phase2Config:
     repo_root: Path
     artifacts_root: Path
     corpus_csv: Path
+    #: Dataset identity: corpus bytes **plus** the corpus_filters block. Every
+    #: module keys its manifest off this, so changing a filter invalidates the
+    #: whole DAG rather than silently reusing artifacts from another filter.
     corpus_content_hash: str
+    #: Hash of the CSV bytes alone, for provenance.
+    corpus_file_hash: str = ""
     schemes: List[StratificationScheme] = field(default_factory=list)
 
     @property
     def camps(self) -> List[str]:
         return list(self.raw["strata"]["camps"])
+
+    @property
+    def boilerplate_policy(self) -> str:
+        return str(self.raw.get("corpus_filters", {}).get("boilerplate_policy", "flag_only"))
 
     @property
     def genres_main(self) -> List[str]:
@@ -116,12 +125,18 @@ def load_config(
         StratificationScheme(name=s["name"], groupby=list(s["groupby"]))
         for s in raw["strata"]["stratification_schemes"]
     ]
+    file_hash = compute_corpus_hash(corpus_csv)
+    filters = raw.get("corpus_filters") or {}
+    dataset_hash = hashlib.sha256(
+        f"{file_hash}|{json.dumps(filters, sort_keys=True)}".encode()
+    ).hexdigest()
     return Phase2Config(
         raw=raw,
         repo_root=repo_root,
         artifacts_root=artifacts,
         corpus_csv=corpus_csv,
-        corpus_content_hash=compute_corpus_hash(corpus_csv),
+        corpus_content_hash=dataset_hash,
+        corpus_file_hash=file_hash,
         schemes=schemes,
     )
 

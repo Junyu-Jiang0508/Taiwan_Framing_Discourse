@@ -1,0 +1,7 @@
+{
+  "corpus_content_hash": "a216389f022b7961523aa078d1e6f63f85fe7e78848325fedf3de6f4fbf2f281",
+  "edge_selection": "fdr",
+  "shared_jaccard_threshold": 0.66,
+  "inputs_hash": "58c6fb84c8ea276f5c5983aca1f67c5716f97bdadf2b068ef351f33abf5784e2",
+  "written_at": "2026-08-05T14:04:11.802281+00:00"
+}

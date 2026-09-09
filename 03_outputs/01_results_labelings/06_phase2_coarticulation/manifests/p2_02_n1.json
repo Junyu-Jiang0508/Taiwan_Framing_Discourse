@@ -1,7 +1,7 @@
 {
-  "corpus_content_hash": "1b2ae99e572c3bb410c5820684d790d7f40c743710b7b70b1fa3c2702de86763",
+  "corpus_content_hash": "15a2af644ea51de905b624c9111d5a0d767b7a738bbfd5c13c45b3f9610e1a75",
   "npmi": "{'min_marginal_count': 30, 'min_stratum_windows': 500, 'empty_l2_in_denominator': True, 'edge_selection': 'fdr', 'fdr_alpha': 0.05}",
   "window_suffix": "1",
-  "inputs_hash": "70942df456f2dbba95cf967b467d969dff7c4cc785c163a31d4ecc342d497d0c",
-  "written_at": "2026-05-18T21:49:41.740500+00:00"
+  "inputs_hash": "0e4635f7f513c9e73076277d27f53e9c1b1e086f21132c03ecf5175d469b2dd4",
+  "written_at": "2026-08-05T05:07:58.504459+00:00"
 }

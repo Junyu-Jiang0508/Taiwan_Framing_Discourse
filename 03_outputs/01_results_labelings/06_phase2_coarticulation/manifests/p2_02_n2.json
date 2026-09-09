@@ -1,0 +1,7 @@
+{
+  "corpus_content_hash": "15a2af644ea51de905b624c9111d5a0d767b7a738bbfd5c13c45b3f9610e1a75",
+  "npmi": "{'min_marginal_count': 30, 'min_stratum_windows': 500, 'empty_l2_in_denominator': True, 'edge_selection': 'fdr', 'fdr_alpha': 0.05}",
+  "window_suffix": "2",
+  "inputs_hash": "cc42f6ca08e7b664e5d9b1d6795fc0cd15f17ecb2ec2f0dd17557338969a9933",
+  "written_at": "2026-08-05T13:35:10.553769+00:00"
+}

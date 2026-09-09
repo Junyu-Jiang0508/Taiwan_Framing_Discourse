@@ -1,0 +1,64 @@
+paths:
+  corpus_pointer: "03_outputs/01_results_labelings/01_results_datasets/deepseek_l2binary_run.txt"
+  artifacts_root: "03_outputs/01_results_labelings/06_phase2_coarticulation_deepseek"
+
+corpus_filters:
+  # Must match phase2_config.yaml: the DS/GPT comparison is only valid on the
+  # same sentence set. See utils/boilerplate.py for patterns and tiers.
+  boilerplate_policy: drop_residue
+
+strata:
+  camps: [DPP, KMT, TPP]
+  genres_main: [news, debate]
+  social_policy: exclude
+  stratification_schemes:
+    - name: camp_genre
+      groupby: [camp, genre]
+    - name: camp
+      groupby: [camp]
+    - name: camp_time
+      groupby: [camp, time_bucket]
+  unknown_camp_policy: drop_with_audit
+
+windows:
+  default_n: 3
+  step: 1
+  short_doc_policy: truncate
+  robustness_ns: [1, 2, 5, document]
+  robustness_run: true
+
+npmi:
+  min_marginal_count: 30
+  min_stratum_windows: 500
+  empty_l2_in_denominator: true
+  edge_selection: fdr
+  fdr_alpha: 0.05
+
+bootstrap:
+  n_resamples: 1000
+  n_resamples_dev: 200
+  ci_alpha: 0.05
+  seed_base: 42
+  n_jobs: -1
+
+leiden:
+  gammas: [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+  seeds_per_gamma: 10
+  seed_base: 123
+  consensus_threshold: 0.5
+  # Median of sweep; post-threshold consensus graph is resolution-agnostic (L&F 2012).
+  consensus_gamma: 1.0
+  stability_coassignment_min: 0.8
+
+cross_camp:
+  top_k_communities: 3
+  qap_permutations: 1000
+  primary_network_scheme: camp
+  shared_jaccard_threshold: 0.66
+  camp_permutation_n: 1000
+  camp_permutation_n_dev: 100
+  camp_permutation_seed_base: 42
+
+smoke:
+  doc_ids: []
+  bootstrap_n: 50

@@ -1,0 +1,138 @@
+{
+  "policy": "drop_residue",
+  "n_rows_before": 22412,
+  "patterns": [
+    {
+      "label": "cna_editor_tail",
+      "kind": "pattern:drop",
+      "n": 888,
+      "pct": 3.962163126896306,
+      "mean_len": 216.83783783783784,
+      "mean_n_l2": 1.5810810810810811
+    },
+    {
+      "label": "tvbs_promo",
+      "kind": "pattern:drop",
+      "n": 265,
+      "pct": 1.1824022844904516,
+      "mean_len": 112.55094339622642,
+      "mean_n_l2": 0.06037735849056604
+    },
+    {
+      "label": "more_news",
+      "kind": "pattern:drop",
+      "n": 129,
+      "pct": 0.5755845082991254,
+      "mean_len": 78.31782945736434,
+      "mean_n_l2": 0.26356589147286824
+    },
+    {
+      "label": "syndication",
+      "kind": "pattern:drop",
+      "n": 28,
+      "pct": 0.12493307156880243,
+      "mean_len": 160.78571428571428,
+      "mean_n_l2": 0.14285714285714285
+    },
+    {
+      "label": "hotline",
+      "kind": "pattern:drop",
+      "n": 40,
+      "pct": 0.17847581652686062,
+      "mean_len": 171.925,
+      "mean_n_l2": 0.0
+    },
+    {
+      "label": "app_promo",
+      "kind": "pattern:drop",
+      "n": 104,
+      "pct": 0.46403712296983757,
+      "mean_len": 149.71153846153845,
+      "mean_n_l2": 0.10576923076923077
+    },
+    {
+      "label": "gnews_follow",
+      "kind": "pattern:prefix",
+      "n": 468,
+      "pct": 2.088167053364269,
+      "mean_len": 99.15811965811966,
+      "mean_n_l2": 1.185897435897436
+    },
+    {
+      "label": "cna_ts_update",
+      "kind": "pattern:prefix",
+      "n": 1372,
+      "pct": 6.121720506871319,
+      "mean_len": 123.40451895043732,
+      "mean_n_l2": 0.8447521865889213
+    },
+    {
+      "label": "ltn_upload_ts",
+      "kind": "pattern:prefix",
+      "n": 45,
+      "pct": 0.20078529359271818,
+      "mean_len": 132.06666666666666,
+      "mean_n_l2": 0.8444444444444444
+    },
+    {
+      "label": "tier:drop",
+      "kind": "tier",
+      "n": 1314,
+      "pct": 5.862930572907371,
+      "mean_len": 181.13394216133943,
+      "mean_n_l2": 1.1095890410958904
+    },
+    {
+      "label": "tier:prefix",
+      "kind": "tier",
+      "n": 1874,
+      "pct": 8.36159200428342,
+      "mean_len": 116.89327641408751,
+      "mean_n_l2": 0.928495197438634
+    },
+    {
+      "label": "any_boilerplate",
+      "kind": "total",
+      "n": 3188,
+      "pct": 14.22452257719079,
+      "mean_len": 143.37139272271017,
+      "mean_n_l2": 1.0031367628607277
+    },
+    {
+      "label": "clean_body",
+      "kind": "total",
+      "n": 19224,
+      "pct": 85.7754774228092,
+      "mean_len": 72.80050977944236,
+      "mean_n_l2": 0.990220557636288
+    }
+  ],
+  "n_dropped": 1314,
+  "dropped_rate": 0.05862930572907371,
+  "dropped_by_kind": {
+    "cna_editor_tail": 884,
+    "tvbs_promo": 151,
+    "more_news": 101,
+    "tvbs_promo|app_promo": 62,
+    "app_promo": 23,
+    "hotline": 22,
+    "tvbs_promo|syndication": 14,
+    "tvbs_promo|more_news": 12,
+    "tvbs_promo|hotline": 10,
+    "tvbs_promo|more_news|app_promo": 8,
+    "syndication": 6,
+    "tvbs_promo|syndication|app_promo": 4,
+    "cna_editor_tail|gnews_follow": 4,
+    "more_news|hotline": 3,
+    "more_news|app_promo": 3,
+    "syndication|app_promo": 2,
+    "tvbs_promo|hotline|app_promo": 2,
+    "tvbs_promo|more_news|syndication|hotline": 1,
+    "tvbs_promo|more_news|hotline": 1,
+    "syndication|hotline": 1
+  },
+  "dropped_by_genre": {
+    "news": 1314
+  },
+  "n_rows_after": 21098
+}

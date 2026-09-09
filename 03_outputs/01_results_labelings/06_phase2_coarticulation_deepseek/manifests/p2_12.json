@@ -1,0 +1,9 @@
+{
+  "corpus_content_hash": "a216389f022b7961523aa078d1e6f63f85fe7e78848325fedf3de6f4fbf2f281",
+  "n_permutations": 1000,
+  "seed_base": 42,
+  "min_marginal_count": 30,
+  "observed_estimator": "point_npmi",
+  "inputs_hash": "adfdbfb44651943d34f82a820f7a3cc6c3ba422a118e27f9f7200ec4df21bfdd",
+  "written_at": "2026-08-05T14:04:11.760346+00:00"
+}

@@ -1,0 +1,8 @@
+{
+  "news_rows": 19935,
+  "news_unknown_camp": 0,
+  "news_unknown_rate": 0.0,
+  "halt_threshold": 0.02,
+  "unknown_camp_policy": "drop_with_audit",
+  "dropped_unknown_rows": 197
+}

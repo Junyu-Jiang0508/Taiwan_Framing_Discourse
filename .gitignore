@@ -14,3 +14,12 @@ venv/
 
 # IDE
 *.code-workspace
+
+# 批量标注产物与交接包:体积过大,不入 Git,靠迁移打包搬运
+l2_binary_corpus_out-*/
+L1_Deepseek/
+L1_Deepseek-*/
+03_outputs/01_results_labelings/99_handoff_*/
+03_outputs/01_results_labelings/handoff_*.zip
+03_outputs/01_results_labelings/01_results_datasets/Run_deepseek_l2binary/
+03_outputs/01_results_labelings/10_merged_master/
