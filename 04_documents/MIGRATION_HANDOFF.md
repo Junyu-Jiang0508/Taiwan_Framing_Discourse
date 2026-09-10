@@ -39,6 +39,45 @@ exFAT 无日志,有目录结构损坏的可能。**在验盘通过之前不要�
 - 旧机的 C、D、E 三块盘和 WSL 全部原封未动,是可靠退路
 - 核心归档在掉线前已验过 SHA256,当时是完好的
 
+## 磁盘分区方案(单块 Samsung 990 Pro 2TB)
+
+分区必须在还原数据之前完成。
+
+| 卷 | 大小 | 内容 |
+|---|---|---|
+| C: SYSTEM | 500 GB | Windows、Program Files、AppData |
+| D: WORK | 900 GB | Docs、Projects、Courses、Data_SociaMedia、WSL 虚拟磁盘、开发缓存、Documents |
+| E: MEDIA | 剩余约 463 GB | Steam 库、游戏、影音 |
+
+**D 盘不是可选项**:还原脚本默认 `-DataDrive D:`,Zotero 的 dataDir 硬编码为
+`D:\Docs\Papers\Zotero`。用 D 盘就零配置,换别的盘符要手工改。
+
+旧机 C 盘 300 GB 用掉 246 GB,其中 76 GB 不该在系统盘:
+WSL 虚拟磁盘 36 GB、游戏存档 36 GB、开发缓存与模型约 12 GB。
+所以装完 WSL 后必须立刻做这三件事,否则 C 盘会重蹈覆辙:
+
+```powershell
+# 1. WSL 虚拟磁盘迁出 C 盘(装完 WSL 立刻做)
+wsl --shutdown
+wsl --manage Ubuntu --move D:\WSL\Ubuntu
+
+# 2. Documents 迁到 D 盘(右键 > 属性 > 位置 > 移动)
+
+# 3. 开发缓存与模型指向 D 盘
+[Environment]::SetEnvironmentVariable('PIP_CACHE_DIR','D:\cache\pip','User')
+[Environment]::SetEnvironmentVariable('CONDA_PKGS_DIRS','D:\cache\conda','User')
+[Environment]::SetEnvironmentVariable('HF_HOME','D:\cache\huggingface','User')
+[Environment]::SetEnvironmentVariable('CARGO_HOME','D:\cache\cargo','User')
+[Environment]::SetEnvironmentVariable('RUSTUP_HOME','D:\cache\rustup','User')
+npm config set cache D:\cache\npm --global
+```
+
+`HF_HOME` 尤其重要,transformers 与 huggingface 的模型缓存会长到几十 GB。
+Steam 安装时库目录选 `E:\SteamLibrary`。
+
+WSL 内部不需要再分区,但不要把大文件放在 `/mnt/c` 或 `/mnt/d` 下跑分析,
+跨文件系统访问慢一个数量级。
+
 ## 重建要点
 
 - WSL 用户名沿用 `jain_farstrider`,否则归档里的绝对路径要额外处理
