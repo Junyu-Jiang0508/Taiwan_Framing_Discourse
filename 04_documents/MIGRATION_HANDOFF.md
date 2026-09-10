@@ -121,6 +121,41 @@ powershell -ExecutionPolicy Bypass -File F:\scripts\11_restore_windows.ps1 -Driv
 - My-Web-V2 备份因路径写错被跳过,脚本已修
 - `D:\下载\Compressed` 首轮有文件复制失败(exit 11),疑似文件名过长,未核对
 
+## 用户名已更改 —— 还原后必须修路径
+
+新机的用户名与旧机不同(旧机是 `jain_farstrider`)。影响如下:
+
+**不受影响:**
+- 归档内路径是相对的(`./projects/...`),解包到任何 home 都正确
+- Windows 侧脚本用 `$env:USERPROFILE`,自动适配新的 Windows 用户名
+
+**会断的:** 九个文件里有硬编码的 `/home/jain_farstrider`,其中两个 Python 脚本
+的 `ROOT = "/home/jain_farstrider/..."` 会直接跑不动。
+
+| 文件 | 处数 | 后果 |
+|---|---|---|
+| `~/.bashrc` | 4 | conda 初始化失败,`conda` 命令找不到 |
+| `~/.gitconfig` | 2 | gh 凭证助手路径失效 |
+| `03_outputs/.../analyze_arbitration.py` | 1 | ROOT 常量错误,脚本跑不动 |
+| `03_outputs/.../compute_gold_vs_models.py` | 1 | 同上 |
+| `Ukrainian-Poetry/scripts/bootstrap_public_repo.py` | 1 | 路径错误 |
+| `.claude/settings.local.json` ×2 | — | 权限规则路径失效 |
+| `migration/env/conda-*.yml` ×4 | 各 1 | prefix 行,conda 实际会忽略 |
+
+修复脚本 `12_fix_paths.sh` 在盘根 `F:\scripts\`,默认干跑:
+
+```bash
+bash /mnt/f/scripts/12_fix_paths.sh                 # 先看会改什么
+bash /mnt/f/scripts/12_fix_paths.sh --apply         # 确认后执行,原文件备份为 .bak-path
+```
+
+**它刻意不改日志与运行清单。** 全盘扫描能扫出 427 个含旧路径的文件,
+但其中绝大多数是 `.log` 和 `input_manifest.json` 这类历史记录 ——
+改写它们等于伪造过去的运行痕迹,对复现性有害。只有会被执行的文件才需要改。
+
+如果新机的 WSL 用户名也可以自己定,**最省事的做法是仍然用 `jain_farstrider`**,
+这样一处都不用改。
+
 ## 验证清单
 
 还原完成后逐项跑通,全过再考虑清理旧机:
