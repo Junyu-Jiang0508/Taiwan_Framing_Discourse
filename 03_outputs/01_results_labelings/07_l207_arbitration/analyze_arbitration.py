@@ -19,7 +19,7 @@ import pandas as pd
 from sklearn.metrics import cohen_kappa_score
 from scipy.stats import binomtest
 
-ROOT = "/home/jain_farstrider/projects/Taiwan_Framing_Discourse"
+ROOT = "/home/Junyu/projects/Taiwan_Framing_Discourse"
 ARB_DIR = f"{ROOT}/03_outputs/01_results_labelings/07_l207_arbitration"
 
 
