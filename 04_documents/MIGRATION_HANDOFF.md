@@ -39,44 +39,64 @@ exFAT 无日志,有目录结构损坏的可能。**在验盘通过之前不要�
 - 旧机的 C、D、E 三块盘和 WSL 全部原封未动,是可靠退路
 - 核心归档在掉线前已验过 SHA256,当时是完好的
 
-## 磁盘分区方案(单块 Samsung 990 Pro 2TB)
+## 磁盘方案:不分区(单块 Samsung 990 Pro 2TB)
 
-分区必须在还原数据之前完成。
+**结论已从「分三个区」改为「整盘一个 C 卷」。** 理由:
 
-| 卷 | 大小 | 内容 |
-|---|---|---|
-| C: SYSTEM | 500 GB | Windows、Program Files、AppData |
-| D: WORK | 900 GB | Docs、Projects、Courses、Data_SociaMedia、WSL 虚拟磁盘、开发缓存、Documents |
-| E: MEDIA | 剩余约 463 GB | Steam 库、游戏、影音 |
+1. NVMe 上分区零性能收益,分区提速是机械盘时代的经验。
+2. 磨损均衡跨整盘工作不看分区,但**空闲空间按分区算** —— 某个卷填满时其他卷的空闲帮不上忙,
+   控制器可支配余量变少,极端情况读写掉三到五成。单卷所有空闲共享。
+3. 「重装保住数据」不需要分区,Windows 11 的「保留我的文件」不依赖独立数据卷。
+   真正的保障是移动硬盘和 GitHub。
+4. 尺寸一定会算错:WSL 的 ext4.vhdx 只涨不缩(2026 现状:fstrim 无用,
+   sparse VHD 因损坏风险被标为不安全,diskpart 拒绝处理 sparse 文件)。
 
-**D 盘不是可选项**:还原脚本默认 `-DataDrive D:`,Zotero 的 dataDir 硬编码为
-`D:\Docs\Papers\Zotero`。用 D 盘就零配置,换别的盘符要手工改。
+唯一站得住的反对意见是「失控写入撑爆系统盘」,但 2TB 里系统只占 164 GB,
+需要约 1.7 TB 失控写入才会发生,用磁盘空间守卫比锁死 500 GB 划算。
+**唯一会改口的情况:要装原生 Linux 双系统。**
 
-旧机 C 盘 300 GB 用掉 246 GB,其中 76 GB 不该在系统盘:
-WSL 虚拟磁盘 36 GB、游戏存档 36 GB、开发缓存与模型约 12 GB。
-所以装完 WSL 后必须立刻做这三件事,否则 C 盘会重蹈覆辙:
+### 目录结构
 
-```powershell
-# 1. WSL 虚拟磁盘迁出 C 盘(装完 WSL 立刻做)
-wsl --shutdown
-wsl --manage Ubuntu --move D:\WSL\Ubuntu
-
-# 2. Documents 迁到 D 盘(右键 > 属性 > 位置 > 移动)
-
-# 3. 开发缓存与模型指向 D 盘
-[Environment]::SetEnvironmentVariable('PIP_CACHE_DIR','D:\cache\pip','User')
-[Environment]::SetEnvironmentVariable('CONDA_PKGS_DIRS','D:\cache\conda','User')
-[Environment]::SetEnvironmentVariable('HF_HOME','D:\cache\huggingface','User')
-[Environment]::SetEnvironmentVariable('CARGO_HOME','D:\cache\cargo','User')
-[Environment]::SetEnvironmentVariable('RUSTUP_HOME','D:\cache\rustup','User')
-npm config set cache D:\cache\npm --global
+```
+C:\
+├─ Work\      研究:Projects Docs Courses Data Tools
+├─ Media\     娱乐:Games SteamLibrary
+├─ Cache\     全部可再生:pip conda huggingface npm cargo rustup models
+└─ WSL\Ubuntu\   ext4.vhdx
 ```
 
-`HF_HOME` 尤其重要,transformers 与 huggingface 的模型缓存会长到几十 GB。
-Steam 安装时库目录选 `E:\SteamLibrary`。
+Users 目录保持默认,**不重定向 Documents** —— 单卷之后没有空间理由,移动反增出错面。
 
-WSL 内部不需要再分区,但不要把大文件放在 `/mnt/c` 或 `/mnt/d` 下跑分析,
-跨文件系统访问慢一个数量级。
+### 四个防腐化机制(靠自觉一定失败)
+
+```powershell
+# 1. 所有缓存赶进 C:\Cache,可再生数据集中一处,想清整个删掉
+[Environment]::SetEnvironmentVariable('PIP_CACHE_DIR','C:\Cache\pip','User')
+[Environment]::SetEnvironmentVariable('CONDA_PKGS_DIRS','C:\Cache\conda','User')
+[Environment]::SetEnvironmentVariable('HF_HOME','C:\Cache\huggingface','User')
+[Environment]::SetEnvironmentVariable('CARGO_HOME','C:\Cache\cargo','User')
+[Environment]::SetEnvironmentVariable('RUSTUP_HOME','C:\Cache\rustup','User')
+npm config set cache C:\Cache\npm --global
+
+# 2. WSL 虚拟磁盘移出 AppData,为了可见可压缩,不是为省空间
+wsl --shutdown
+wsl --manage Ubuntu --move C:\WSL\Ubuntu
+
+# 3. 把 C:\Work 及子目录固定到快速访问并加进「库」,让它取代 Documents 成为默认导航目标
+
+# 4. 磁盘空间守卫,代替分区硬边界(计划任务每天跑)
+$free = (Get-Volume -DriveLetter C).SizeRemaining/1GB
+if ($free -lt 150) { msg * "C 盘剩余 $([math]::Round($free)) GB,检查 C:\Cache 与 C:\WSL" }
+```
+
+### 脚本已相应修改
+
+`11_restore_windows.ps1` 不再依赖 D 盘:参数从 `-DataDrive` 改为 `-WorkRoot`,默认 `C:\Work`。
+脚本还会自动把 Zotero prefs.js 里的 dataDir 改写成新路径并备份原文件,不需要手工重设。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File F:\scripts\11_restore_windows.ps1 -Drive F: -WorkRoot C:\Work
+```
 
 ## 重建要点
 
@@ -90,7 +110,7 @@ WSL 内部不需要再分区,但不要把大文件放在 `/mnt/c` 或 `/mnt/d` �
 
 ## 三个已知陷阱
 
-1. **活的 Zotero 库在 `D:\Docs\Papers\Zotero`**,不是用户目录下那个。
+1. **活的 Zotero 库在 `C:\Work\Docs\Papers\Zotero`(还原后)**,不是用户目录下那个;还原后落在 `C:\Work\Docs\Papers\Zotero`。
    `TRANSFER\stale\Zotero-CDrive-DEAD` 是旧机 3 月的失效副本,不要还原。
 2. **`D:\Projects` 是 3 至 4 月的过期快照**,WSL 侧才是权威,不要反向覆盖。
 3. **Danmaku 的 .md 文档按仓库策略不入 Git**,只存在于归档包里。
