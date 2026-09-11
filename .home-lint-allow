@@ -1,0 +1,5 @@
+# 由 ~/README.md 的 R3 规则读取。每行一个相对仓库根的路径，超过 50MB 但明确豁免。
+# 理由：这两份是本项目的原始新闻语料，是论文可复现性的一部分，且早已推上 GitHub。
+# 现在改用 LFS 或洗历史需要强推，对一个正在投稿的仓库代价过高，收益仅 112MB。
+01_data/01_raw_datasets/01_news_datasets/02_Ke_chinatimes_news.csv
+01_data/01_raw_datasets/01_news_datasets/03_Lai_chinatimes_news.csv
