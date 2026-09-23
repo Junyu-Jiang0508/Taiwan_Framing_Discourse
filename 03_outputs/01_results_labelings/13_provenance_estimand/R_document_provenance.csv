@@ -1,0 +1,10 @@
+file,n_rows,top_domain,top_share,cna_dateline
+01_Ho_chinatimes_news.csv,5023,www.cna.com.tw,1.0,0.865
+01_Ho_ltn_news.csv,4130,news.ltn.com.tw,1.0,0.0
+01_Ho_tvbs_news.csv,3294,news.tvbs.com.tw,1.0,0.0
+02_Ke_chinatimes_news.csv,13874,www.cna.com.tw,0.9945,0.873
+02_Ke_ltn_news.csv,4361,news.ltn.com.tw,1.0,0.0
+02_Ke_tvbs_news.csv,9074,news.tvbs.com.tw,1.0,0.001
+03_Lai_chinatimes_news.csv,14549,www.cna.com.tw,1.0,0.848
+03_Lai_ltn_news.csv,8971,news.ltn.com.tw,1.0,0.0
+03_Lai_tvbs_news.csv,10788,news.tvbs.com.tw,1.0,0.0

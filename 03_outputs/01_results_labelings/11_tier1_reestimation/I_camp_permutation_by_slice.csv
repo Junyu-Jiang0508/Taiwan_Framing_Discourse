@@ -1,0 +1,10 @@
+slice,block,n,observed,null_mean,p_perm
+cna,cohesion,12460,0.7137,0.5324,0.0125
+cna,boundary,12460,2.3391,2.3387,0.4838
+cna,all8,12460,0.9616,0.8558,0.1546
+own_voice,cohesion,7889,0.9006,0.6655,0.015
+own_voice,boundary,7889,2.6233,2.1381,0.1272
+own_voice,all8,7889,1.2136,0.9715,0.01
+cna_own,cohesion,5041,1.1458,0.8262,0.0025
+cna_own,boundary,5041,4.4339,3.213,0.0773
+cna_own,all8,5041,1.8044,1.3975,0.0349

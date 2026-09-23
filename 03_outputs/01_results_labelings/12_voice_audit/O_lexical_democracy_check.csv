@@ -1,0 +1,14 @@
+quantity,value,p
+lift_lexical_民主|L1-01,0.222,
+lift_lexical_民主|L1-02,0.711,
+lift_lexical_民主|L1-03,2.362,
+lift_lexical_民主|L1-04,0.756,
+lift_lexical_民主|L1-05,1.207,
+lift_lexical_民主|L1-06,0.738,
+lift_lexical_民主|L1-07,0.534,
+lift_lexical_民主|L1-01|cna,0.177,
+lift_lexical_民主|L1-01|ltn,0.355,
+lex_demo|within_OR,0.137,0.0
+lex_demo|between_OR,2.731,0.0021
+c08|within_OR,0.101,0.0
+c08|between_OR,2.371,0.0053

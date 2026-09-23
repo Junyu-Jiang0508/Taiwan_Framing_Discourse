@@ -1,0 +1,37 @@
+slice,block,n,n_docs,observed,null_mean,z,p_perm,q_bh_all_rows
+pooled,cohesion,20900,3380,0.4975,0.4231,1.26,0.1139,0.3013
+pooled,boundary,20900,3380,1.4373,1.4278,0.04,0.4615,0.5203
+pooled,all8,20900,3380,0.6539,0.614,0.65,0.2458,0.4214
+own (published),cohesion,7889,1926,0.9006,0.6609,2.74,0.007,0.108
+own (published),boundary,7889,1926,2.6233,2.147,0.93,0.1339,0.3013
+own (published),all8,7889,1926,1.2136,0.9673,2.53,0.009,0.108
+reporter (published),cohesion,9269,2535,0.6905,0.6432,0.52,0.3017,0.4526
+reporter (published),boundary,9269,2535,1.8881,2.1463,-0.86,0.8142,0.8272
+reporter (published),all8,9269,2535,0.9663,0.9301,0.41,0.3357,0.4648
+attributed own+cross (published),cohesion,11631,2463,0.6204,0.5384,1.12,0.1309,0.3013
+attributed own+cross (published),boundary,11631,2463,3.037,2.1036,1.98,0.034,0.153
+attributed own+cross (published),all8,11631,2463,0.8558,0.8295,0.27,0.3796,0.4881
+cna(wire),cohesion,12460,1647,0.7137,0.5307,2.45,0.012,0.108
+cna(wire),boundary,12460,1647,2.3391,2.3515,-0.03,0.4615,0.5203
+cna(wire),all8,12460,1647,0.9616,0.8494,1.18,0.1189,0.3013
+cna ∩ own,cohesion,5041,1194,1.1458,0.83,2.76,0.005,0.108
+cna ∩ own,boundary,5041,1194,4.4339,3.2805,1.35,0.0839,0.3013
+cna ∩ own,all8,5041,1194,1.8044,1.3945,2.41,0.021,0.108
+S1 debate,cohesion,966,98,2.927,2.6358,0.41,0.2757,0.4315
+S1 debate,boundary,966,98,2.02,2.2995,-0.51,0.6913,0.7541
+S1 debate,all8,966,98,2.6724,2.5251,0.27,0.3147,0.4532
+S2 own named+speaking,cohesion,2503,987,0.9949,0.8564,1.15,0.1189,0.3013
+S2 own named+speaking,boundary,2503,987,3.6427,2.737,1.3,0.1049,0.3013
+S2 own named+speaking,all8,2503,987,1.5391,1.2361,2.19,0.021,0.108
+"S3 own named, not speaking",cohesion,4420,1696,1.452,1.0653,2.47,0.019,0.108
+"S3 own named, not speaking",boundary,4420,1696,3.2616,2.9061,0.57,0.2078,0.4156
+"S3 own named, not speaking",all8,4420,1696,2.2634,1.9976,0.73,0.1429,0.3026
+"S4 no name, speech-marked",cohesion,3215,1515,1.0616,0.8853,1.46,0.0719,0.2876
+"S4 no name, speech-marked",boundary,3215,1515,2.3848,2.7057,-0.76,0.8032,0.8272
+"S4 no name, speech-marked",all8,3215,1515,1.2181,1.2127,0.05,0.4625,0.5203
+"S5 no name, plain",cohesion,6054,2100,0.9023,0.863,0.32,0.3556,0.4741
+"S5 no name, plain",boundary,6054,2100,2.4256,2.7973,-0.89,0.8272,0.8272
+"S5 no name, plain",all8,6054,2100,1.3536,1.2573,0.75,0.2238,0.4214
+cross,cohesion,3742,1200,1.0777,1.0457,0.2,0.3946,0.4898
+cross,boundary,3742,1200,5.9419,5.2371,0.33,0.2627,0.4299
+cross,all8,3742,1200,2.0166,1.8637,0.4,0.2378,0.4214

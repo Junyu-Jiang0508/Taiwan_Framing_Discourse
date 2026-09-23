@@ -1,0 +1,10 @@
+outcome,term,OR,p
+L2-08 (DeepSeek),peace,4.723,0.0
+L2-08 (DeepSeek),peace_x_camp_KMT,0.512,0.0164
+L2-08 (DeepSeek),peace_x_camp_TPP,0.615,0.0228
+L2-08 (GPT),peace,5.595,0.0
+L2-08 (GPT),peace_x_camp_KMT,0.582,0.0526
+L2-08 (GPT),peace_x_camp_TPP,0.617,0.029
+lexical 民主,peace,5.189,0.0
+lexical 民主,peace_x_camp_KMT,0.639,0.1334
+lexical 民主,peace_x_camp_TPP,0.652,0.0496
