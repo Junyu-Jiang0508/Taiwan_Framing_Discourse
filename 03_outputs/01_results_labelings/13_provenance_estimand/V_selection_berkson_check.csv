@@ -1,0 +1,3 @@
+pool,n,n_econ,n_demo,both,OR
+raw unfiltered sentences,61880,3376,3006,335,2.303
+analysis corpus,20900,1987,1165,143,1.358
