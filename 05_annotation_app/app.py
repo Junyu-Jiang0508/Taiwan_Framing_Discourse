@@ -20,13 +20,17 @@ import streamlit as st
 from supabase import Client, create_client
 
 _BASE = os.path.dirname(os.path.abspath(__file__))
+# Reference (gold) labels are hidden from coders unless explicitly enabled for post-hoc review:
+# showing them during coding anchors the annotator and invalidates inter-coder reliability.
+SHOW_REFERENCE = os.environ.get("FRAMING_SHOW_REFERENCE", "0") == "1"
 CORPUS_FILE = os.path.join(_BASE, "label1_set_v2.csv")
 _CORPUS_FALLBACK = os.path.join(
     _BASE, "..", "01_data", "06_validation_sets", "04_validation_set_v2", "label1_set_v2.csv"
 )
-_L1_BUNDLE = os.path.join(_BASE, "codebooks", "01_annotation_guide_label1_v9.csv")
+# Coders see the same codebook version the LLM annotator used (L1 v9.1 / L2 v10.1, 2026-10-18).
+_L1_BUNDLE = os.path.join(_BASE, "codebooks", "01_annotation_guide_label1_v9.1.csv")
 _L1_MONO = os.path.join(_BASE, "..", "01_data", "05_labels_guidance", "01_annotation_guide_label1_v9.csv")
-_L2_BUNDLE = os.path.join(_BASE, "codebooks", "02_annotation_guide_label2_v10.csv")
+_L2_BUNDLE = os.path.join(_BASE, "codebooks", "02_annotation_guide_label2_v10.1.csv")
 _L2_MONO = os.path.join(_BASE, "..", "01_data", "05_labels_guidance", "02_annotation_guide_label2_v10.csv")
 
 
@@ -201,22 +205,24 @@ def build_export_csv(corpus: pd.DataFrame, my_rows: dict[str, dict[str, Any]], a
     for _, r in corpus.iterrows():
         uid = str(int(r["id"]))
         ann = my_rows.get(uid, {})
-        rows.append(
-            {
-                "id": r["id"],
-                "candidate": r.get("candidate", ""),
-                "party": r.get("party", ""),
-                "source_type": r.get("source_type", ""),
-                "date": r.get("date", ""),
-                "sentence": r.get("sentence", ""),
-                "ref_L1_label_v2": r.get("L1_label_v2", ""),
-                "ref_L2_labels": r.get("L2_labels", ""),
-                "annotator_id": annotator_id,
-                "your_L1": ann.get("l1_label", ""),
-                "your_L2": ann.get("l2_labels", ""),
-                "unsure": ann.get("unsure", False),
-            }
-        )
+        rec = {
+            "id": r["id"],
+            "candidate": r.get("candidate", ""),
+            "party": r.get("party", ""),
+            "source_type": r.get("source_type", ""),
+            "date": r.get("date", ""),
+            "sentence": r.get("sentence", ""),
+        }
+        if SHOW_REFERENCE:
+            rec["ref_L1_label_v2"] = r.get("L1_label_v2", "")
+            rec["ref_L2_labels"] = r.get("L2_labels", "")
+        rec.update({
+            "annotator_id": annotator_id,
+            "your_L1": ann.get("l1_label", ""),
+            "your_L2": ann.get("l2_labels", ""),
+            "unsure": ann.get("unsure", False),
+        })
+        rows.append(rec)
     return pd.DataFrame(rows).to_csv(index=False, encoding="utf-8-sig")
 
 
@@ -379,9 +385,10 @@ def main():
         sentence_text = html.unescape(sentence_text)
     st.info(sentence_text)
 
-    with st.expander("驗證集參考標籤（校對用，非必須一致）", expanded=False):
-        st.write(f"**L1：** {ref_l1 if pd.notna(ref_l1) and str(ref_l1).strip() else '（無）'}")
-        st.write(f"**L2：** {ref_l2_s}")
+    if SHOW_REFERENCE:
+        with st.expander("驗證集參考標籤（校對用，非必須一致）", expanded=False):
+            st.write(f"**L1：** {ref_l1 if pd.notna(ref_l1) and str(ref_l1).strip() else '（無）'}")
+            st.write(f"**L2：** {ref_l2_s}")
 
     saved = my_rows.get(uid_s, {})
     default_l1 = str(saved.get("l1_label", "")).strip()
@@ -470,7 +477,7 @@ def main():
     st.divider()
     csv_out = build_export_csv(corpus, st.session_state.framing_my_rows, annotator_id)
     st.download_button(
-        "下載我的標註（CSV，含參考欄）",
+        "下載我的標註（CSV）",
         csv_out,
         file_name=f"framing_annotation_{annotator_id.replace(' ', '_')}.csv",
         mime="text/csv",

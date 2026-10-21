@@ -1,0 +1,84 @@
+
+=== p2_00 (mode=full) ===
+p2_00 boilerplate (drop_residue): dropped 1314 / 22412 rows (5.86%)
+p2_00 done: 20901 sentences → /home/Junyu/work/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/06_phase2_coarticulation_claude/labeled_units.parquet
+
+=== p2_01 (mode=full) ===
+p2_01 done: 15481 windows
+
+=== p2_02 (mode=full) ===
+  -- p2_02 (window n=3)
+p2_02 done
+  -- p2_02 (window n=1)
+p2_02_n1 done
+  -- p2_02 (window n=2)
+p2_02_n2 done
+  -- p2_02 (window n=5)
+p2_02_n5 done
+  -- p2_02 (window n=document)
+p2_02_ndocument done
+
+=== p2_03 (mode=full) ===
+  -- p2_03 (window n=3)
+p2_03 (full) done: B=1000
+  -- p2_03 (window n=1)
+p2_03 (full)_n1 done: B=1000
+  -- p2_03 (window n=2)
+p2_03 (full)_n2 done: B=1000
+  -- p2_03 (window n=5)
+p2_03 (full)_n5 done: B=1000
+  -- p2_03 (window n=document)
+p2_03 (full)_ndocument done: B=1000
+
+=== p2_04 (mode=full) ===
+  -- p2_04 (window n=3)
+p2_04 done: 16 strata
+  -- p2_04 (window n=1)
+p2_04_n1 done: 16 strata
+  -- p2_04 (window n=2)
+p2_04_n2 done: 16 strata
+  -- p2_04 (window n=5)
+p2_04_n5 done: 13 strata
+  -- p2_04 (window n=document)
+p2_04_ndocument done: 9 strata
+
+=== p2_05 (mode=full) ===
+  -- p2_05 (window n=3)
+p2_05 done
+  -- p2_05 (window n=1)
+p2_05_n1 done
+  -- p2_05 (window n=2)
+p2_05_n2 done
+  -- p2_05 (window n=5)
+p2_05_n5 done
+  -- p2_05 (window n=document)
+p2_05_ndocument done
+
+=== p2_06 (mode=full) ===
+p2_06 done
+
+=== p2_12 (mode=full) ===
+p2_12 done
+
+=== p2_13 (mode=full) ===
+p2_13 done
+
+=== p2_14 (mode=full) ===
+p2_14 done
+
+=== p2_07 (mode=full) ===
+p2_07 done: 8 exemplar files
+
+=== p2_08 (mode=full) ===
+p2_08 done
+
+=== p2_09 (mode=full) ===
+p2_09 done
+
+=== p2_10 (mode=full) ===
+p2_10 done: 30 comparisons
+
+=== p2_11 (mode=full) ===
+p2_11 done: 254 comparisons, 51 disjoint
+
+Phase 2 pipeline complete (mode=full).

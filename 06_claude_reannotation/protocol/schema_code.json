@@ -1,0 +1,16 @@
+{
+ "type": "object",
+ "properties": {
+  "ev": {
+   "type": "string"
+  },
+  "value": {
+   "type": "boolean"
+  }
+ },
+ "required": [
+  "ev",
+  "value"
+ ],
+ "additionalProperties": false
+}

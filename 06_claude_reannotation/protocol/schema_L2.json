@@ -1,0 +1,72 @@
+{
+ "type": "object",
+ "properties": {
+  "L2-01_ev": {
+   "type": "string"
+  },
+  "L2-01": {
+   "type": "boolean"
+  },
+  "L2-02_ev": {
+   "type": "string"
+  },
+  "L2-02": {
+   "type": "boolean"
+  },
+  "L2-03_ev": {
+   "type": "string"
+  },
+  "L2-03": {
+   "type": "boolean"
+  },
+  "L2-04_ev": {
+   "type": "string"
+  },
+  "L2-04": {
+   "type": "boolean"
+  },
+  "L2-05_ev": {
+   "type": "string"
+  },
+  "L2-05": {
+   "type": "boolean"
+  },
+  "L2-06_ev": {
+   "type": "string"
+  },
+  "L2-06": {
+   "type": "boolean"
+  },
+  "L2-07_ev": {
+   "type": "string"
+  },
+  "L2-07": {
+   "type": "boolean"
+  },
+  "L2-08_ev": {
+   "type": "string"
+  },
+  "L2-08": {
+   "type": "boolean"
+  }
+ },
+ "required": [
+  "L2-01_ev",
+  "L2-01",
+  "L2-02_ev",
+  "L2-02",
+  "L2-03_ev",
+  "L2-03",
+  "L2-04_ev",
+  "L2-04",
+  "L2-05_ev",
+  "L2-05",
+  "L2-06_ev",
+  "L2-06",
+  "L2-07_ev",
+  "L2-07",
+  "L2-08_ev",
+  "L2-08"
+ ],
+ "additionalProperties": false
+}

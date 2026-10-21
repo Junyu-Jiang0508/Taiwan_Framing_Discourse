@@ -1,0 +1,12 @@
+{
+  "corpus_content_hash": "95b63de81f5bc1b204e254de1481d8beac7ecc539862013ef39b5717c06d5cda",
+  "boilerplate_policy": "drop_residue",
+  "corpus_file_hash": "ce839e5e9f02432c16e8bb687e6ed617af7763fdbbb1133401a1931448850f83",
+  "inputs_hash": "0540b02a207bdd6d9ff23ed5cddc80fa22f214cff353a94d44c93209d8ab3ee6",
+  "corpus_csv": "/home/Junyu/work/Taiwan_Framing_Discourse/03_outputs/01_results_labelings/01_results_datasets/Run_claude_final_20261020/final_results.csv",
+  "n_rows_main": 20901,
+  "n_rows_social": 148,
+  "n_multi_party": 2654,
+  "n_boilerplate_dropped": 1314,
+  "written_at": "2026-10-21T02:47:20.012638+00:00"
+}

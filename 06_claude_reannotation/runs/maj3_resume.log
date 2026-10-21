@@ -1,0 +1,173 @@
+2026-10-19T19:29:05 start full_code_L2-07_r3/CODE: 5776 to do (15124 already done), effort=low variant=std workers=2
+2026-10-19T19:29:05 start full_low_r3/L2: 6081 to do (14819 already done), effort=low variant=std workers=2
+2026-10-19T19:29:05 start full_low_r2/L2: 6173 to do (14727 already done), effort=low variant=std workers=2
+2026-10-19T19:29:05 start full_code_L2-07_r2/CODE: 5677 to do (15223 already done), effort=low variant=std workers=2
+2026-10-19T19:29:05 start full_low_r2/L1: 569 to do (20331 already done), effort=low variant=std workers=1
+2026-10-19T19:29:06 start full_low_r3/L1: 605 to do (20295 already done), effort=low variant=std workers=1
+2026-10-19T19:29:20 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:22 end: ok=5 fail=0 stopped=True
+2026-10-19T19:29:22 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:23 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:24 end: ok=8 fail=0 stopped=True
+2026-10-19T19:29:25 end: ok=8 fail=0 stopped=True
+2026-10-19T19:29:26 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:26 end: ok=4 fail=0 stopped=True
+2026-10-19T19:29:28 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:28 end: ok=6 fail=0 stopped=True
+2026-10-19T19:29:33 USAGE LIMIT -> stopping (reset 2026-10-19T21:40:00): You've hit your session limit · resets 9:40pm (America/Los_Angeles)
+2026-10-19T19:29:35 end: ok=10 fail=0 stopped=True
+2026-10-19T21:42:01 start full_code_L2-07_r3/CODE: 5768 to do (15132 already done), effort=low variant=std workers=2
+2026-10-19T21:42:01 start full_low_r3/L1: 601 to do (20299 already done), effort=low variant=std workers=1
+2026-10-19T21:42:01 start full_low_r2/L2: 6168 to do (14732 already done), effort=low variant=std workers=2
+2026-10-19T21:42:01 start full_low_r3/L2: 6071 to do (14829 already done), effort=low variant=std workers=2
+2026-10-19T21:42:01 start full_code_L2-07_r2/CODE: 5669 to do (15231 already done), effort=low variant=std workers=2
+2026-10-19T21:42:02 start full_low_r2/L1: 563 to do (20337 already done), effort=low variant=std workers=1
+2026-10-19T21:48:28 progress 200/5768 ok=200 fail=0 elapsed=6.5min rate=30.9/min
+2026-10-19T21:48:32 progress 200/5669 ok=200 fail=0 elapsed=6.5min rate=30.7/min
+2026-10-19T21:52:01 progress 200/6071 ok=200 fail=0 elapsed=10.0min rate=20.0/min
+2026-10-19T21:52:08 progress 200/6168 ok=200 fail=0 elapsed=10.1min rate=19.7/min
+2026-10-19T21:54:49 progress 400/5768 ok=400 fail=0 elapsed=12.8min rate=31.2/min
+2026-10-19T21:55:01 progress 400/5669 ok=400 fail=0 elapsed=13.0min rate=30.8/min
+2026-10-19T21:56:03 progress 200/601 ok=200 fail=0 elapsed=14.0min rate=14.2/min
+2026-10-19T21:56:13 progress 200/563 ok=200 fail=0 elapsed=14.2min rate=14.1/min
+2026-10-19T22:01:49 progress 600/5669 ok=600 fail=0 elapsed=19.8min rate=30.3/min
+2026-10-19T22:01:55 progress 600/5768 ok=600 fail=0 elapsed=19.9min rate=30.1/min
+2026-10-19T22:02:24 progress 400/6071 ok=400 fail=0 elapsed=20.4min rate=19.6/min
+2026-10-19T22:02:40 progress 400/6168 ok=400 fail=0 elapsed=20.7min rate=19.4/min
+2026-10-19T22:08:35 progress 800/5669 ok=800 fail=0 elapsed=26.6min rate=30.1/min
+2026-10-19T22:08:40 progress 800/5768 ok=800 fail=0 elapsed=26.7min rate=30.0/min
+2026-10-19T22:11:20 progress 400/601 ok=400 fail=0 elapsed=29.3min rate=13.6/min
+2026-10-19T22:11:30 progress 400/563 ok=400 fail=0 elapsed=29.5min rate=13.6/min
+2026-10-19T22:12:53 progress 600/6071 ok=600 fail=0 elapsed=30.9min rate=19.4/min
+2026-10-19T22:13:04 progress 600/6168 ok=600 fail=0 elapsed=31.1min rate=19.3/min
+2026-10-19T22:15:21 progress 1000/5768 ok=1000 fail=0 elapsed=33.3min rate=30.0/min
+2026-10-19T22:15:33 progress 1000/5669 ok=1000 fail=0 elapsed=33.5min rate=29.8/min
+2026-10-19T22:21:42 progress 1200/5768 ok=1200 fail=0 elapsed=39.7min rate=30.2/min
+2026-10-19T22:21:53 progress 1200/5669 ok=1200 fail=0 elapsed=39.9min rate=30.1/min
+2026-10-19T22:22:44 progress 800/6071 ok=800 fail=0 elapsed=40.7min rate=19.6/min
+2026-10-19T22:23:22 progress 800/6168 ok=800 fail=0 elapsed=41.4min rate=19.3/min
+2026-10-19T22:23:36 end: ok=563 fail=0 stopped=False
+2026-10-19T22:23:40 start full_low_r2/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-19T22:23:40 end: ok=0 fail=0 stopped=False
+2026-10-19T22:26:00 progress 600/601 ok=600 fail=0 elapsed=44.0min rate=13.6/min
+2026-10-19T22:26:04 end: ok=601 fail=0 stopped=False
+2026-10-19T22:26:08 start full_low_r3/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-19T22:26:08 end: ok=0 fail=0 stopped=False
+2026-10-19T22:28:13 progress 1400/5669 ok=1400 fail=0 elapsed=46.2min rate=30.3/min
+2026-10-19T22:28:27 progress 1400/5768 ok=1400 fail=0 elapsed=46.4min rate=30.1/min
+2026-10-19T22:32:54 progress 1000/6071 ok=1000 fail=0 elapsed=50.9min rate=19.6/min
+2026-10-19T22:33:43 progress 1000/6168 ok=1000 fail=0 elapsed=51.7min rate=19.3/min
+2026-10-19T22:34:50 progress 1600/5669 ok=1600 fail=0 elapsed=52.8min rate=30.3/min
+2026-10-19T22:35:10 progress 1600/5768 ok=1600 fail=0 elapsed=53.2min rate=30.1/min
+2026-10-19T22:42:19 progress 1800/5768 ok=1800 fail=0 elapsed=60.3min rate=29.8/min
+2026-10-19T22:43:31 progress 1200/6071 ok=1200 fail=0 elapsed=61.5min rate=19.5/min
+2026-10-19T22:44:36 progress 1200/6168 ok=1200 fail=0 elapsed=62.6min rate=19.2/min
+2026-10-19T22:45:03 progress 1800/5669 ok=1800 fail=0 elapsed=63.0min rate=28.6/min
+2026-10-19T22:49:08 progress 2000/5768 ok=2000 fail=0 elapsed=67.1min rate=29.8/min
+2026-10-19T22:52:05 progress 2000/5669 ok=2000 fail=0 elapsed=70.1min rate=28.5/min
+2026-10-19T22:53:58 progress 1400/6071 ok=1400 fail=0 elapsed=72.0min rate=19.5/min
+2026-10-19T22:54:54 progress 1400/6168 ok=1400 fail=0 elapsed=72.9min rate=19.2/min
+2026-10-19T22:56:03 progress 2200/5768 ok=2200 fail=0 elapsed=74.0min rate=29.7/min
+2026-10-19T22:59:30 progress 2200/5669 ok=2200 fail=0 elapsed=77.5min rate=28.4/min
+2026-10-19T23:02:20 progress 2400/5768 ok=2400 fail=0 elapsed=80.3min rate=29.9/min
+2026-10-19T23:03:47 progress 1600/6071 ok=1600 fail=0 elapsed=81.8min rate=19.6/min
+2026-10-19T23:04:40 progress 1600/6168 ok=1600 fail=0 elapsed=82.7min rate=19.4/min
+2026-10-19T23:05:46 progress 2400/5669 ok=2400 fail=0 elapsed=83.8min rate=28.7/min
+2026-10-19T23:08:33 progress 2600/5768 ok=2600 fail=0 elapsed=86.5min rate=30.0/min
+2026-10-19T23:11:59 progress 2600/5669 ok=2600 fail=0 elapsed=90.0min rate=28.9/min
+2026-10-19T23:13:51 progress 1800/6071 ok=1800 fail=0 elapsed=91.8min rate=19.6/min
+2026-10-19T23:14:25 progress 1800/6168 ok=1800 fail=0 elapsed=92.4min rate=19.5/min
+2026-10-19T23:15:06 progress 2800/5768 ok=2800 fail=0 elapsed=93.1min rate=30.1/min
+2026-10-19T23:18:51 progress 2800/5669 ok=2800 fail=0 elapsed=96.8min rate=28.9/min
+2026-10-19T23:21:57 progress 3000/5768 ok=3000 fail=0 elapsed=99.9min rate=30.0/min
+2026-10-19T23:24:05 progress 2000/6071 ok=2000 fail=0 elapsed=102.1min rate=19.6/min
+2026-10-19T23:24:43 progress 2000/6168 ok=2000 fail=0 elapsed=102.7min rate=19.5/min
+2026-10-19T23:25:49 progress 3000/5669 ok=3000 fail=0 elapsed=103.8min rate=28.9/min
+2026-10-19T23:28:48 progress 3200/5768 ok=3200 fail=0 elapsed=106.8min rate=30.0/min
+2026-10-19T23:32:42 progress 3200/5669 ok=3200 fail=0 elapsed=110.7min rate=28.9/min
+2026-10-19T23:33:43 progress 2200/6071 ok=2200 fail=0 elapsed=111.7min rate=19.7/min
+2026-10-19T23:34:31 progress 2200/6168 ok=2200 fail=0 elapsed=112.5min rate=19.6/min
+2026-10-19T23:35:02 progress 3400/5768 ok=3400 fail=0 elapsed=113.0min rate=30.1/min
+2026-10-20T08:14:33 start full_code_L2-07_r2/CODE: 2301 to do (18599 already done), effort=low variant=std workers=2
+2026-10-20T08:14:33 start full_code_L2-07_r3/CODE: 2275 to do (18625 already done), effort=low variant=std workers=2
+2026-10-20T08:14:33 start full_low_r3/L2: 3784 to do (17116 already done), effort=low variant=std workers=2
+2026-10-20T08:14:33 start full_low_r2/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-20T08:14:33 end: ok=0 fail=0 stopped=False
+2026-10-20T08:14:33 start full_low_r2/L2: 3893 to do (17007 already done), effort=low variant=std workers=2
+2026-10-20T08:14:33 start full_low_r3/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-20T08:14:33 end: ok=0 fail=0 stopped=False
+2026-10-20T08:14:35 start full_low_r3/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-20T08:14:35 end: ok=0 fail=0 stopped=False
+2026-10-20T08:14:35 start full_low_r2/L1: 0 to do (20900 already done), effort=low variant=std workers=1
+2026-10-20T08:14:35 end: ok=0 fail=0 stopped=False
+2026-10-20T08:21:26 progress 200/2275 ok=200 fail=0 elapsed=6.9min rate=29.0/min
+2026-10-20T08:21:43 progress 200/2301 ok=200 fail=0 elapsed=7.2min rate=27.9/min
+2026-10-20T08:25:10 progress 200/3784 ok=200 fail=0 elapsed=10.6min rate=18.8/min
+2026-10-20T08:25:23 progress 200/3893 ok=200 fail=0 elapsed=10.8min rate=18.4/min
+2026-10-20T08:28:14 progress 400/2275 ok=400 fail=0 elapsed=13.7min rate=29.2/min
+2026-10-20T08:28:27 progress 400/2301 ok=400 fail=0 elapsed=13.9min rate=28.8/min
+2026-10-20T08:35:11 progress 600/2275 ok=600 fail=0 elapsed=20.6min rate=29.1/min
+2026-10-20T08:35:20 progress 600/2301 ok=600 fail=0 elapsed=20.8min rate=28.8/min
+2026-10-20T08:35:47 progress 400/3893 ok=400 fail=0 elapsed=21.3min rate=18.8/min
+2026-10-20T08:35:48 progress 400/3784 ok=400 fail=0 elapsed=21.3min rate=18.8/min
+2026-10-20T08:42:04 progress 800/2275 ok=800 fail=0 elapsed=27.5min rate=29.1/min
+2026-10-20T08:42:08 progress 800/2301 ok=800 fail=0 elapsed=27.6min rate=29.0/min
+2026-10-20T08:46:13 progress 600/3893 ok=600 fail=0 elapsed=31.7min rate=18.9/min
+2026-10-20T08:46:15 progress 600/3784 ok=600 fail=0 elapsed=31.7min rate=18.9/min
+2026-10-20T08:48:35 progress 1000/2275 ok=1000 fail=0 elapsed=34.0min rate=29.4/min
+2026-10-20T08:48:46 progress 1000/2301 ok=1000 fail=0 elapsed=34.2min rate=29.2/min
+2026-10-20T08:55:21 progress 1200/2275 ok=1200 fail=0 elapsed=40.8min rate=29.4/min
+2026-10-20T08:55:27 progress 1200/2301 ok=1200 fail=0 elapsed=40.9min rate=29.3/min
+2026-10-20T08:56:33 progress 800/3893 ok=800 fail=0 elapsed=42.0min rate=19.0/min
+2026-10-20T08:56:44 progress 800/3784 ok=800 fail=0 elapsed=42.2min rate=19.0/min
+2026-10-20T09:01:59 progress 1400/2301 ok=1400 fail=0 elapsed=47.4min rate=29.5/min
+2026-10-20T09:02:20 progress 1400/2275 ok=1400 fail=0 elapsed=47.8min rate=29.3/min
+2026-10-20T09:06:42 progress 1000/3893 ok=1000 fail=0 elapsed=52.2min rate=19.2/min
+2026-10-20T09:06:52 progress 1000/3784 ok=1000 fail=0 elapsed=52.3min rate=19.1/min
+2026-10-20T09:08:44 progress 1600/2301 ok=1600 fail=0 elapsed=54.2min rate=29.5/min
+2026-10-20T09:08:54 progress 1600/2275 ok=1600 fail=0 elapsed=54.4min rate=29.4/min
+2026-10-20T09:15:15 progress 1800/2275 ok=1800 fail=0 elapsed=60.7min rate=29.6/min
+2026-10-20T09:15:18 progress 1800/2301 ok=1800 fail=0 elapsed=60.8min rate=29.6/min
+2026-10-20T09:16:55 progress 1200/3784 ok=1200 fail=0 elapsed=62.4min rate=19.2/min
+2026-10-20T09:17:00 progress 1200/3893 ok=1200 fail=0 elapsed=62.5min rate=19.2/min
+2026-10-20T09:21:42 progress 2000/2301 ok=2000 fail=0 elapsed=67.2min rate=29.8/min
+2026-10-20T09:21:42 progress 2000/2275 ok=2000 fail=0 elapsed=67.2min rate=29.8/min
+2026-10-20T09:27:11 progress 1400/3893 ok=1400 fail=0 elapsed=72.7min rate=19.3/min
+2026-10-20T09:27:14 progress 1400/3784 ok=1400 fail=0 elapsed=72.7min rate=19.3/min
+2026-10-20T09:28:05 progress 2200/2301 ok=2200 fail=0 elapsed=73.5min rate=29.9/min
+2026-10-20T09:28:16 progress 2200/2275 ok=2200 fail=0 elapsed=73.7min rate=29.8/min
+2026-10-20T09:30:38 end: ok=2275 fail=0 stopped=False
+2026-10-20T09:30:41 start full_code_L2-07_r3/CODE: 0 to do (20900 already done), effort=low variant=std workers=2
+2026-10-20T09:30:41 end: ok=0 fail=0 stopped=False
+2026-10-20T09:31:13 end: ok=2301 fail=0 stopped=False
+2026-10-20T09:31:15 start full_code_L2-07_r2/CODE: 0 to do (20900 already done), effort=low variant=std workers=2
+2026-10-20T09:31:15 end: ok=0 fail=0 stopped=False
+2026-10-20T09:37:36 progress 1600/3893 ok=1600 fail=0 elapsed=83.1min rate=19.3/min
+2026-10-20T09:37:45 progress 1600/3784 ok=1600 fail=0 elapsed=83.2min rate=19.2/min
+2026-10-20T09:47:50 progress 1800/3893 ok=1800 fail=0 elapsed=93.3min rate=19.3/min
+2026-10-20T09:48:00 progress 1800/3784 ok=1800 fail=0 elapsed=93.5min rate=19.3/min
+2026-10-20T09:58:01 progress 2000/3893 ok=2000 fail=0 elapsed=103.5min rate=19.3/min
+2026-10-20T09:58:20 progress 2000/3784 ok=2000 fail=0 elapsed=103.8min rate=19.3/min
+2026-10-20T10:08:00 progress 2200/3893 ok=2200 fail=0 elapsed=113.5min rate=19.4/min
+2026-10-20T10:08:34 progress 2200/3784 ok=2200 fail=0 elapsed=114.0min rate=19.3/min
+2026-10-20T10:18:24 progress 2400/3893 ok=2400 fail=0 elapsed=123.9min rate=19.4/min
+2026-10-20T10:19:09 progress 2400/3784 ok=2400 fail=0 elapsed=124.6min rate=19.3/min
+2026-10-20T10:28:21 progress 2600/3893 ok=2600 fail=0 elapsed=133.8min rate=19.4/min
+2026-10-20T10:29:10 progress 2600/3784 ok=2600 fail=0 elapsed=134.6min rate=19.3/min
+2026-10-20T10:38:13 progress 2800/3893 ok=2800 fail=0 elapsed=143.7min rate=19.5/min
+2026-10-20T10:38:59 progress 2800/3784 ok=2800 fail=0 elapsed=144.4min rate=19.4/min
+2026-10-20T10:48:19 progress 3000/3893 ok=3000 fail=0 elapsed=153.8min rate=19.5/min
+2026-10-20T10:48:49 progress 3000/3784 ok=3000 fail=0 elapsed=154.3min rate=19.4/min
+2026-10-20T10:58:41 progress 3200/3784 ok=3200 fail=0 elapsed=164.1min rate=19.5/min
+2026-10-20T10:58:46 progress 3200/3893 ok=3200 fail=0 elapsed=164.2min rate=19.5/min
+2026-10-20T11:08:53 progress 3400/3893 ok=3400 fail=0 elapsed=174.3min rate=19.5/min
+2026-10-20T11:08:59 progress 3400/3784 ok=3400 fail=0 elapsed=174.4min rate=19.5/min
+2026-10-20T11:18:52 progress 3600/3893 ok=3600 fail=0 elapsed=184.3min rate=19.5/min
+2026-10-20T11:18:52 progress 3600/3784 ok=3600 fail=0 elapsed=184.3min rate=19.5/min
+2026-10-20T11:27:47 end: ok=3784 fail=0 stopped=False
+2026-10-20T11:27:50 start full_low_r3/L2: 0 to do (20900 already done), effort=low variant=std workers=2
+2026-10-20T11:27:50 end: ok=0 fail=0 stopped=False
+2026-10-20T11:28:41 progress 3800/3893 ok=3800 fail=0 elapsed=194.1min rate=19.6/min
+2026-10-20T11:33:24 end: ok=3893 fail=0 stopped=False
+2026-10-20T11:33:27 start full_low_r2/L2: 0 to do (20900 already done), effort=low variant=std workers=2
+2026-10-20T11:33:27 end: ok=0 fail=0 stopped=False

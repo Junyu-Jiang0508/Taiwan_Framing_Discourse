@@ -1,0 +1,9 @@
+{
+ "built": "2026-10-20T19:45:20",
+ "configuration": "3-run majority (joint call) for L1 and L2 except L2-07; L2-07 = 3-run majority of the code-specific prompt",
+ "source": "03_outputs/01_results_labelings/01_results_datasets/Run_claude_maj3_20261020/final_results.csv",
+ "rows": 22560,
+ "annotated_rows": 20901,
+ "preregistration": "06_claude_reannotation/human_tasks/PREREG_gold2.md (deviation log 2026-10-20)",
+ "final_results_sha256": "ce839e5e9f02432c16e8bb687e6ed617af7763fdbbb1133401a1931448850f83"
+}

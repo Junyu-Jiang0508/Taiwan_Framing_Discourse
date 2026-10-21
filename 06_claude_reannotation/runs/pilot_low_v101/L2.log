@@ -1,0 +1,6 @@
+2026-10-18T12:00:10 start pilot_low_v101/L2: 100 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T12:01:35 progress 50/100 ok=50 fail=0 elapsed=1.4min rate=35.5/min
+2026-10-18T12:02:55 progress 100/100 ok=100 fail=0 elapsed=2.7min rate=36.5/min
+2026-10-18T12:02:55 end: ok=100 fail=0 stopped=False
+2026-10-18T12:02:55 start pilot_low_v101/L2: 0 to do (100 already done), effort=low variant=std workers=4
+2026-10-18T12:02:55 end: ok=0 fail=0 stopped=False

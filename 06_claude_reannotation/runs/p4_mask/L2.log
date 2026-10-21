@@ -1,0 +1,8 @@
+2026-10-18T22:06:50 start p4_mask/L2: 300 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:08:39 progress 50/300 ok=50 fail=0 elapsed=1.8min rate=27.6/min
+2026-10-18T22:10:19 progress 100/300 ok=100 fail=0 elapsed=3.5min rate=28.7/min
+2026-10-18T22:12:05 progress 150/300 ok=150 fail=0 elapsed=5.3min rate=28.5/min
+2026-10-18T22:13:54 progress 200/300 ok=200 fail=0 elapsed=7.1min rate=28.3/min
+2026-10-18T22:15:43 progress 250/300 ok=250 fail=0 elapsed=8.9min rate=28.1/min
+2026-10-18T22:17:27 progress 300/300 ok=300 fail=0 elapsed=10.6min rate=28.3/min
+2026-10-18T22:17:27 end: ok=300 fail=0 stopped=False

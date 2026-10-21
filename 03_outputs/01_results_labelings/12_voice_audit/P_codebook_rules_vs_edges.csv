@@ -1,0 +1,32 @@
+pair,code,field,rule,clause,pooled_ratio,pooled_q
+01-08,L2-01,exclusion_criteria,route_away,（1）主軸為民主制度優越→L2-08。,1.11,0.0153
+01-03,L2-01,exclusion_criteria,route_away,（2）僅援引規範爭取支持、全段無國家行為者展演→L2-03。,1.202,0.036
+01-02,L2-01,exclusion_criteria,route_away,（3）純他者優劣對比→L2-02。,1.457,0.0062
+01-07,L2-01,exclusion_criteria,route_away,（4）主功能為號召行動→L2-07。,0.978,0.295
+02-05,L2-02,exclusion_criteria,route_away,（1）核心為他者威脅→L2-05。,1.041,0.5198
+02-06,L2-02,exclusion_criteria,route_away,（3）無他者對比、僅自讚成就→L2-06。,0.901,0.304
+02-08,L2-02,exclusion_criteria,route_away,（4）主軸為民主價值命題→L2-08。,1.415,0.0062
+02-06,L2-02,boundary_test,route_away,【vs L2-06】對比是分類性的（「我們不同」）還是等級性的（「我們更好」）？前者→L2-02，後者→L2-06。,0.901,0.304
+02-05,L2-02,boundary_test,route_away,【vs L2-05】判「在說威脅」還是「在說不同」？僅後者→L2-02。,1.041,0.5198
+01-03,L2-03,exclusion_criteria,route_away,（1）主軸為主權宣示→L2-01。,1.202,0.036
+01-03,L2-03,exclusion_criteria,permit_colabel,（2）外交出訪若呈現國家行為者展演→並標L2-01。,1.202,0.036
+03-06,L2-03,exclusion_criteria,route_away,（3）台灣獲他國肯定若無規範引用→L2-06。,1.144,0.1594
+03-06,L2-03,boundary_test,route_away,【vs L2-06】國際讚譽作為政治主張的論據→L2-03。國際讚譽作為慶祝的燃料→L2-06。「WHO讚揚台灣，台灣應被納入WHA」→L2-03。「全世界都在,1.144,0.1594
+04-05,L2-04,exclusion_criteria,route_away,（1）歷史敘述映射當下威脅→加L2-05。,1.015,0.8456
+04-06,L2-04,exclusion_criteria,route_away,（2）僅列舉過去輝煌、無爭議性重構→L2-06。,1.256,0.0062
+04-06,L2-04,boundary_test,route_away,【vs L2-06「論證vs傳承」】歷史引用作為政治論證的前提→L2-04。歷史引用作為共同身分的確認→L2-06。移除歷史引用後政治主張是否失去支撐？→是則L,1.256,0.0062
+04-05,L2-04,boundary_test,route_away,【爭議性判準】L2-04的記憶是被爭奪的——存在對立敘事。L2-06的記憶是共識性的。範例：「民進黨37年前在戒嚴年代冒生命危險創黨」→B級模板啟動（具名事件+,1.015,0.8456
+02-05,L2-05,exclusion_criteria,route_away,與L2-02：判「在說威脅」或「在說不同」？僅後者→L2-02。與L2-08：民主自由若附屬於威脅回應→可標L2-05；獨立價值論述→另標L2-08。每標籤須有,1.041,0.5198
+05-08,L2-05,exclusion_criteria,route_away,與L2-02：判「在說威脅」或「在說不同」？僅後者→L2-02。與L2-08：民主自由若附屬於威脅回應→可標L2-05；獨立價值論述→另標L2-08。每標籤須有,0.996,0.9821
+06-08,L2-06,exclusion_criteria,route_away,（1）主軸為民主自由定義身分→L2-08。,0.843,0.0062
+04-06,L2-06,exclusion_criteria,route_away,（2）主軸為歷史敘事重構→L2-04。,1.256,0.0062
+06-07,L2-06,exclusion_criteria,permit_colabel,（3）成就描述同時含號召動員語段→可並標L2-07。,0.902,0.0062
+05-06,L2-06,exclusion_criteria,route_away,（4）純他者威脅渲染、無自豪標準預設→L2-05。,0.87,0.0062
+02-06,L2-06,boundary_test,route_away,【vs L2-02】等級性對比（「我們更好」）→L2-06；分類性對比（「我們不同」）→L2-02。,0.901,0.304
+04-06,L2-06,boundary_test,route_away,【vs L2-04】既有共識敘事內運作→L2-06；挑戰/重構敘事模板→L2-04。,1.256,0.0062
+01-07,L2-07,exclusion_criteria,route_away,（2）主軸為主權法理宣示且無未來行動指向→L2-01。,0.978,0.295
+06-07,L2-07,exclusion_criteria,route_away,（3）主軸為純成就陳述或數字展示且無未來行動指向→L2-06。,0.902,0.0062
+07-08,L2-07,exclusion_criteria,permit_colabel,（4）主軸為民主價值定義且無動員召喚→L2-08。注意：含方向性/未來性的句子，即便同時涉及主權/成就/價值，仍應標 L2-07，可並標。,1.08,0.0062
+01-08,L2-08,exclusion_criteria,route_away,（1）國家實體地位→L2-01。,1.11,0.0153
+02-08,L2-08,exclusion_criteria,route_away,（2）文化本質差異→L2-02。,1.415,0.0062
+05-08,L2-08,exclusion_criteria,route_away,（4）與L2-05並存須各有子句支撐。,0.996,0.9821

@@ -1,0 +1,8 @@
+{
+  "corpus_content_hash": "95b63de81f5bc1b204e254de1481d8beac7ecc539862013ef39b5717c06d5cda",
+  "edge_selection": "fdr",
+  "bootstrap_n_resamples": 1000,
+  "ci_alpha": 0.05,
+  "inputs_hash": "f5aa173b4fac03cd1a504ffe2fb2ac307b07d25521bbdd21e20b121f85eca243",
+  "written_at": "2026-10-21T03:02:10.587610+00:00"
+}
