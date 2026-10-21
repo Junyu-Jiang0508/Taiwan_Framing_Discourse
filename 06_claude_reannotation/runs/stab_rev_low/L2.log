@@ -1,0 +1,5 @@
+2026-10-18T11:51:00 start stab_rev_low/L2: 30 to do (0 already done), effort=low variant=rev workers=3
+2026-10-18T11:51:31 progress 10/30 ok=10 fail=0 elapsed=0.5min rate=19.3/min
+2026-10-18T11:51:53 progress 20/30 ok=20 fail=0 elapsed=0.9min rate=22.8/min
+2026-10-18T11:52:22 progress 30/30 ok=30 fail=0 elapsed=1.4min rate=22.0/min
+2026-10-18T11:52:22 end: ok=30 fail=0 stopped=False

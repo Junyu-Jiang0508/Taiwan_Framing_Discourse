@@ -1,0 +1,7 @@
+{
+  "corpus_content_hash": "95b63de81f5bc1b204e254de1481d8beac7ecc539862013ef39b5717c06d5cda",
+  "robustness_ns": "[1, 2, 5, 'document']",
+  "edge_selection": "fdr",
+  "inputs_hash": "b7e55271fd57bdcc2c0d2ca600fdfac60131b5bfd797b92596cc879761bb1c08",
+  "written_at": "2026-10-21T03:02:16.948365+00:00"
+}

@@ -1,0 +1,54 @@
+{
+ "type": "object",
+ "properties": {
+  "reason": {
+   "type": "string"
+  },
+  "L1": {
+   "type": "string",
+   "enum": [
+    "L1-01",
+    "L1-02",
+    "L1-03",
+    "L1-04",
+    "L1-05",
+    "L1-06",
+    "L1-07"
+   ]
+  },
+  "L1_secondary": {
+   "anyOf": [
+    {
+     "type": "string",
+     "enum": [
+      "L1-01",
+      "L1-02",
+      "L1-03",
+      "L1-04",
+      "L1-05",
+      "L1-06",
+      "L1-07"
+     ]
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "confidence": {
+   "type": "string",
+   "enum": [
+    "high",
+    "medium",
+    "low"
+   ]
+  }
+ },
+ "required": [
+  "reason",
+  "L1",
+  "L1_secondary",
+  "confidence"
+ ],
+ "additionalProperties": false
+}

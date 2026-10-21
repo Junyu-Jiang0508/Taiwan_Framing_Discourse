@@ -1,0 +1,3 @@
+2026-10-18T11:39:56 start defs_medium/L2: 15 to do (0 already done), effort=medium variant=std workers=4
+2026-10-18T11:40:16 progress 10/15 ok=10 fail=0 elapsed=0.3min rate=30.1/min
+2026-10-18T11:40:26 end: ok=15 fail=0 stopped=False

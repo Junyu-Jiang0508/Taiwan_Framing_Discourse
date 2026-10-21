@@ -1,0 +1,6 @@
+{
+  "corpus_content_hash": "95b63de81f5bc1b204e254de1481d8beac7ecc539862013ef39b5717c06d5cda",
+  "windows_config": "{'default_n': 3, 'step': 1, 'short_doc_policy': 'truncate', 'robustness_ns': [1, 2, 5, 'document'], 'robustness_run': True}",
+  "inputs_hash": "84ca596409169909d5a3b031105e2ae9df8740eda716ce8f47aacad02f98745d",
+  "written_at": "2026-10-21T02:47:54.275888+00:00"
+}

@@ -1,0 +1,79 @@
+2026-10-18T11:39:56 start defs_medium/L1: 15 to do (0 already done), effort=medium variant=std workers=4
+2026-10-18T11:39:56 start defs_medium/L2: 15 to do (0 already done), effort=medium variant=std workers=4
+2026-10-18T11:40:10 progress 10/15 ok=10 fail=0 elapsed=0.2min rate=43.7/min
+2026-10-18T11:40:16 progress 10/15 ok=10 fail=0 elapsed=0.3min rate=30.1/min
+2026-10-18T11:40:16 end: ok=15 fail=0 stopped=False
+2026-10-18T11:40:26 end: ok=15 fail=0 stopped=False
+2026-10-18T11:40:26 start pilot_low/L1: 100 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T11:40:26 start pilot_low/L2: 100 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T11:40:40 progress 10/100 ok=10 fail=0 elapsed=0.2min rate=42.5/min
+2026-10-18T11:40:46 progress 10/100 ok=10 fail=0 elapsed=0.3min rate=30.9/min
+2026-10-18T11:40:50 progress 20/100 ok=20 fail=0 elapsed=0.4min rate=50.0/min
+2026-10-18T11:41:00 progress 30/100 ok=30 fail=0 elapsed=0.6min rate=53.2/min
+2026-10-18T11:41:00 progress 20/100 ok=20 fail=0 elapsed=0.6min rate=35.3/min
+2026-10-18T11:41:09 progress 40/100 ok=40 fail=0 elapsed=0.7min rate=55.4/min
+2026-10-18T11:41:17 progress 30/100 ok=30 fail=0 elapsed=0.8min rate=35.4/min
+2026-10-18T11:41:20 progress 50/100 ok=50 fail=0 elapsed=0.9min rate=55.6/min
+2026-10-18T11:41:31 progress 60/100 ok=60 fail=0 elapsed=1.1min rate=55.1/min
+2026-10-18T11:41:32 progress 40/100 ok=40 fail=0 elapsed=1.1min rate=36.4/min
+2026-10-18T11:41:42 progress 70/100 ok=70 fail=0 elapsed=1.3min rate=55.3/min
+2026-10-18T11:41:46 progress 50/100 ok=50 fail=0 elapsed=1.3min rate=37.5/min
+2026-10-18T11:41:53 progress 80/100 ok=80 fail=0 elapsed=1.5min rate=55.0/min
+2026-10-18T11:42:02 progress 90/100 ok=90 fail=0 elapsed=1.6min rate=56.1/min
+2026-10-18T11:42:03 progress 60/100 ok=60 fail=0 elapsed=1.6min rate=37.1/min
+2026-10-18T11:42:14 progress 100/100 ok=100 fail=0 elapsed=1.8min rate=55.9/min
+2026-10-18T11:42:14 end: ok=100 fail=0 stopped=False
+2026-10-18T11:42:18 progress 70/100 ok=70 fail=0 elapsed=1.9min rate=37.4/min
+2026-10-18T11:42:35 progress 80/100 ok=80 fail=0 elapsed=2.1min rate=37.3/min
+2026-10-18T11:42:51 progress 90/100 ok=90 fail=0 elapsed=2.4min rate=37.3/min
+2026-10-18T11:43:09 progress 100/100 ok=100 fail=0 elapsed=2.7min rate=36.9/min
+2026-10-18T11:43:09 end: ok=100 fail=0 stopped=False
+2026-10-18T11:43:09 start pilot_medium/L1: 100 to do (0 already done), effort=medium variant=std workers=4
+2026-10-18T11:43:09 start pilot_medium/L2: 100 to do (0 already done), effort=medium variant=std workers=4
+2026-10-18T11:43:25 progress 10/100 ok=10 fail=0 elapsed=0.3min rate=37.3/min
+2026-10-18T11:43:30 progress 10/100 ok=10 fail=0 elapsed=0.4min rate=28.5/min
+2026-10-18T11:43:36 progress 20/100 ok=20 fail=0 elapsed=0.5min rate=43.8/min
+2026-10-18T11:43:48 progress 30/100 ok=30 fail=0 elapsed=0.6min rate=46.6/min
+2026-10-18T11:43:48 progress 20/100 ok=20 fail=0 elapsed=0.7min rate=30.6/min
+2026-10-18T11:44:01 progress 40/100 ok=40 fail=0 elapsed=0.9min rate=46.3/min
+2026-10-18T11:44:08 progress 30/100 ok=30 fail=0 elapsed=1.0min rate=30.6/min
+2026-10-18T11:44:13 progress 50/100 ok=50 fail=0 elapsed=1.1min rate=47.0/min
+2026-10-18T11:44:24 progress 60/100 ok=60 fail=0 elapsed=1.3min rate=48.0/min
+2026-10-18T11:44:26 progress 40/100 ok=40 fail=0 elapsed=1.3min rate=31.1/min
+2026-10-18T11:44:38 progress 70/100 ok=70 fail=0 elapsed=1.5min rate=47.1/min
+2026-10-18T11:44:47 progress 50/100 ok=50 fail=0 elapsed=1.6min rate=30.7/min
+2026-10-18T11:44:49 progress 80/100 ok=80 fail=0 elapsed=1.7min rate=47.9/min
+2026-10-18T11:45:04 progress 90/100 ok=90 fail=0 elapsed=1.9min rate=46.9/min
+2026-10-18T11:45:08 progress 60/100 ok=60 fail=0 elapsed=2.0min rate=30.2/min
+2026-10-18T11:45:18 progress 100/100 ok=100 fail=0 elapsed=2.2min rate=46.4/min
+2026-10-18T11:45:18 end: ok=100 fail=0 stopped=False
+2026-10-18T11:45:25 progress 70/100 ok=70 fail=0 elapsed=2.3min rate=30.8/min
+2026-10-18T11:45:43 progress 80/100 ok=80 fail=0 elapsed=2.6min rate=31.2/min
+2026-10-18T11:46:04 progress 90/100 ok=90 fail=0 elapsed=2.9min rate=30.9/min
+2026-10-18T11:46:28 progress 100/100 ok=100 fail=0 elapsed=3.3min rate=30.2/min
+2026-10-18T11:46:28 end: ok=100 fail=0 stopped=False
+2026-10-18T11:46:28 start pilot_high/L2: 100 to do (0 already done), effort=high variant=std workers=4
+2026-10-18T11:46:28 start pilot_high/L1: 100 to do (0 already done), effort=high variant=std workers=4
+2026-10-18T11:46:44 progress 10/100 ok=10 fail=0 elapsed=0.3min rate=37.6/min
+2026-10-18T11:46:54 progress 10/100 ok=10 fail=0 elapsed=0.4min rate=23.0/min
+2026-10-18T11:46:56 progress 20/100 ok=20 fail=0 elapsed=0.5min rate=43.4/min
+2026-10-18T11:47:06 progress 30/100 ok=30 fail=0 elapsed=0.6min rate=46.9/min
+2026-10-18T11:47:13 progress 20/100 ok=20 fail=0 elapsed=0.8min rate=26.7/min
+2026-10-18T11:47:17 progress 40/100 ok=40 fail=0 elapsed=0.8min rate=49.3/min
+2026-10-18T11:47:31 progress 50/100 ok=50 fail=0 elapsed=1.0min rate=47.9/min
+2026-10-18T11:47:42 progress 60/100 ok=60 fail=0 elapsed=1.2min rate=48.8/min
+2026-10-18T11:47:42 progress 30/100 ok=30 fail=0 elapsed=1.2min rate=24.2/min
+2026-10-18T11:47:56 progress 70/100 ok=70 fail=0 elapsed=1.5min rate=48.0/min
+2026-10-18T11:48:03 progress 40/100 ok=40 fail=0 elapsed=1.6min rate=25.2/min
+2026-10-18T11:48:09 progress 80/100 ok=80 fail=0 elapsed=1.7min rate=47.5/min
+2026-10-18T11:48:23 progress 90/100 ok=90 fail=0 elapsed=1.9min rate=46.9/min
+2026-10-18T11:48:26 progress 50/100 ok=50 fail=0 elapsed=2.0min rate=25.3/min
+2026-10-18T11:48:38 progress 100/100 ok=100 fail=0 elapsed=2.2min rate=46.1/min
+2026-10-18T11:48:38 end: ok=100 fail=0 stopped=False
+2026-10-18T11:48:46 progress 60/100 ok=60 fail=0 elapsed=2.3min rate=26.1/min
+2026-10-18T11:49:04 progress 70/100 ok=70 fail=0 elapsed=2.6min rate=26.8/min
+2026-10-18T11:49:28 progress 80/100 ok=80 fail=0 elapsed=3.0min rate=26.7/min
+2026-10-18T11:49:52 progress 90/100 ok=90 fail=0 elapsed=3.4min rate=26.4/min
+2026-10-18T11:50:19 progress 100/100 ok=100 fail=0 elapsed=3.9min rate=26.0/min
+2026-10-18T11:50:19 end: ok=100 fail=0 stopped=False
+PILOT DONE
