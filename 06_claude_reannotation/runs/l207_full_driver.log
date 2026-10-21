@@ -1,0 +1,462 @@
+2026-10-18T22:10:23 start full_code_L2-07/CODE: 20900 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T22:13:58 progress 200/20900 ok=200 fail=0 elapsed=3.6min rate=55.7/min
+2026-10-18T22:18:02 progress 400/20900 ok=400 fail=0 elapsed=7.6min rate=52.3/min
+2026-10-18T22:21:30 progress 600/20900 ok=600 fail=0 elapsed=11.1min rate=54.0/min
+2026-10-18T22:25:11 progress 800/20900 ok=800 fail=0 elapsed=14.8min rate=54.0/min
+2026-10-18T22:28:42 progress 1000/20900 ok=1000 fail=0 elapsed=18.3min rate=54.6/min
+2026-10-18T22:31:53 progress 1200/20900 ok=1200 fail=0 elapsed=21.5min rate=55.8/min
+2026-10-18T22:35:16 progress 1400/20900 ok=1400 fail=0 elapsed=24.9min rate=56.3/min
+2026-10-18T22:38:45 progress 1600/20900 ok=1600 fail=0 elapsed=28.4min rate=56.4/min
+2026-10-18T22:42:09 progress 1800/20900 ok=1800 fail=0 elapsed=31.8min rate=56.7/min
+2026-10-18T22:45:41 progress 2000/20900 ok=2000 fail=0 elapsed=35.3min rate=56.7/min
+2026-10-18T22:49:09 progress 2200/20900 ok=2200 fail=0 elapsed=38.8min rate=56.7/min
+2026-10-18T22:52:47 progress 2400/20900 ok=2400 fail=0 elapsed=42.4min rate=56.6/min
+2026-10-18T22:56:12 progress 2600/20900 ok=2600 fail=0 elapsed=45.8min rate=56.8/min
+2026-10-18T22:59:35 progress 2800/20900 ok=2800 fail=0 elapsed=49.2min rate=56.9/min
+2026-10-18T23:02:58 progress 3000/20900 ok=3000 fail=0 elapsed=52.6min rate=57.0/min
+2026-10-18T23:06:28 progress 3200/20900 ok=3200 fail=0 elapsed=56.1min rate=57.1/min
+2026-10-18T23:09:48 progress 3400/20900 ok=3400 fail=0 elapsed=59.4min rate=57.2/min
+2026-10-18T23:13:08 progress 3600/20900 ok=3600 fail=0 elapsed=62.7min rate=57.4/min
+2026-10-18T23:16:38 progress 3800/20900 ok=3800 fail=0 elapsed=66.2min rate=57.4/min
+2026-10-18T23:19:51 progress 4000/20900 ok=4000 fail=0 elapsed=69.5min rate=57.6/min
+2026-10-18T23:23:30 progress 4200/20900 ok=4200 fail=0 elapsed=73.1min rate=57.4/min
+2026-10-18T23:27:10 progress 4400/20900 ok=4400 fail=0 elapsed=76.8min rate=57.3/min
+2026-10-18T23:30:43 progress 4600/20900 ok=4600 fail=0 elapsed=80.3min rate=57.3/min
+2026-10-18T23:34:14 progress 4800/20900 ok=4800 fail=0 elapsed=83.9min rate=57.2/min
+2026-10-18T23:37:42 progress 5000/20900 ok=5000 fail=0 elapsed=87.3min rate=57.3/min
+2026-10-18T23:41:10 progress 5200/20900 ok=5200 fail=0 elapsed=90.8min rate=57.3/min
+2026-10-18T23:44:28 progress 5400/20900 ok=5400 fail=0 elapsed=94.1min rate=57.4/min
+2026-10-18T23:47:58 progress 5600/20900 ok=5600 fail=0 elapsed=97.6min rate=57.4/min
+2026-10-18T23:51:10 progress 5800/20900 ok=5800 fail=0 elapsed=100.8min rate=57.5/min
+2026-10-18T23:54:30 progress 6000/20900 ok=6000 fail=0 elapsed=104.1min rate=57.6/min
+2026-10-19T08:37:40 start full_code_L2-07/CODE: 14721 to do (6179 already done), effort=low variant=std workers=4
+2026-10-19T08:41:21 progress 200/14721 ok=200 fail=0 elapsed=3.7min rate=54.1/min
+2026-10-19T08:44:50 progress 400/14721 ok=400 fail=0 elapsed=7.2min rate=55.8/min
+2026-10-19T08:48:12 progress 600/14721 ok=600 fail=0 elapsed=10.5min rate=56.9/min
+2026-10-19T08:51:38 progress 800/14721 ok=800 fail=0 elapsed=14.0min rate=57.3/min
+2026-10-19T08:55:07 progress 1000/14721 ok=1000 fail=0 elapsed=17.5min rate=57.3/min
+2026-10-19T08:58:35 progress 1200/14721 ok=1200 fail=0 elapsed=20.9min rate=57.4/min
+2026-10-19T09:01:54 progress 1400/14721 ok=1400 fail=0 elapsed=24.2min rate=57.8/min
+2026-10-19T09:05:04 progress 1600/14721 ok=1600 fail=0 elapsed=27.4min rate=58.4/min
+2026-10-19T09:08:21 progress 1800/14721 ok=1800 fail=0 elapsed=30.7min rate=58.6/min
+2026-10-19T09:11:43 progress 2000/14721 ok=2000 fail=0 elapsed=34.1min rate=58.7/min
+2026-10-19T09:15:08 progress 2200/14721 ok=2200 fail=0 elapsed=37.5min rate=58.7/min
+2026-10-19T09:18:27 progress 2400/14721 ok=2400 fail=0 elapsed=40.8min rate=58.8/min
+2026-10-19T09:21:52 progress 2600/14721 ok=2600 fail=0 elapsed=44.2min rate=58.8/min
+2026-10-19T09:25:32 progress 2800/14721 ok=2800 fail=0 elapsed=47.9min rate=58.5/min
+2026-10-19T09:28:49 progress 3000/14721 ok=3000 fail=0 elapsed=51.2min rate=58.6/min
+2026-10-19T09:32:10 progress 3200/14721 ok=3200 fail=0 elapsed=54.5min rate=58.7/min
+2026-10-19T09:35:39 progress 3400/14721 ok=3400 fail=0 elapsed=58.0min rate=58.6/min
+2026-10-19T09:39:05 progress 3600/14721 ok=3600 fail=0 elapsed=61.4min rate=58.6/min
+2026-10-19T09:42:25 progress 3800/14721 ok=3800 fail=0 elapsed=64.8min rate=58.7/min
+2026-10-19T09:45:52 progress 4000/14721 ok=4000 fail=0 elapsed=68.2min rate=58.6/min
+2026-10-19T09:49:24 progress 4200/14721 ok=4200 fail=0 elapsed=71.7min rate=58.5/min
+2026-10-19T09:52:51 progress 4400/14721 ok=4400 fail=0 elapsed=75.2min rate=58.5/min
+2026-10-19T09:56:23 progress 4600/14721 ok=4600 fail=0 elapsed=78.7min rate=58.4/min
+2026-10-19T09:59:49 progress 4800/14721 ok=4800 fail=0 elapsed=82.2min rate=58.4/min
+2026-10-19T10:03:16 progress 5000/14721 ok=5000 fail=0 elapsed=85.6min rate=58.4/min
+2026-10-19T10:06:44 progress 5200/14721 ok=5200 fail=0 elapsed=89.1min rate=58.4/min
+2026-10-19T10:10:05 progress 5400/14721 ok=5400 fail=0 elapsed=92.4min rate=58.4/min
+2026-10-19T10:13:30 progress 5600/14721 ok=5600 fail=0 elapsed=95.8min rate=58.4/min
+2026-10-19T10:16:47 progress 5800/14721 ok=5800 fail=0 elapsed=99.1min rate=58.5/min
+2026-10-19T10:20:11 progress 6000/14721 ok=6000 fail=0 elapsed=102.5min rate=58.5/min
+2026-10-19T10:23:31 progress 6200/14721 ok=6200 fail=0 elapsed=105.9min rate=58.6/min
+2026-10-19T10:26:58 progress 6400/14721 ok=6400 fail=0 elapsed=109.3min rate=58.5/min
+2026-10-19T10:30:16 progress 6600/14721 ok=6600 fail=0 elapsed=112.6min rate=58.6/min
+2026-10-19T10:33:48 progress 6800/14721 ok=6800 fail=0 elapsed=116.1min rate=58.5/min
+2026-10-19T10:37:14 progress 7000/14721 ok=7000 fail=0 elapsed=119.6min rate=58.5/min
+2026-10-19T10:40:43 progress 7200/14721 ok=7200 fail=0 elapsed=123.1min rate=58.5/min
+2026-10-19T10:44:06 progress 7400/14721 ok=7400 fail=0 elapsed=126.4min rate=58.5/min
+2026-10-19T10:47:41 progress 7600/14721 ok=7600 fail=0 elapsed=130.0min rate=58.5/min
+2026-10-19T10:51:00 progress 7800/14721 ok=7800 fail=0 elapsed=133.3min rate=58.5/min
+2026-10-19T10:54:11 progress 8000/14721 ok=8000 fail=0 elapsed=136.5min rate=58.6/min
+2026-10-19T10:57:25 progress 8200/14721 ok=8200 fail=0 elapsed=139.8min rate=58.7/min
+2026-10-19T11:00:44 progress 8400/14721 ok=8400 fail=0 elapsed=143.1min rate=58.7/min
+2026-10-19T11:04:07 progress 8600/14721 ok=8600 fail=0 elapsed=146.5min rate=58.7/min
+2026-10-19T11:07:40 progress 8800/14721 ok=8800 fail=0 elapsed=150.0min rate=58.7/min
+2026-10-19T11:10:59 progress 9000/14721 ok=9000 fail=0 elapsed=153.3min rate=58.7/min
+2026-10-19T11:14:23 progress 9200/14721 ok=9200 fail=0 elapsed=156.7min rate=58.7/min
+2026-10-19T11:17:38 progress 9400/14721 ok=9400 fail=0 elapsed=160.0min rate=58.8/min
+2026-10-19T11:20:59 progress 9600/14721 ok=9600 fail=0 elapsed=163.3min rate=58.8/min
+2026-10-19T11:24:19 progress 9800/14721 ok=9800 fail=0 elapsed=166.7min rate=58.8/min
+2026-10-19T11:27:48 progress 10000/14721 ok=10000 fail=0 elapsed=170.1min rate=58.8/min
+2026-10-19T11:31:05 progress 10200/14721 ok=10200 fail=0 elapsed=173.4min rate=58.8/min
+2026-10-19T11:34:11 progress 10400/14721 ok=10400 fail=0 elapsed=176.5min rate=58.9/min
+2026-10-19T11:37:32 progress 10600/14721 ok=10600 fail=0 elapsed=179.9min rate=58.9/min
+2026-10-19T11:37:57 _003fcdeb9f87_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:37:58 _68c39267b513_u013 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:37:59 _6a5e9e102c93_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:37:59 _caf9028f6abb_u005 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:01 _003fcdeb9f87_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:02 _68c39267b513_u013 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:03 _6a5e9e102c93_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:03 _caf9028f6abb_u005 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:05 _003fcdeb9f87_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:07 _68c39267b513_u013 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:07 _6a5e9e102c93_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:08 _caf9028f6abb_u005 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:10 _003fcdeb9f87_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:11 _68c39267b513_u013 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:12 _6a5e9e102c93_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:12 _caf9028f6abb_u005 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:14 _003fcdeb9f87_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:15 _68c39267b513_u013 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:16 _6a5e9e102c93_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:16 _caf9028f6abb_u005 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:18 _e1859281d5f9_u004 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:20 _13095c041e35_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:20 _f0c2a3f748e6_u009 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:21 _e3e29ba69393_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:23 _e1859281d5f9_u004 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:24 _13095c041e35_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:24 _f0c2a3f748e6_u009 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:25 _e3e29ba69393_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:27 _e1859281d5f9_u004 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:29 _13095c041e35_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:29 _f0c2a3f748e6_u009 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:29 _e3e29ba69393_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:31 _e1859281d5f9_u004 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:33 _13095c041e35_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:33 _f0c2a3f748e6_u009 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:33 _e3e29ba69393_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:36 _e1859281d5f9_u004 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:37 _13095c041e35_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:37 _f0c2a3f748e6_u009 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:38 _e3e29ba69393_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:40 _9a49940bbd97_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:42 _914394707464_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:42 _d65c7867395c_u006 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:42 _70fdad8371b6_u009 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:45 _9a49940bbd97_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:46 _914394707464_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:46 _d65c7867395c_u006 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:47 _70fdad8371b6_u009 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:49 _9a49940bbd97_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:50 _914394707464_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:50 _d65c7867395c_u006 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:51 _70fdad8371b6_u009 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:53 _9a49940bbd97_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:54 _914394707464_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:55 _d65c7867395c_u006 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:55 _70fdad8371b6_u009 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:58 _9a49940bbd97_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:58 _914394707464_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:59 _d65c7867395c_u006 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:38:59 _70fdad8371b6_u009 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:02 _6ac9040f25d2_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:03 _0ab83ad15b22_u013 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:03 _20afb2de1725_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:03 _35ce4f51097f_u006 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:06 _6ac9040f25d2_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:07 _0ab83ad15b22_u013 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:08 _20afb2de1725_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:08 _35ce4f51097f_u006 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:11 _6ac9040f25d2_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:11 _0ab83ad15b22_u013 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:12 _20afb2de1725_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:12 _35ce4f51097f_u006 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:15 _6ac9040f25d2_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:16 _0ab83ad15b22_u013 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:16 _20afb2de1725_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:16 _35ce4f51097f_u006 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:19 _6ac9040f25d2_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:20 _0ab83ad15b22_u013 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:21 _20afb2de1725_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:21 _35ce4f51097f_u006 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:24 _1e9f361b264c_u004 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:24 _f5df4db70a71_u011 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:25 _d0a2ddfd3625_u013 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:25 _fc27e5d6571b_u004 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:28 _1e9f361b264c_u004 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:28 _f5df4db70a71_u011 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:29 _d0a2ddfd3625_u013 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:30 _fc27e5d6571b_u004 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:32 _1e9f361b264c_u004 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:32 _f5df4db70a71_u011 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:34 _d0a2ddfd3625_u013 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:34 _fc27e5d6571b_u004 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:36 _1e9f361b264c_u004 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:37 _f5df4db70a71_u011 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:38 _d0a2ddfd3625_u013 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:38 _fc27e5d6571b_u004 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:41 _1e9f361b264c_u004 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:42 _d0a2ddfd3625_u013 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:42 _f5df4db70a71_u011 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:42 _fc27e5d6571b_u004 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:45 _2e7b37fb935b_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:46 _b7b885a72bb9_u010 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:47 _f778bcb68564_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:47 _d3fe20f2d292_u014 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:49 _2e7b37fb935b_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:50 _b7b885a72bb9_u010 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:51 _f778bcb68564_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:51 _d3fe20f2d292_u014 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:55 _b7b885a72bb9_u010 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:55 _f778bcb68564_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:55 _d3fe20f2d292_u014 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:58 _2e7b37fb935b_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:59 _b7b885a72bb9_u010 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:59 _f778bcb68564_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:39:59 _d3fe20f2d292_u014 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:02 _2e7b37fb935b_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:03 _b7b885a72bb9_u010 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:04 _f778bcb68564_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:05 _d3fe20f2d292_u014 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:07 _2e7b37fb935b_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:07 _5b25207c8e03_u005 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:08 _403693140f42_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:10 _229af01ae223_u012 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:11 _c3975b9927fe_u019 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:11 _5b25207c8e03_u005 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:12 _403693140f42_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:14 _229af01ae223_u012 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:15 _c3975b9927fe_u019 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:16 _5b25207c8e03_u005 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:16 _403693140f42_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:18 _229af01ae223_u012 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:20 _c3975b9927fe_u019 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:20 _5b25207c8e03_u005 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:21 _403693140f42_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:23 _229af01ae223_u012 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:24 _c3975b9927fe_u019 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:25 _5b25207c8e03_u005 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:25 _403693140f42_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:27 _229af01ae223_u012 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:28 _c3975b9927fe_u019 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:29 _5889778a2e60_u003 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:29 _7626748b03a4_u007 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:31 _6da1b187fd2a_u016 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:32 _b38a73dad3ec_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:33 _5889778a2e60_u003 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:33 _7626748b03a4_u007 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:35 _6da1b187fd2a_u016 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:37 _b38a73dad3ec_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:37 _5889778a2e60_u003 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:38 _7626748b03a4_u007 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:40 _6da1b187fd2a_u016 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:41 _b38a73dad3ec_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:42 _5889778a2e60_u003 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:42 _7626748b03a4_u007 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:44 _6da1b187fd2a_u016 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:45 _b38a73dad3ec_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:46 _5889778a2e60_u003 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:46 _7626748b03a4_u007 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:48 _6da1b187fd2a_u016 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:50 _b38a73dad3ec_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:50 _368516c44da3_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:50 _e88cf3815e89_u015 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:52 _63a7db144999_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:54 _8e1dc4911ec5_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:54 _368516c44da3_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:55 _e88cf3815e89_u015 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:57 _63a7db144999_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:58 _8e1dc4911ec5_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:59 _e88cf3815e89_u015 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:40:59 _368516c44da3_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:01 _63a7db144999_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:02 _8e1dc4911ec5_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:03 _e88cf3815e89_u015 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:03 _368516c44da3_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:05 _63a7db144999_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:07 _8e1dc4911ec5_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:07 _368516c44da3_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:07 _e88cf3815e89_u015 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:10 _63a7db144999_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:11 _8e1dc4911ec5_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:12 _8b8637849f04_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:12 _a30db06c681e_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:14 _3e8f17d09ee1_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:15 _01fc43f085ec_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:16 _8b8637849f04_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:16 _a30db06c681e_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:18 _3e8f17d09ee1_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:19 _01fc43f085ec_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:20 _8b8637849f04_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:20 _a30db06c681e_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:22 _3e8f17d09ee1_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:24 _01fc43f085ec_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:24 _8b8637849f04_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:25 _a30db06c681e_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:27 _3e8f17d09ee1_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:28 _01fc43f085ec_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:29 _8b8637849f04_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:29 _a30db06c681e_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:31 _3e8f17d09ee1_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:32 _01fc43f085ec_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:33 _e3f124993158_u014 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:33 _015f2d449a69_u006 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:35 _45d501eb1638_u029 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:36 副总统辩论_a4a3572e071e_u861 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:37 _e3f124993158_u014 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:38 _015f2d449a69_u006 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:39 _45d501eb1638_u029 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:41 副总统辩论_a4a3572e071e_u861 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:41 _e3f124993158_u014 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:42 _015f2d449a69_u006 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:44 _45d501eb1638_u029 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:45 副总统辩论_a4a3572e071e_u861 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:46 _e3f124993158_u014 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:46 _015f2d449a69_u006 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:48 _45d501eb1638_u029 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:49 副总统辩论_a4a3572e071e_u861 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:50 _e3f124993158_u014 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:51 _015f2d449a69_u006 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:52 _45d501eb1638_u029 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:54 副总统辩论_a4a3572e071e_u861 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:54 _05a6ea111183_u003 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:55 meeting1_1c537ffc49b6_u006 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:57 _708496307484_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:58 _38d898f47465_u003 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:58 _05a6ea111183_u003 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:41:59 meeting1_1c537ffc49b6_u006 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:01 _708496307484_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:02 _38d898f47465_u003 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:03 _05a6ea111183_u003 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:03 meeting1_1c537ffc49b6_u006 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:05 _708496307484_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:06 _38d898f47465_u003 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:08 _05a6ea111183_u003 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:08 meeting1_1c537ffc49b6_u006 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:10 _708496307484_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:11 _38d898f47465_u003 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:12 _05a6ea111183_u003 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:13 meeting1_1c537ffc49b6_u006 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:14 _708496307484_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:15 _38d898f47465_u003 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:16 _c74480c4bd7d_u009 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:17 _190a153f839f_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:18 _64c5af64e02c_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:19 _9756a03dc193_u014 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:21 _c74480c4bd7d_u009 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:22 _190a153f839f_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:22 _64c5af64e02c_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:23 _9756a03dc193_u014 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:25 _c74480c4bd7d_u009 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:26 _190a153f839f_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:27 _64c5af64e02c_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:28 _9756a03dc193_u014 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:29 _c74480c4bd7d_u009 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:30 _190a153f839f_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:31 _64c5af64e02c_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:32 _9756a03dc193_u014 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:33 _c74480c4bd7d_u009 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:35 _190a153f839f_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:36 _64c5af64e02c_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:36 _9756a03dc193_u014 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:38 _d6722e8bc410_u035 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:39 _9ed08803a682_u006 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:40 _f7309464a152_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:41 _4fae3db9512f_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:42 _d6722e8bc410_u035 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:43 _9ed08803a682_u006 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:44 _f7309464a152_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:45 _4fae3db9512f_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:46 _d6722e8bc410_u035 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:47 _9ed08803a682_u006 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:48 _f7309464a152_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:49 _4fae3db9512f_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:50 _d6722e8bc410_u035 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:51 _9ed08803a682_u006 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:53 _f7309464a152_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:53 _4fae3db9512f_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:55 _d6722e8bc410_u035 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:56 _9ed08803a682_u006 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:57 _f7309464a152_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:57 _4fae3db9512f_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:42:59 _eb3df395fcaf_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:00 总统辩论_e76e2f37b3f6_u444 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:02 _cba2bd9027da_u009 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:02 _cc8cf87241a0_u002 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:03 _eb3df395fcaf_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:04 总统辩论_e76e2f37b3f6_u444 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:06 _cba2bd9027da_u009 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:06 _cc8cf87241a0_u002 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:08 _eb3df395fcaf_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:08 总统辩论_e76e2f37b3f6_u444 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:10 _cc8cf87241a0_u002 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:10 _cba2bd9027da_u009 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:12 _eb3df395fcaf_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:13 总统辩论_e76e2f37b3f6_u444 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:15 _cc8cf87241a0_u002 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:15 _cba2bd9027da_u009 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:16 _eb3df395fcaf_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:17 总统辩论_e76e2f37b3f6_u444 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:19 _cc8cf87241a0_u002 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:19 _cba2bd9027da_u009 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:20 _3e284dfad3b1_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:21 _917a0af7dd58_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:23 _bf3f7ebf37a0_u005 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:23 _e79b2bd2c0de_u011 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:25 _3e284dfad3b1_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:26 _917a0af7dd58_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:27 _bf3f7ebf37a0_u005 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:28 _e79b2bd2c0de_u011 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:29 _3e284dfad3b1_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:30 _917a0af7dd58_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:32 _bf3f7ebf37a0_u005 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:32 _e79b2bd2c0de_u011 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:33 _3e284dfad3b1_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:34 _917a0af7dd58_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:36 _bf3f7ebf37a0_u005 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:36 _e79b2bd2c0de_u011 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:38 _3e284dfad3b1_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:39 _917a0af7dd58_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:40 _bf3f7ebf37a0_u005 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:41 _e79b2bd2c0de_u011 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:42 _e79b2bd2c0de_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:43 _fc526c07a94b_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:45 _92ebe4c0b6cb_u010 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:45 _12c543476962_u016 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:46 _e79b2bd2c0de_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:47 _fc526c07a94b_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:49 _92ebe4c0b6cb_u010 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:50 _12c543476962_u016 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:51 _e79b2bd2c0de_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:52 _fc526c07a94b_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:53 _92ebe4c0b6cb_u010 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:54 _12c543476962_u016 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:55 _e79b2bd2c0de_u000 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:56 _fc526c07a94b_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:57 _92ebe4c0b6cb_u010 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:58 _12c543476962_u016 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:43:59 _e79b2bd2c0de_u000 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:00 _fc526c07a94b_u001 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:02 _92ebe4c0b6cb_u010 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:02 _12c543476962_u016 attempt 5 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:03 _b594e7bf325a_u001 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:05 _56baa14fb3ba_u003 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:06 _3b1ced4d7fca_u000 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:07 _94f190a89430_u004 attempt 1 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:08 _b594e7bf325a_u001 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:09 _56baa14fb3ba_u003 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:10 _3b1ced4d7fca_u000 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:11 _94f190a89430_u004 attempt 2 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:12 _b594e7bf325a_u001 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:14 _56baa14fb3ba_u003 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:14 _3b1ced4d7fca_u000 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:15 _94f190a89430_u004 attempt 3 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:44:16 _b594e7bf325a_u001 attempt 4 failed: You've hit your session limit · resets 12:10pm (America/Los_Angeles) (sleep 3s)
+2026-10-19T11:46:00 progress 10800/14721 ok=10732 fail=68 elapsed=188.3min rate=57.3/min
+2026-10-19T11:47:09 start full_code_L2-07/CODE: 3969 to do (16931 already done), effort=low variant=std workers=4
+2026-10-19T11:50:34 progress 200/3969 ok=200 fail=0 elapsed=3.4min rate=58.4/min
+2026-10-19T11:54:01 progress 400/3969 ok=400 fail=0 elapsed=6.9min rate=58.1/min
+2026-10-19T11:57:31 progress 600/3969 ok=600 fail=0 elapsed=10.4min rate=57.7/min
+2026-10-19T12:00:52 progress 800/3969 ok=800 fail=0 elapsed=13.7min rate=58.3/min
+2026-10-19T12:04:14 progress 1000/3969 ok=1000 fail=0 elapsed=17.1min rate=58.5/min
+2026-10-19T12:07:48 progress 1200/3969 ok=1200 fail=0 elapsed=20.7min rate=58.0/min
+2026-10-19T12:10:57 progress 1400/3969 ok=1400 fail=0 elapsed=23.8min rate=58.8/min
+2026-10-19T12:14:13 progress 1600/3969 ok=1600 fail=0 elapsed=27.1min rate=59.1/min
+2026-10-19T12:17:32 progress 1800/3969 ok=1800 fail=0 elapsed=30.4min rate=59.2/min
+2026-10-19T12:20:50 progress 2000/3969 ok=2000 fail=0 elapsed=33.7min rate=59.4/min
+2026-10-19T12:24:00 progress 2200/3969 ok=2200 fail=0 elapsed=36.9min rate=59.7/min
+2026-10-19T12:27:40 progress 2400/3969 ok=2400 fail=0 elapsed=40.5min rate=59.2/min
+2026-10-19T12:30:59 progress 2600/3969 ok=2600 fail=0 elapsed=43.8min rate=59.3/min
+2026-10-19T12:34:14 progress 2800/3969 ok=2800 fail=0 elapsed=47.1min rate=59.5/min
+2026-10-19T12:37:24 progress 3000/3969 ok=3000 fail=0 elapsed=50.3min rate=59.7/min
+2026-10-19T12:40:56 progress 3200/3969 ok=3200 fail=0 elapsed=53.8min rate=59.5/min
+2026-10-19T12:44:06 progress 3400/3969 ok=3400 fail=0 elapsed=57.0min rate=59.7/min
+2026-10-19T12:47:17 progress 3600/3969 ok=3600 fail=0 elapsed=60.1min rate=59.9/min
+2026-10-19T12:50:17 progress 3800/3969 ok=3800 fail=0 elapsed=63.2min rate=60.2/min
+2026-10-19T12:52:53 end: ok=3969 fail=0 stopped=False
+2026-10-19T12:52:55 start full_code_L2-07/CODE: 0 to do (20900 already done), effort=low variant=std workers=4
+2026-10-19T12:52:55 end: ok=0 fail=0 stopped=False

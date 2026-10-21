@@ -1,0 +1,4 @@
+2026-10-18T11:57:43 start defs_v101/L2: 15 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T11:58:11 end: ok=15 fail=0 stopped=False
+2026-10-18T11:58:11 start defs_v101/L2: 0 to do (15 already done), effort=low variant=std workers=4
+2026-10-18T11:58:11 end: ok=0 fail=0 stopped=False

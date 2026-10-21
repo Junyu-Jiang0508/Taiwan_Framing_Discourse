@@ -1,0 +1,49 @@
+2026-10-18T22:02:49 start pilot_low_v101_r2/L2: 100 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:02:49 start pilot_low_v101_r3/L2: 100 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:02:50 start p4_code/CODE: 100 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:02:50 start p4_code/CODE: 100 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:04:18 progress 50/100 ok=50 fail=0 elapsed=1.5min rate=33.9/min
+2026-10-18T22:04:19 progress 50/100 ok=50 fail=0 elapsed=1.5min rate=33.3/min
+2026-10-18T22:04:40 progress 50/100 ok=50 fail=0 elapsed=1.8min rate=27.1/min
+2026-10-18T22:04:56 progress 50/100 ok=50 fail=0 elapsed=2.1min rate=23.6/min
+2026-10-18T22:05:36 progress 100/100 ok=100 fail=0 elapsed=2.8min rate=36.1/min
+2026-10-18T22:05:36 end: ok=100 fail=0 stopped=False
+2026-10-18T22:05:53 progress 100/100 ok=100 fail=0 elapsed=3.1min rate=32.7/min
+2026-10-18T22:05:53 end: ok=100 fail=0 stopped=False
+2026-10-18T22:06:43 progress 100/100 ok=100 fail=0 elapsed=3.9min rate=25.7/min
+2026-10-18T22:06:43 end: ok=100 fail=0 stopped=False
+2026-10-18T22:06:49 progress 100/100 ok=100 fail=0 elapsed=4.0min rate=25.0/min
+2026-10-18T22:06:49 end: ok=100 fail=0 stopped=False
+2026-10-18T22:06:50 start p4_mask/L2: 300 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:06:50 start p4_mask/L1: 300 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:06:50 start p4_mask_ctrl/L2: 300 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:06:50 start p4_mask_ctrl/L1: 300 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:08:06 progress 50/300 ok=50 fail=0 elapsed=1.3min rate=39.4/min
+2026-10-18T22:08:10 progress 50/300 ok=50 fail=0 elapsed=1.3min rate=37.6/min
+2026-10-18T22:08:32 progress 50/300 ok=50 fail=0 elapsed=1.7min rate=29.4/min
+2026-10-18T22:08:39 progress 50/300 ok=50 fail=0 elapsed=1.8min rate=27.6/min
+2026-10-18T22:09:20 progress 100/300 ok=100 fail=0 elapsed=2.5min rate=40.1/min
+2026-10-18T22:09:20 progress 100/300 ok=100 fail=0 elapsed=2.5min rate=40.1/min
+2026-10-18T22:10:19 progress 100/300 ok=100 fail=0 elapsed=3.5min rate=28.7/min
+2026-10-18T22:10:27 progress 100/300 ok=100 fail=0 elapsed=3.6min rate=27.7/min
+2026-10-18T22:10:40 progress 150/300 ok=150 fail=0 elapsed=3.8min rate=39.2/min
+2026-10-18T22:10:40 progress 150/300 ok=150 fail=0 elapsed=3.8min rate=39.2/min
+2026-10-18T22:12:03 progress 200/300 ok=200 fail=0 elapsed=5.2min rate=38.3/min
+2026-10-18T22:12:05 progress 150/300 ok=150 fail=0 elapsed=5.3min rate=28.5/min
+2026-10-18T22:12:15 progress 200/300 ok=200 fail=0 elapsed=5.4min rate=36.9/min
+2026-10-18T22:12:17 progress 150/300 ok=150 fail=0 elapsed=5.4min rate=27.5/min
+2026-10-18T22:13:33 progress 250/300 ok=250 fail=0 elapsed=6.7min rate=37.2/min
+2026-10-18T22:13:36 progress 250/300 ok=250 fail=0 elapsed=6.8min rate=37.0/min
+2026-10-18T22:13:54 progress 200/300 ok=200 fail=0 elapsed=7.1min rate=28.3/min
+2026-10-18T22:14:08 progress 200/300 ok=200 fail=0 elapsed=7.3min rate=27.4/min
+2026-10-18T22:14:58 progress 300/300 ok=300 fail=0 elapsed=8.1min rate=36.9/min
+2026-10-18T22:14:58 end: ok=300 fail=0 stopped=False
+2026-10-18T22:15:17 progress 300/300 ok=300 fail=0 elapsed=8.4min rate=35.5/min
+2026-10-18T22:15:17 end: ok=300 fail=0 stopped=False
+2026-10-18T22:15:43 progress 250/300 ok=250 fail=0 elapsed=8.9min rate=28.1/min
+2026-10-18T22:16:12 progress 250/300 ok=250 fail=0 elapsed=9.4min rate=26.7/min
+2026-10-18T22:17:27 progress 300/300 ok=300 fail=0 elapsed=10.6min rate=28.3/min
+2026-10-18T22:17:27 end: ok=300 fail=0 stopped=False
+2026-10-18T22:17:57 progress 300/300 ok=300 fail=0 elapsed=11.1min rate=27.0/min
+2026-10-18T22:17:57 end: ok=300 fail=0 stopped=False
+P4 DONE

@@ -1,0 +1,28 @@
+{
+ "system_L1.txt": {
+  "sha256": "02efa4770cebe47dfce2d1ae4a3be63312eac741dbaef1e0f6a7411209f11da6",
+  "chars": 8066
+ },
+ "system_L1_rev.txt": {
+  "sha256": "685aa2b4696b25f90f96ae325e58d21c22e6c5ec1426968394b40b862acf2955",
+  "chars": 8066
+ },
+ "system_L2.txt": {
+  "sha256": "24c0f6b77ad8a0e5f86a70e8f410b223e31e59c1e7304700f9f198363cd549de",
+  "chars": 4857
+ },
+ "system_L2_rev.txt": {
+  "sha256": "81520c4351f1e13d06b0b722a76455ce7db53859ee087c7920c4dbb4f130b973",
+  "chars": 4857
+ },
+ "system_L2_v101.txt": {
+  "sha256": "c88c8ab2ba2cc49965c064919d6aefa3894ab9977c56f9e9c3b37888ceb07701",
+  "chars": 5173
+ },
+ "schema_L1.json": {
+  "sha256": "de8f175a0060c3160e2e37fba9d553928c39dbb5c98cf0395fd56229a169fc09"
+ },
+ "schema_L2.json": {
+  "sha256": "9e29ac29134d942fd62eabd97d9459df0559735c1f92397ffdf7608d27459729"
+ }
+}

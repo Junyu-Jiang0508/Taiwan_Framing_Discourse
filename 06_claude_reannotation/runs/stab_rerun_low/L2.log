@@ -1,0 +1,5 @@
+2026-10-18T11:51:00 start stab_rerun_low/L2: 30 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T11:51:20 progress 10/30 ok=10 fail=0 elapsed=0.3min rate=30.3/min
+2026-10-18T11:51:44 progress 20/30 ok=20 fail=0 elapsed=0.7min rate=27.6/min
+2026-10-18T11:52:11 progress 30/30 ok=30 fail=0 elapsed=1.2min rate=25.5/min
+2026-10-18T11:52:11 end: ok=30 fail=0 stopped=False

@@ -1,0 +1,4 @@
+2026-10-18T11:58:12 start holdout_low/L1: 39 to do (0 already done), effort=low variant=std workers=4
+2026-10-18T11:58:56 end: ok=39 fail=0 stopped=False
+2026-10-18T11:58:56 start holdout_low/L1: 0 to do (39 already done), effort=low variant=std workers=4
+2026-10-18T11:58:56 end: ok=0 fail=0 stopped=False

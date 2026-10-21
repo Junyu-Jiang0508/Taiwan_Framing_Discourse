@@ -1,0 +1,4 @@
+2026-10-18T22:02:50 start p4_code/CODE: 100 to do (0 already done), effort=low variant=std workers=3
+2026-10-18T22:04:19 progress 50/100 ok=50 fail=0 elapsed=1.5min rate=33.3/min
+2026-10-18T22:05:36 progress 100/100 ok=100 fail=0 elapsed=2.8min rate=36.1/min
+2026-10-18T22:05:36 end: ok=100 fail=0 stopped=False
